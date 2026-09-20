@@ -73,6 +73,7 @@ remote "podman run --rm ${PODMAN_FLAGS[*]} \
   -e WINNOW_ASSETS=/etc/winnow/assets \
   -e WINNOW_DB=/var/lib/winnow/winnow.db \
   -e WINNOW_PROFILE=/etc/winnow/profile.yaml \
+  -e WINNOW_CONFIG=/etc/winnow/config.toml \
   -e TERM=\"${TERM:-xterm-256color}\" \
   $IMAGE$QUOTED"
 STATUS=$?

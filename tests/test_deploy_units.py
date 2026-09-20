@@ -215,3 +215,16 @@ def test_the_failure_notifier_gets_no_more_credential_than_the_timer():
     assert "op-token-digest" in text
     assert "op-token-mail" not in text
     assert "/var/winnow" not in text, "it does not need the store to say a unit died"
+
+
+def test_the_wrapper_hands_every_path_the_container_needs():
+    """Caught in deployment twice: a path the code defaults to, unmounted.
+
+    Inside the container the operator's home is not the operator's home, so
+    every location has to be named explicitly. A missing WINNOW_CONFIG means
+    the review screen finds no settings and `s` fails at the point of sending.
+    """
+    script = Path("deploy/winnow-remote.sh").read_text()
+
+    for variable in ("WINNOW_DB", "WINNOW_PROFILE", "WINNOW_CONFIG", "WINNOW_ASSETS"):
+        assert f"-e {variable}=" in script, f"{variable} is not passed to the container"
