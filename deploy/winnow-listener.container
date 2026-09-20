@@ -1,0 +1,53 @@
+# The inbound listener: IMAP IDLE, classify, advance applications.
+#
+# Long-running, and the only unattended process that touches the mailbox. It is
+# given a token scoped to the mail vault because it must read the mailbox, and
+# it still cannot send: the module imports no SMTP code, and `winnow listen`
+# has no path to one. Sending happens only in `winnow review`, interactively,
+# on an explicit keystroke against a specific draft.
+#
+# Restart=always because a listener that died quietly is indistinguishable from
+# a quiet week, which is the failure this whole design keeps trying to avoid.
+
+[Unit]
+Description=winnow inbound mail listener
+After=network-online.target
+Wants=network-online.target
+# A run that dies before the digest says nothing on its own. This is what
+# keeps a failure from looking like a quiet day.
+OnFailure=winnow-failure@%N.service
+
+[Container]
+# Restarts pick up what CI last built; without this the deployed image
+# silently never changes.
+# The homeserver is this same box, published on 127.0.0.1 behind Caddy, and
+# rootless container networking cannot route back to the host's loopback —
+# measured: the public name, host.containers.internal and the gateway are all
+# refused from the default namespace. nyx.container shares the host namespace
+# for the same reason.
+Network=host
+Pull=newer
+Image=ghcr.io/CHANGEME/winnow:latest
+ContainerName=winnow-listener
+# See the digest unit: keep-id so the container's UID 1000 is the host's `core`.
+UserNS=keep-id
+Exec=listen
+# :z, not :Z. Uppercase assigns a private SELinux category pair per
+# container, so two containers sharing one volume relabel it out from
+# under each other — which is what denied op its config directory and
+# looked for a while like an intermittent 1Password failure.
+Volume=/var/winnow:/var/lib/winnow:z
+Volume=%h/.config/winnow:/etc/winnow:ro,z
+# See the digest unit: PodmanArgs rather than AuthFile=, and a persistent path.
+PodmanArgs=--authfile=%h/.config/winnow/registry-auth.json
+Environment=OP_SERVICE_ACCOUNT_TOKEN_FILE=/etc/winnow/op-token-mail
+Environment=WINNOW_DB=/var/lib/winnow/winnow.db
+Environment=WINNOW_PROFILE=/etc/winnow/profile.yaml
+NoNewPrivileges=true
+
+[Service]
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target

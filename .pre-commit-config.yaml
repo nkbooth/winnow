@@ -1,0 +1,36 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
+        # Adapter fixtures are a deliberate 2.6MB dated snapshot of real board payloads.
+        args: ["--maxkb=3072"]
+      - id: check-yaml
+
+  # Run the project's own ruff rather than a separately pinned copy, so the hook
+  # and CI can never disagree about what passes.
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: ruff check
+        entry: uv run ruff check --fix
+        language: system
+        types: [python]
+        pass_filenames: false
+      - id: ruff-format
+        name: ruff format
+        entry: uv run ruff format
+        language: system
+        types: [python]
+        pass_filenames: false
+
+  # Baselined rather than pragma'd: the board fixtures are full of high-entropy
+  # job ids, and annotating a one-line JSON payload would be worse than useless.
+  # New findings outside the baseline still fail the commit.
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ["--baseline", ".secrets.baseline"]

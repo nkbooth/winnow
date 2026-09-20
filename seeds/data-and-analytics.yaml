@@ -1,0 +1,33 @@
+# Data and analytics
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: data-and-analytics
+description: >-
+  Warehouses, pipelines, observability, and product analytics.
+
+companies:
+  - name: Cribl
+    board: https://jobs.ashbyhq.com/cribl
+    tags: [remote-first]
+    verified: 2026-09-19
+  - name: Databricks
+    board: https://boards.greenhouse.io/databricks
+    verified: 2026-09-19
+  - name: Elastic
+    board: https://boards.greenhouse.io/elastic
+    tags: [publicly-traded, remote-first]
+    verified: 2026-09-19
+    note: "Distributed by default."
+  - name: Fivetran
+    board: https://boards.greenhouse.io/fivetran
+    verified: 2026-09-19
+  - name: PostHog
+    board: https://jobs.ashbyhq.com/posthog
+    tags: [open-source, remote-first]
+    verified: 2026-09-19
+  - name: Supabase
+    board: https://jobs.ashbyhq.com/supabase
+    tags: [open-source, remote-first]
+    verified: 2026-09-19

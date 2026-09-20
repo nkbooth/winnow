@@ -1,0 +1,269 @@
+# winnow scoring rubric — EXAMPLE
+#
+# Everything downstream reads this file: the gates, the scorer's weights, the
+# digest's threshold. Change it here, not in the code.
+#
+# `winnow init` writes one of these by interview. This copy is a worked
+# example for a fictional candidate, and it is also what the test suite runs
+# against, so it cannot drift out of date without a test failing.
+
+version: 1
+updated: 2026-09-20
+candidate:
+  name: Alex Rivera
+  location: Asheville, NC
+  timezone: America/New_York
+  mailbox: alex@example.invalid
+
+# ---------------------------------------------------------------------------
+# Engagement tracks. Scored separately — a posting matches one or neither.
+# ---------------------------------------------------------------------------
+engagement:
+  w2:
+    enabled: true
+    status: primary
+  contract:
+    enabled: true
+    status: additive          # runs ALONGSIDE current full-time W2 employment
+    max_hours_per_week: 15    # hard gate; flex only for exceptional interest
+    structures: [1099, c2c, w2_agency]
+    reachable_share: 0.2      # share of contract demand reachable at all
+    channels:
+      ats_posted: search      # employment-type filter on the existing pipeline
+      staffing_agencies: skip # below rate floor; worst measured conversion
+      vms_msp: unreachable    # 30-40% of demand, structurally invisible
+      curated_rosters: task   # Toptal/Catalant/BTG - apply once, not a search
+                              # apply once; not a recurring search
+    duration_floor: null      # open to any length; flexibility is the point
+    notes: >
+      Because contract work is additive, any posting implying full-time
+      availability is an auto-reject regardless of fit score. The addressable
+      set is part-time, fractional, advisory, and project-scoped engagements.
+
+# ---------------------------------------------------------------------------
+# Compensation. Floors are hard. Below floor is a decline, not a negotiation.
+# ---------------------------------------------------------------------------
+compensation:
+  w2:
+    mid_market:
+      floor: 200000
+      target: 250000
+    large_corporate:
+      floor: 275000
+      target: null
+    rationale: >
+      Sole earner in a high cost-of-living area, and current pay is already
+      near the floor. There is no exceptional-role discount.
+  contract:
+    hourly_floor: 200
+    hourly_target: [250, 300]
+    note: >
+      This rate is NOT the staffing-agency market (which tops out near $110/hr
+      for this work). Target fractional, advisory, boutique consulting, and
+      direct-client engagements.
+  equity:
+    below_floor: worthless     # never substitutes for absent cash
+    above_floor: valuable      # can bridge floor -> target and beyond
+
+# ---------------------------------------------------------------------------
+# Hard gates. Any true => auto-reject, never surfaced.
+# ---------------------------------------------------------------------------
+hard_gates:
+  - comp_below_applicable_floor
+  - onsite_required
+  - hybrid_required            # incl. "remote" postings hiding an onsite requirement
+  - relocation_required
+  - contract_exceeds_15_hours_per_week
+  - employer_in_stealth_list
+  - crypto_sector_below: 400000
+
+# ---------------------------------------------------------------------------
+# Geography
+# ---------------------------------------------------------------------------
+location:
+  remote: required
+  scope: US-wide
+  timezone_constraints: none
+  hybrid_exception: >
+    Not currently open. RTO is the closest thing to an absolute dealbreaker.
+  rto_trap_detection: true     # read the BODY for "within N miles", "2 days onsite",
+                               # "hybrid flexible", pending-RTO language
+
+# ---------------------------------------------------------------------------
+# Titles
+# ---------------------------------------------------------------------------
+titles:
+  primary:
+    - Director of Business Systems
+    - Director of Business Operations
+    - Head of Business Operations
+    - Senior Manager, Business Systems
+    - Director of Revenue Operations
+    - Director of Sales Operations
+    - ERP Program Manager
+    - Director of ERP
+    - Principal Business Systems Analyst
+  specialist_niches:
+    - ERP implementation / migration consulting
+    - RevOps leadership at mid-to-late-stage SaaS
+    - Systems and process leadership at high-comp tech companies
+  discovery_only:
+    # Match for discovery, but must clear the comp gate on posted range or drop.
+    - Business Systems Analyst
+    - Business Process Analyst
+    - Solutions Analyst
+    - ERP Analyst
+    - Systems Operations Manager
+  decline:
+    - pure platform/infrastructure data engineering
+    - frontend or application development
+    - IC roles with no process ownership
+
+# ---------------------------------------------------------------------------
+# Industry and mission
+# ---------------------------------------------------------------------------
+industry:
+  constrained: false
+  strong_pull:
+    description: >
+      Open-source and privacy-focused mission companies, commercially funded.
+      Credible rather than aspirational — already a daily user of this category.
+    examples:
+      - Proton
+      - Tailscale
+      - 1Password
+      - Bitwarden
+      - DuckDuckGo
+      - Mullvad
+      - Fastmail
+      - Element
+      - Nextcloud
+      - Mattermost
+      - GitLab
+      - Grafana
+      - Framework Computer
+    weight: +15
+  in_scope:
+    # AI is explicitly IN scope. The objection is burnout culture, not sector.
+    - artificial intelligence
+    - SaaS
+    - healthcare operations
+    - logistics
+    - fintech back-office
+  avoid:
+    crypto:
+      unless_comp_above: 400000
+  deprioritize:
+    government_public_sector:
+      weight: -25
+      reason: >
+        Federal and government contracting is out of scope (2026-09-18). Not
+        auto-rejected - a genuinely strong match may still surface - but weighted
+        far down. Independent corroboration: government carries the worst
+        ghost-job rate of any sector at ~60%.
+      sources: no SAM.gov or USAJOBS integration; penalty applies only to
+        government roles arriving through ordinary sources
+    dynamics_gp_shops:
+      reason: >
+        Niche premium is real, but organizations still on GP typically cannot
+        afford to leave it — which means they cannot pay the floor either.
+      action: score down unless posted comp independently clears the floor
+
+# ---------------------------------------------------------------------------
+# Scoring weights. Clearing the comp floor is necessary but NOT sufficient.
+# ---------------------------------------------------------------------------
+weights:
+  growth_signal: +20
+    # scope expansion, budget ownership, a team to build, company stage where
+    # the role grows. The driver for leaving is being capped and stagnant —
+    # a lateral role at $210k with no ceiling above it is a bad match.
+  builder_shaped: +15
+    # puzzles, tooling, automation, greenfield construction, empowering users
+  team_leadership: +10
+    # wants direct reports; philosophy is "success is my team outgrowing me"
+  mission_alignment: +15
+  governance_documentation_heavy: -10
+    # same titles, wrong work
+  grind_culture_signals: -15
+    # "fast-paced" + "wear many hats", founding titles at seed stage,
+    # equity-heavy/cash-light, "hustle", unlimited PTO at early stage.
+    # None disqualifying alone; the cluster is the signal.
+  source_proximity: +15
+    # Huntr, 1.24M applications: company career page 6.87% interview rate,
+    # ATS 3.16%, boards/aggregators 1.95%. A role found at source beats the
+    # same role found on an aggregator. Always link the source URL, never
+    # the aggregator's — resolve back to it before surfacing.
+  ghost_job_signals: -20
+    # 20-35% of listings are phantom (Ashby 18%, LinkedIn 27%, JOLTS ~30%,
+    # employer self-report ~33%; tech ~48%). Heuristics: live >30 days,
+    # recurring repost of a prior req, vague scope with no named team.
+    # At an 8-item cap, a third being phantom makes the digest ignorable.
+  degree_required_stated: -5
+    # FLAG, never auto-reject. No degree. Much of this language is boilerplate
+    # and auto-rejecting would delete most qualified matches. Surface it in the
+    # concern line so the decision stays human.
+
+# ---------------------------------------------------------------------------
+# Posting-quality red flags. Computable.
+# ---------------------------------------------------------------------------
+red_flags:
+  salary_range_spans_tiers:
+    max_ratio: 2.0            # e.g. $90k–$250k => reject; signals no real budget
+    action: reject
+  llm_generated_boilerplate:
+    action: reject
+    note: >
+      Vague, meaningless descriptions visibly machine-written with no human
+      editing. Judged by the scorer while it is already reading the body.
+  no_comp_disclosed:
+    action: flag              # not fatal, but unresolved until asked
+  stale_at_source:
+    action: reject
+    note: >
+      Aggregators lag the source by 24-72h and sometimes never update.
+      Re-verify every digest candidate against the company's own board
+      immediately before sending. Prevents the worst failure the system
+      can produce: an evening spent on a role that closed last week.
+
+# ---------------------------------------------------------------------------
+# Credentials
+# ---------------------------------------------------------------------------
+credentials:
+  degree: none
+  coursework: Computer Science (business focus), Middlesex Community College
+  in_progress:
+    - CISSP
+  pgp: 4A35B10787EC87DA23725CBE2A2F185C04DEE64A
+
+# ---------------------------------------------------------------------------
+# Stealth
+# ---------------------------------------------------------------------------
+stealth:
+  current_employer_aware: false
+  exclude_employers:
+    - Contoso Manufacturing
+  competitor_and_client_conflicts: manual   # the candidate gates these, not the agent
+  linkedin_mode: recruiters_only            # never the public green banner
+  constraints:
+    - no publicly visible profile changes
+    - no application channels that notify a network
+    - outreach drafts stay in the review queue; nothing sends automatically
+
+# ---------------------------------------------------------------------------
+# Delivery and process
+# ---------------------------------------------------------------------------
+process:
+  urgency: active_no_deadline
+  notice_period_weeks: [2, 4]
+  interviews_per_week: 2
+  applications_per_week: unknown    # MEASURE, do not assume
+  silence_window_days: 21           # past this, a non-reply is the answer
+  references: ready_on_request
+
+digest:
+  score_threshold: 70
+  max_items: 8                      # hypothesis; recalibrate against real throughput
+  always_show_top: 3
+  cadence: on_hits
+  weekly_summary: monday            # posts even at zero, so silence != breakage
+  retention_days: 180

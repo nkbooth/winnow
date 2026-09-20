@@ -1,0 +1,42 @@
+[project]
+name = "winnow"
+version = "0.1.0"
+description = "Daily job-board agent: ATS-first sourcing, deterministic gates, LLM scoring, Matrix digest."
+requires-python = ">=3.14"
+dependencies = [
+    "anthropic>=0.40",
+    "httpx>=0.28",
+    "pyyaml>=6.0",
+    "textual>=8.2",  # 8.x: Widget._render is internal, do not shadow it
+]
+
+[project.scripts]
+winnow = "winnow.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.8"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = "src"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0",
+    "pytest>=8.3",
+    "pytest-asyncio>=1.4.0",
+    "ruff>=0.8",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+# The review TUI's tests drive Textual's async pilot; everything else is sync.
+asyncio_mode = "auto"

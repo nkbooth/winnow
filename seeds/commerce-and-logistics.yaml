@@ -1,0 +1,25 @@
+# Commerce and logistics
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: commerce-and-logistics
+description: >-
+  Retail, marketplaces, freight, fleets, and moving physical things.
+
+companies:
+  - name: Flexport
+    board: https://boards.greenhouse.io/flexport
+    verified: 2026-09-19
+  - name: Instacart
+    board: https://boards.greenhouse.io/instacart
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Nuro
+    board: https://boards.greenhouse.io/nuro
+    tags: [robotics]
+    verified: 2026-09-19
+  - name: Samsara
+    board: https://boards.greenhouse.io/samsara
+    tags: [publicly-traded]
+    verified: 2026-09-19

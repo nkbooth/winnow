@@ -1,0 +1,1661 @@
+{
+ "count": 86,
+ "__CLASS__": "Adzuna::API::Response::JobSearchResults",
+ "mean": 108464.95,
+ "results": [
+  {
+   "created": "2026-09-01T07:23:28Z",
+   "company": {
+    "display_name": "SourceLine",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5864540751",
+   "salary_min": 93010.52,
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Texas",
+     "Dallas"
+    ],
+    "display_name": "Dallas, Texas",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "description": "Our client is hiring a Director of Sales Operations to support sales growth, lead conversion, marketing performance, customer acquisition, partnership development, and operational coordination across multiple RV shop locations. This is a revenue-focused leadership role responsible for improving sales performance, strengthening customer communication, supporting marketing and referral activity, and ensuring sales efforts align with shop capacity and operational needs. The Director of Sales Opera\u2026",
+   "latitude": 32.798895,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODY0NTQwNzUxIn0.d9V-_Kcx8gl-Gw1FRp0eCwFWYiESo477rqb-jcSjy4Y",
+   "title": "Director of Sales Operations",
+   "redirect_url": "https://www.adzuna.com/details/5864540751?utm_medium=api&utm_source=38708645",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -96.767002,
+   "salary_max": 93010.52
+  },
+  {
+   "redirect_url": "https://www.adzuna.com/details/5857994516?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "description": "At Numotion, we\u2019re on a mission to improve the lives of people with disabilities. As North America\u2019s largest provider of mobility products and services, we deliver personalized solutions from manual and power wheelchairs to medical supplies and other assistive technologies that support health, independence, and everyday participation. We\u2019re committed to a workforce of diverse backgrounds and experiences and to an inclusive environment shaped by open dialogue, attentive listening, and tangible, \u2026",
+   "title": "Director of Sales Operations",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1Nzk5NDUxNiIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.ENoGEeP2eVYj72tmlw8ExeQQ0YEpzUKKvIEdTzEYXNU",
+   "location": {
+    "display_name": "Monroe, Butler County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Ohio",
+     "Butler County",
+     "Monroe"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Numotion"
+   },
+   "id": "5857994516",
+   "salary_min": 100000,
+   "contract_time": "full_time",
+   "salary_is_predicted": "0",
+   "longitude": -84.369977,
+   "salary_max": 125000,
+   "latitude": 39.448688,
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "created": "2026-08-27T03:09:52Z"
+  },
+  {
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Norwell, Plymouth County",
+    "area": [
+     "US",
+     "Massachusetts",
+     "Plymouth County",
+     "Norwell"
+    ]
+   },
+   "id": "5886469126",
+   "salary_min": 122446.24,
+   "company": {
+    "display_name": "Clean Harbors",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5886469126?utm_medium=api&utm_source=38708645",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg2NDY5MTI2In0.lqq2NquwFmj9g9OsNYqTSaxbEZWKAFMKr_7D0h50DcM",
+   "title": "Director of Sales Operations",
+   "description": "The Director of Sales Operations will lead enterprise data governance strategy, drive sales effectiveness through scalable processes and compensation plans, advanced analytics, and disciplined execution. This role is accountable for customer master data governance, CRM integrity, and sales compensation design and analytics, ensuring alignment between sales performance, data quality, and incentive structures to achieve revenue and margin goals. Clean Harbors (NYSE: CLH) is North America\u2019s leadin\u2026",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "created": "2026-09-16T12:54:45Z",
+   "salary_max": 122446.24,
+   "salary_is_predicted": "1",
+   "longitude": -70.792783,
+   "contract_time": "full_time",
+   "latitude": 42.161516
+  },
+  {
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "US",
+    "area": [
+     "US"
+    ]
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "id": "5886233342",
+   "salary_min": 170000,
+   "company": {
+    "display_name": "Feastables",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-09-16T09:10:43Z",
+   "salary_max": 200000,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "0",
+   "redirect_url": "https://www.adzuna.com/details/5886233342?utm_medium=api&utm_source=38708645",
+   "contract_time": "full_time",
+   "title": "Director of Sales Operations",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NjIzMzM0MiIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.L5K10v_TrOKtKP3ITxZJhv4KfNiKomaeh4-k9xgR2F4",
+   "description": "Feastables is on a mission to create the world's most engaging brand. As the CPG industry teeters on the edge of transformation, trust has shifted from traditional corporate giants to innovative individual creators. With the backing of MrBeast, the world's most influential creator, and our unwavering commitment to transparency and superior quality, we are strategically positioned to become the go-to snacking brand for future generations. At the heart of our ethos is the belief that anything is \u2026"
+  },
+  {
+   "title": "Director, Global Sales Operations",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODY4ODgwOTA5In0.MFT6ZJQ8UwC1OqFgFnB3tb5uNOx2W3o8aX4rQNPVt5I",
+   "description": "About Ingredion: Join Ingredion, where innovation impacts lives worldwide! Without even realizing it, you\u2019ve experienced our work in your favorite chocolate, your pet\u2019s food, the paper you write on, and your everyday snacks. As a global powerhouse across more than 60 industries, we harness the potential of natural ingredients to transform lives. Whether you\u2019re just starting your career or bringing years of experience, there's a place for you here to make a real difference. Be part of our team t\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5868880909?utm_medium=api&utm_source=38708645",
+   "company": {
+    "display_name": "Ingredion",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5868880909",
+   "salary_min": 181400,
+   "location": {
+    "display_name": "Bridgewater, Somerset County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "New Jersey",
+     "Somerset County",
+     "Bridgewater"
+    ]
+   },
+   "latitude": 40.597148,
+   "salary_is_predicted": "0",
+   "longitude": -74.628332,
+   "contract_time": "full_time",
+   "salary_max": 241867,
+   "created": "2026-09-03T08:13:56Z",
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   }
+  },
+  {
+   "redirect_url": "https://www.adzuna.com/details/5849526392?utm_medium=api&utm_source=38708645",
+   "longitude": -76.711917,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 82494.83,
+   "latitude": 37.959676,
+   "description": "Lead. Coach. Build. Grow.At EmpowerHome, we\u2019re building one of the most innovative and high-performing real estate organizations in the country\u2014and we\u2019re looking for an experienced Director of Sales Operations to help lead our continued growth. This is an opportunity for a proven sales leader who knows how to coach, motivate, and develop sales professionals while creating a culture of accountability and high performance.As our Director of Sales Operations, you\u2019ll work closely with leadership an\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODQ5NTI2MzkyIn0.BCl6fY7Kn4eTluJnDUrd8A3OSBU5ZRxhbtLnsb6mttU",
+   "title": "Director Of Sales Operations - Real Estate",
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Virginia",
+     "Richmond County"
+    ],
+    "display_name": "Richmond County, Virginia",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "created": "2026-08-20T06:34:59Z",
+   "company": {
+    "display_name": "EmpowerHome Team - Richmond",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5849526392",
+   "salary_min": 82494.83
+  },
+  {
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "display_name": "Deunquat, Wyandot County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Ohio",
+     "Wyandot County",
+     "Deunquat"
+    ]
+   },
+   "company": {
+    "display_name": "XPO",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-09-15T18:21:20Z",
+   "id": "5885194340",
+   "salary_min": 65985.98,
+   "redirect_url": "https://www.adzuna.com/land/ad/5885194340?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=AA86A5FF12BECFE1ED0AE25D72F90C0DB582D2E6",
+   "longitude": -83.146331,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 65985.98,
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "latitude": 40.946001,
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg1MTk0MzQwIn0.j-_KJJ3YQ6kR1YqyHDG9M7zj3jYu48Q6C3ZQ4s_7Zds"
+  },
+  {
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Ohio",
+     "Marion County",
+     "Marion"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Marion, Marion County"
+   },
+   "created": "2026-09-15T18:23:13Z",
+   "company": {
+    "display_name": "XPO",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "salary_min": 71043.88,
+   "id": "5885195938",
+   "redirect_url": "https://www.adzuna.com/land/ad/5885195938?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=FD9519E494BB2B8E916D66CFE6E66473192DD76B",
+   "longitude": -83.12376,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 71043.88,
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "latitude": 40.56402,
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg1MTk1OTM4In0.if69raFCho_234cEyaWRThtVQxxGbjfp23SnpxobUsM"
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "XPO"
+   },
+   "created": "2026-09-14T18:21:20Z",
+   "salary_min": 65857.98,
+   "id": "5883932201",
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Ohio",
+     "Wyandot County",
+     "Upper Sandusky"
+    ],
+    "display_name": "Upper Sandusky, Wyandot County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgzOTMyMjAxIn0.XSIUsdQpfzLDyuSUA-Kv6cAj3vCAJobYMMcfL86RX6Q",
+   "latitude": 40.82046,
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "longitude": -83.30934,
+   "redirect_url": "https://www.adzuna.com/land/ad/5883932201?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=3D8FB15351B0A539751D502A2940286844240E94",
+   "salary_max": 65857.98
+  },
+  {
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "display_name": "Arlington, Hancock County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Ohio",
+     "Hancock County",
+     "Arlington"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "XPO"
+   },
+   "created": "2026-09-15T18:20:41Z",
+   "id": "5885193803",
+   "salary_min": 80154.31,
+   "redirect_url": "https://www.adzuna.com/land/ad/5885193803?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=FF6AE10EC01F4D7C279116D531CF74FE52709488",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -83.630767,
+   "salary_is_predicted": "1",
+   "salary_max": 80154.31,
+   "latitude": 40.898553,
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg1MTkzODAzIn0.qshb3RjWGMfqSKF67Wylf67mrJDYs_R4MkJ8O7z7jH0"
+  },
+  {
+   "redirect_url": "https://www.adzuna.com/land/ad/5890874180?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=33F4AE936BEF7BF2DD4F78727B1E19CF62F888E5",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -74.393934,
+   "salary_max": 90979.92,
+   "latitude": 40.505476,
+   "description": "Job Description Job Description Hanes Industries, Inc. , a division of Leggett & Platt (NYSE: LEG), is seeking a dedicated Sales Representative to join our team in the Edison, New Jersey area and surrounding states. As the leading distributor of industrial fabrics in the United States, our products are integral to a variety of sectors, including industrial packaging, building products, automotive, filtration, furniture, and mattress manufacturing. Responsibilities: As the Sales Representative, \u2026",
+   "title": "Outside Sales Representative",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODkwODc0MTgwIn0.9nx9n6JIEjYJ0Op4MSDOquzacM2K5COKujXUMhMmVmY",
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "display_name": "Edison, Middlesex County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "New Jersey",
+     "Middlesex County",
+     "Edison"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Hanes Companies"
+   },
+   "created": "2026-09-19T13:37:18Z",
+   "salary_min": 90979.92,
+   "id": "5890874180"
+  },
+  {
+   "salary_max": 146248.38,
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -74.489971,
+   "redirect_url": "https://www.adzuna.com/land/ad/5880914345?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=06BB480DAFFA362264716F364AE4060D5FD5AA7F",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgwOTE0MzQ1In0.p1VwgamIFUmRBH4IhWO34z0ccXnCbRdmtu9vCZ3CyKQ",
+   "title": "Northeast Transportation Market Growth Director (MGD)",
+   "description": "As the Northeast Transportation Market Growth Director (MGD) you will report to Northeast Executive Director of Sales (EDS). You are responsible for the development and implementation of the Northeast transportation market strategy working and will oversee a team of Client Account Manager (CAMs) with discrete portfolios across the geography. You will be responsible for working collaboratively on that strategy to include input and create alignment with the Director of Sales Operations and Strate\u2026",
+   "latitude": 40.795433,
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "display_name": "Morristown, Morris County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "New Jersey",
+     "Morris County",
+     "Morristown"
+    ]
+   },
+   "salary_min": 146248.38,
+   "id": "5880914345",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Jacobs"
+   },
+   "created": "2026-09-12T07:00:23Z"
+  },
+  {
+   "salary_min": 97622.56,
+   "id": "5880913812",
+   "created": "2026-09-12T07:00:11Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Jacobs"
+   },
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Boston, Suffolk County",
+    "area": [
+     "US",
+     "Massachusetts",
+     "Suffolk County",
+     "Boston"
+    ]
+   },
+   "title": "Northeast Transportation Market Growth Director (MGD)",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgwOTEzODEyIn0.txivFyr-aayPkqwkRPBDAP19tIWpLewz55swnMmIe9k",
+   "latitude": 42.356644,
+   "description": "As the Northeast Transportation Market Growth Director (MGD) you will report to Northeast Executive Director of Sales (EDS). You are responsible for the development and implementation of the Northeast transportation market strategy working and will oversee a team of Client Account Manager (CAMs) with discrete portfolios across the geography. You will be responsible for working collaboratively on that strategy to include input and create alignment with the Director of Sales Operations and Strate\u2026",
+   "salary_max": 97622.56,
+   "longitude": -71.065917,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "redirect_url": "https://www.adzuna.com/land/ad/5880913812?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=60191EA5824DAD57D8E8E5C72188FDE2FEC6A8A3"
+  },
+  {
+   "created": "2026-09-12T07:00:23Z",
+   "company": {
+    "display_name": "Jacobs",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "salary_min": 123943.02,
+   "id": "5880914341",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Clark, Union County",
+    "area": [
+     "US",
+     "New Jersey",
+     "Union County",
+     "Clark"
+    ]
+   },
+   "description": "As the Northeast Transportation Market Growth Director (MGD) you will report to Northeast Executive Director of Sales (EDS). You are responsible for the development and implementation of the Northeast transportation market strategy working and will oversee a team of Client Account Manager (CAMs) with discrete portfolios across the geography. You will be responsible for working collaboratively on that strategy to include input and create alignment with the Director of Sales Operations and Strate\u2026",
+   "latitude": 40.621051,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgwOTE0MzQxIn0.poUzMHSpZmOg_wGn8vyYeT0mWRy7LUzKhwf4xA86Y-w",
+   "title": "Northeast Transportation Market Growth Director (MGD)",
+   "redirect_url": "https://www.adzuna.com/land/ad/5880914341?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=E4576F7E84CD7B1F43EEF8B70C1B99F015B20194",
+   "longitude": -74.309552,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 123943.02
+  },
+  {
+   "created": "2026-09-12T07:56:11Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Jacobs"
+   },
+   "id": "5880967729",
+   "salary_min": 146426.45,
+   "location": {
+    "area": [
+     "US",
+     "New York",
+     "New York City",
+     "Manhattan",
+     "Grand Central"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Grand Central, Manhattan"
+   },
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "description": "As the Northeast Transportation Market Growth Director (MGD) you will report to Northeast Executive Director of Sales (EDS). You are responsible for the development and implementation of the Northeast transportation market strategy working and will oversee a team of Client Account Manager (CAMs) with discrete portfolios across the geography. You will be responsible for working collaboratively on that strategy to include input and create alignment with the Director of Sales Operations and Strate\u2026",
+   "latitude": 40.755381,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4MDk2NzcyOSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.RhoJGpAmwpVmTeHhE4m7iL98PaN97yt7UibbDtiZzqs",
+   "title": "Northeast Transportation Market Growth Director (MGD)",
+   "redirect_url": "https://www.adzuna.com/land/ad/5880967729?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=892152478FFE39709CF7CD51FE64CDB2B3E41090",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -73.978504,
+   "salary_max": 146426.45
+  },
+  {
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "New York City, New York",
+    "area": [
+     "US",
+     "New York",
+     "New York City"
+    ]
+   },
+   "created": "2026-09-17T20:48:49Z",
+   "company": {
+    "display_name": "NBCUniversal",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "salary_min": 100123.83,
+   "id": "5888469484",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5888469484?utm_medium=api&utm_source=38708645",
+   "salary_max": 100123.83,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4ODQ2OTQ4NCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.somDYaMdqfz8WGbM2D-cbGsUUPEsR5TR8ENgU40-4DA",
+   "title": "Programmatic Manager",
+   "description": "Job Description NBCUniversal\u2019s Platform Monetization group is responsible for the planning and execution of advertising campaigns across NBCUniversal\u2019s full technology suite. The division services both internal and external customers in support of NBCUniversal\u2019s $8B annual advertising business. The Programmatic Ad Operations team within the Platform Monetization group is tasked with executing all programmatic guaranteed, biddable and indirect marketplace deals domestically and globally. We are \u2026"
+  },
+  {
+   "salary_max": 40518.98,
+   "redirect_url": "https://www.adzuna.com/details/5890024203?utm_medium=api&utm_source=38708645",
+   "longitude": -77.94471,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "description": "Job Description The Material Installer is responsible for the successful transportation and installation of a variety of signage and material types. A Material Installer is required to review and ensure that all material meets the required specifications for each project, prepare each item for mounting, and manage the placement and installation of all material as required. A successful Material installer is detail oriented, will demonstrate precision, is knowledgeable about the many different m\u2026",
+   "latitude": 34.225726,
+   "title": "Sign Installer",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODkwMDI0MjAzIn0.nzqksNLLLD1j8k0R_wfBrONmvuhJ1Mufvyfa9uBPAWs",
+   "location": {
+    "display_name": "Wilmington, New Hanover County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "North Carolina",
+     "New Hanover County",
+     "Wilmington"
+    ]
+   },
+   "category": {
+    "label": "Engineering Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "engineering-jobs"
+   },
+   "salary_min": 40518.98,
+   "id": "5890024203",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Stay Alert Safety Services"
+   },
+   "created": "2026-09-18T21:05:31Z"
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Solve IMG"
+   },
+   "created": "2026-09-01T22:11:31Z",
+   "id": "5866117515",
+   "salary_min": 44854.01,
+   "location": {
+    "display_name": "Chanhassen, Carver County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Minnesota",
+     "Carver County",
+     "Chanhassen"
+    ]
+   },
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODY2MTE3NTE1In0.GvtFv1__B1D9TT7uQbYlgabInEDnqHXYHaDZcmhXAvM",
+   "title": "Customer Solutions Specialist",
+   "latitude": 44.842253,
+   "description": "POSITION DESCRIPTION: Reporting to the Director of Sales Operations, the Customer Solutions Specialist is responsible for supporting Solve\u2019s customers by offering thoughtful and knowledgeable solutions to satisfy their inquiries and trouble-shoot any product issues. The CSS will be responsible for consulting with our customers to best understand their business and be able to make calculated product recommendations to complement their needs. Working in tandem with the Regional Sales Managers, th\u2026",
+   "longitude": -93.550907,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "redirect_url": "https://www.adzuna.com/details/5866117515?utm_medium=api&utm_source=38708645",
+   "salary_max": 44854.01
+  },
+  {
+   "created": "2026-09-14T14:16:06Z",
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "latitude": 40.86204,
+   "salary_is_predicted": "0",
+   "longitude": -74.40612,
+   "contract_time": "full_time",
+   "salary_max": 90000,
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Morris County New Jersey Fitness Center"
+   },
+   "id": "5883850690",
+   "salary_min": 75000,
+   "location": {
+    "display_name": "Parsippany Troy Hills, Morris County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "New Jersey",
+     "Morris County",
+     "Parsippany Troy Hills"
+    ]
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4Mzg1MDY5MCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.5bBxGKwoRFJi8Gs559wgGXwQY9MoV3mvZdePKFFkMpY",
+   "title": "Fitness Director",
+   "description": "Benefits: 401(k) matching Dental insurance Health insurance Vision insurance Job Description The Fitness Director oversees sales operations, drives revenue growth, and manages personnel within Northern New Jersey District. Key responsibilities include setting sales targets, developing regional strategies, hiring and training staff, and analyzing performance data to improve productivity and ensure company goals are met. Key Responsibilities Sales Strategy & Execution: Develop and implement plans\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5883850690?utm_medium=api&utm_source=38708645"
+  },
+  {
+   "salary_max": 68733.3,
+   "salary_is_predicted": "1",
+   "longitude": -87.83749,
+   "contract_time": "full_time",
+   "latitude": 41.797911,
+   "category": {
+    "tag": "logistics-warehouse-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Logistics & Warehouse Jobs"
+   },
+   "created": "2026-09-18T07:47:15Z",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/land/ad/5889194747?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=CB571B2C1AA22653741AC41BF27A513EF7E44452",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4OTE5NDc0NyIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.TkI85WlLcsR7kQGUieO-vo_QDcVS9LnrsHmE2BN7D4A",
+   "title": "Logistics Supervisor",
+   "description": "Scientific Games: Scientific Games is the global leader in lottery games, sports betting and technology, and the partner of choice for government lotteries. From cutting-edge backend systems to exciting entertainment experiences and trailblazing retail and digital solutions, we elevate play every day. We push game designs to the next level and are pioneers in data analytics and iLottery. Built on a foundation of trusted partnerships, Scientific Games combines relentless innovation, legendary pe\u2026",
+   "location": {
+    "area": [
+     "US",
+     "Illinois",
+     "Cook County",
+     "Mc Cook"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Mc Cook, Cook County"
+   },
+   "id": "5889194747",
+   "salary_min": 68733.3,
+   "company": {
+    "display_name": "Scientific Games",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   }
+  },
+  {
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT Jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Worthington, Franklin County",
+    "area": [
+     "US",
+     "Ohio",
+     "Franklin County",
+     "Worthington"
+    ]
+   },
+   "salary_min": 61703.39,
+   "id": "5854690733",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "OPOC.us"
+   },
+   "created": "2026-08-24T18:40:03Z",
+   "salary_max": 61703.39,
+   "redirect_url": "https://www.adzuna.com/details/5854690733?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "longitude": -83.017962,
+   "description": "Sales Operations Analyst Position Title: Sales Operations Analyst Department: Sales Operations Reports To: Director of Sales Operations Direct Reports: None Location: Worthington, Ohio Experience Level: Early Career POSITION SUMMARY OPOC.us completed a full Salesforce implementation in June 2025. The Sales Operations function is now responsible for operating that platform, scaling the reporting built on it, and supporting a rapidly growing outbound sales organization. The Sales Operations Analy\u2026",
+   "latitude": 40.093119,
+   "title": "Sales Operations Analyst",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1NDY5MDczMyIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.rH12skcS6Y8TGsChDwlX-fVFqAnQLz50IfjfFQlZQGA"
+  },
+  {
+   "id": "5861973422",
+   "salary_min": 55000,
+   "company": {
+    "display_name": "Omega Systems",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "location": {
+    "display_name": "Springmont, Berks County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Pennsylvania",
+     "Berks County",
+     "Springmont"
+    ]
+   },
+   "title": "Account Associate (42302)",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODYxOTczNDIyIn0.NJgDd0kiYgtnknmQSInI13kJU4_Tz478u0J7y6MPy50",
+   "description": "Description OMEGA SYSTEMS JOB DESCRIPTION Position: Account Associate Reports To: Director of Sales Operations Division: Sales Position Overview The Account Associate serves as the primary point of contact for an assigned portfolio of managed services Customers. This role is responsible for building strong customer relationships, ensuring service expectations are met, and proactively engaging Customers to maximize the value of our services. The Account Associate works closely with internal team\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5861973422?utm_medium=api&utm_source=38708645",
+   "created": "2026-08-30T02:25:19Z",
+   "category": {
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "latitude": 40.326962,
+   "salary_max": 65000,
+   "salary_is_predicted": "0",
+   "longitude": -75.996701,
+   "contract_time": "full_time"
+  },
+  {
+   "created": "2026-09-03T02:30:24Z",
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "latitude": 44.842253,
+   "salary_max": 65000,
+   "salary_is_predicted": "0",
+   "longitude": -93.550907,
+   "contract_time": "full_time",
+   "salary_min": 55000,
+   "id": "5868458477",
+   "company": {
+    "display_name": "Solve IMG",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Minnesota",
+     "Carver County",
+     "Chanhassen"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Chanhassen, Carver County"
+   },
+   "title": "Customer Solutions Specialist",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg2ODQ1ODQ3NyIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.08N_l8iGKuYiy5Bu83w1RQXveCPjZp0wanNUTjl7pLQ",
+   "description": "POSITION DESCRIPTION: Reporting to the Director of Sales Operations, the Customer Solutions Specialist is responsible for supporting Solve\u2019s customers by offering thoughtful and knowledgeable solutions to satisfy their inquiries and trouble-shoot any product issues. The CSS will be responsible for consulting with our customers to best understand their business and be able to make calculated product recommendations to complement their needs. Working in tandem with the Regional Sales Managers, th\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5868458477?utm_medium=api&utm_source=38708645"
+  },
+  {
+   "salary_max": 48519.61,
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -96.767002,
+   "redirect_url": "https://www.adzuna.com/details/5882638766?utm_medium=api&utm_source=38708645",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgyNjM4NzY2In0.bPhV64YOqt95pp5vGPHFrNHRZ9BsVEVjvsW4uBQAiKc",
+   "title": "Revenue Operations Manager (Sales & Marketing) - Hybrid in Dallas, TX",
+   "latitude": 32.798895,
+   "description": "General Summary Velocity is seeking a Revenue Operations Manager. The Revenue Operations Manager is responsible for the administration, optimization, governance, and continuous improvement of the organization's HubSpot ecosystem and supporting Revenue Operations processes. This role partners closely with cross-functional stakeholders to implement operational strategies, improve business processes, and ensure Sales, Customer Success, Marketing, and leadership teams have the right tools, accurate\u2026",
+   "category": {
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Texas",
+     "Dallas"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Dallas, Texas"
+   },
+   "id": "5882638766",
+   "salary_min": 48519.61,
+   "created": "2026-09-13T08:47:00Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Velocity"
+   }
+  },
+  {
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Admin Jobs",
+    "tag": "admin-jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Washington",
+     "King County",
+     "Seattle"
+    ],
+    "display_name": "Seattle, King County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "created": "2026-08-26T15:36:48Z",
+   "company": {
+    "display_name": "Tasso",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5857225416",
+   "salary_min": 59884.88,
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -122.336407,
+   "redirect_url": "https://www.adzuna.com/details/5857225416?utm_medium=api&utm_source=38708645",
+   "salary_max": 59884.88,
+   "title": "Sales Operations Administrator",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1NzIyNTQxNiIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.2X7zwHT1gsTrt_t-Hyu54COR0U_Wr8X8f07Ze-VuWh8",
+   "description": "Who We Are Tasso is a fast-growing Seattle-based startup focused on delivering at-home diagnostic testing to those who need it most. We are growing our footprint with leading health systems, clinical research organizations, academic medical centers, and more who are looking to deliver clinical-grade, convenient diagnostic tests to their patients. Tasso was originally founded to find a better way to collect blood instead of a painful fingerstick or time-consuming venous draw. Since then, our pro\u2026",
+   "latitude": 47.608492
+  },
+  {
+   "category": {
+    "tag": "hospitality-catering-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Hospitality & Catering Jobs"
+   },
+   "created": "2026-08-21T02:19:04Z",
+   "salary_is_predicted": "1",
+   "longitude": -90.076855,
+   "contract_time": "part_time",
+   "salary_max": 58434.53,
+   "latitude": 29.957519,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "New Orleans, Orleans Parish",
+    "area": [
+     "US",
+     "Louisiana",
+     "Orleans Parish",
+     "New Orleans"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "City Sightseeing"
+   },
+   "salary_min": 58434.53,
+   "id": "5850669864",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5850669864?utm_medium=api&utm_source=38708645",
+   "title": "Tour Host-PT",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODUwNjY5ODY0In0.J-TSlfgNDQt-8is6v7Cw45HSYwwdpFkTzJCcudG65dM",
+   "description": "Position Overview: The Tour Host is responsible for delivering engaging, informative, and entertaining commentary on City Sightseeing New Orleans\u2019 tours, including double-decker bus and walking tours. This position brings local charm and historical knowledge to life while ensuring guests have a memorable and enjoyable experience. Tour Hosts are expected to maintain a professional, energetic presence while balancing historical information, entertainment, and safety messaging for diverse audience\u2026"
+  },
+  {
+   "location": {
+    "area": [
+     "US",
+     "New Mexico",
+     "Bernalillo County",
+     "Sandia Base"
+    ],
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Sandia Base, Bernalillo County"
+   },
+   "id": "5885959585",
+   "salary_min": 65000,
+   "company": {
+    "display_name": "Defined Fitness",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.com/details/5885959585?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "description": "Location: All club facilities Reports to: Director of Sales & Operations Supervises: Group X Department Status: Exempt / Full-time Position Overview The District Group X Manager is responsible for leading the Group X Department across all Defined Fitness locations, including the oversight of a diverse range of programming such as Yoga, Pilates, Silver Sneakers, Aquatics, and other specialty formats. This individual ensures high-quality, results-driven instruction and consistent exceptional memb\u2026",
+   "title": "District Group X Manager",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NTk1OTU4NSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.awR_M6XriBWt6FFcjxrzyuqKghv09EZ3vrFEFBOEBuk",
+   "category": {
+    "tag": "it-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "IT Jobs"
+   },
+   "created": "2026-09-16T06:37:22Z",
+   "salary_max": 75000,
+   "contract_time": "full_time",
+   "salary_is_predicted": "0",
+   "longitude": -106.518431,
+   "latitude": 35.134844
+  },
+  {
+   "location": {
+    "area": [
+     "US",
+     "California",
+     "Contra Costa County",
+     "Walnut Creek"
+    ],
+    "display_name": "Walnut Creek, Contra Costa County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "company": {
+    "display_name": "Canadian Solar",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "salary_min": 110000,
+   "id": "5870093811",
+   "redirect_url": "https://www.adzuna.com/details/5870093811?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "description": "At CS Power Systems, we're on a mission to transform lives by delivering clean, solar-powered electricity to millions worldwide\u2014and we're just getting started. As a cutting-edge division of Canadian Solar, a global leader founded in 2001, we stand at the forefront of manufacturing high-performance solar panels, inverters, and advanced energy storage solutions. In this fast-growing, high-impact industry, our deep commitment to sustainability drives everything we do, creating innovative technolog\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg3MDA5MzgxMSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.OkyqA_JYSvPKQ0FtOJi853X3Sum9o297apFai_qC6l0",
+   "title": "Manager, Planning",
+   "category": {
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "created": "2026-09-04T01:16:24Z",
+   "contract_time": "full_time",
+   "salary_is_predicted": "0",
+   "longitude": -122.0667,
+   "salary_max": 150000,
+   "latitude": 37.865566
+  },
+  {
+   "category": {
+    "label": "Admin Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "admin-jobs"
+   },
+   "created": "2026-08-27T01:32:34Z",
+   "contract_time": "full_time",
+   "salary_is_predicted": "0",
+   "longitude": -82.312671,
+   "salary_max": 75000,
+   "latitude": 34.86742,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Wade Hampton, Greenville County",
+    "area": [
+     "US",
+     "South Carolina",
+     "Greenville County",
+     "Wade Hampton"
+    ]
+   },
+   "company": {
+    "display_name": "ScanSource",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5857917985",
+   "salary_min": 60000,
+   "redirect_url": "https://www.adzuna.com/details/5857917985?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "description": "Position Summary: The Contracts Administrator is responsible for supporting the administration, compliance, documentation, and reporting functions associated with ScanSource's government and cooperative purchasing contract program. This role serves as the operational backbone of the contracts function, ensuring contract records, GSA catalog data, compliance documentation, reporting requirements, and audit readiness are maintained across all active contract vehicles. Working closely with the Sr.\u2026",
+   "title": "Contracts Administrator",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1NzkxNzk4NSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.ndtboGAo99IdKt7Y7ViODBAhU6lsqeuX0B6YCDuZKo0"
+  },
+  {
+   "created": "2026-09-17T02:05:41Z",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "latitude": 35.134844,
+   "salary_is_predicted": "0",
+   "longitude": -106.518431,
+   "contract_time": "full_time",
+   "salary_max": 85000,
+   "company": {
+    "display_name": "Defined Fitness",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5887263920",
+   "salary_min": 65000,
+   "location": {
+    "area": [
+     "US",
+     "New Mexico",
+     "Bernalillo County",
+     "Sandia Base"
+    ],
+    "display_name": "Sandia Base, Bernalillo County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "title": "District Fitness Manager",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NzI2MzkyMCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.iu8588Ri_K8W38NkZCS8U-Db1F6bj2f3fQok3cUdQG4",
+   "description": "Location: All club facilities Reports to: Director of Sales & Operations Oversight: Personal Training Program Status: Exempt / Full-time Position Overview The District Fitness Manger takes the lead in everything they do. You are relentless in pursuit of your goals, set the pace for success and are fueled by enthusiasm; you jump higher, reach further and push harder than anyone. You are diligent, determined to inspire, empower and support a culture of success while improving the lives of team me\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5887263920?utm_medium=api&utm_source=38708645"
+  },
+  {
+   "description": "Manager, Revenue Operations Location: Miami, FL Reports to: Director of Sales Operations Department: GTM Operations About the Role The Manager, Revenue Operations owns the operations behind eMed's top-of-funnel motion end to end \u2014 marketing operations, lead lifecycle and routing, campaign-to-pipeline visibility, and channel/partner referral deal operations. Today these motions have no dedicated operational owner; this role builds that home. You will define and govern how a lead moves from first\u2026",
+   "latitude": 25.756014,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4MDAxMDEwNCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.e1PgWQNgiNqYnc-zadvMt2wqC1Zr29w7iTbn4BBrLBM",
+   "title": "Manager, Revenue Operations",
+   "redirect_url": "https://www.adzuna.com/details/5880010104?utm_medium=api&utm_source=38708645",
+   "longitude": -80.134484,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 116104.81,
+   "created": "2026-09-11T13:25:57Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "eMed, LLC"
+   },
+   "id": "5880010104",
+   "salary_min": 116104.81,
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Florida",
+     "Miami-Dade County",
+     "Miami"
+    ],
+    "display_name": "Miami, Miami-Dade County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   }
+  },
+  {
+   "description": "Sales Operations Analyst Position Title: Sales Operations Analyst Department: Sales Operations Reports To: Director of Sales Operations Direct Reports: None Location: Worthington, Ohio Experience Level: Early Career POSITION SUMMARY OPOC.us completed a full Salesforce implementation in June 2025. The Sales Operations function is now responsible for operating that platform, scaling the reporting built on it, and supporting a rapidly growing outbound sales organization. The Sales Operations Analy\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1NjYxOTE2MSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.ReNQA7-c_2n4b-5cK0R4rzZ15QtL2vJcjJ7f17CODh8",
+   "title": "Sales Operations Analyst",
+   "redirect_url": "https://www.adzuna.com/details/5856619161?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "company": {
+    "display_name": "OPOC.us",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "salary_min": 60000,
+   "id": "5856619161",
+   "location": {
+    "area": [
+     "US",
+     "Ohio",
+     "Franklin County",
+     "Mount Air"
+    ],
+    "display_name": "Mount Air, Franklin County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "latitude": 40.10094,
+   "contract_time": "full_time",
+   "salary_is_predicted": "0",
+   "longitude": -83.01474,
+   "salary_max": 75000,
+   "created": "2026-08-26T05:29:15Z",
+   "category": {
+    "tag": "it-jobs",
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   }
+  },
+  {
+   "salary_min": 55129.14,
+   "id": "5868193539",
+   "company": {
+    "display_name": "SunSource",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-09-02T23:53:58Z",
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "display_name": "Federal Heights, Adams County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Colorado",
+     "Adams County",
+     "Federal Heights"
+    ]
+   },
+   "title": "CO- Operations Supervisor (Inside Sales Supervisor) - Denver, CO",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg2ODE5MzUzOSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.-D9l4muN84jZmAAKA8-JUhAvnacaGw87FzjLxqXIYIs",
+   "latitude": 39.749838,
+   "description": "CO- Operations Supervisor (Inside Sales Supervisor) - Denver, CO Ryan Herco Flow Solutions, a SunSource company, is a leading distributor of fluid control systems, fluid filtration systems, fluid handling products, micro-electronics, and general industrial supply. We sell to a broad base of customers in industries such as electronic component and equipment manufacturers, chemical manufacturers, water & waste treatment, metal finishing, pollution control and life sciences companies. www.rhfs.com\u2026",
+   "salary_max": 55129.14,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -104.995597,
+   "salary_is_predicted": "1",
+   "redirect_url": "https://www.adzuna.com/details/5868193539?utm_medium=api&utm_source=38708645"
+  },
+  {
+   "category": {
+    "tag": "healthcare-nursing-jobs",
+    "label": "Healthcare & Nursing Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "area": [
+     "US",
+     "New Jersey",
+     "Middlesex County",
+     "Avenel"
+    ],
+    "display_name": "Avenel, Middlesex County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "created": "2026-08-26T23:35:13Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Keurig Dr Pepper"
+   },
+   "id": "5857852730",
+   "salary_min": 105443.58,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "longitude": -74.278422,
+   "redirect_url": "https://www.adzuna.com/land/ad/5857852730?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=BEADED1B6EC84415E21213A976807E7F8F17CD6D",
+   "salary_max": 105443.58,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1Nzg1MjczMCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.FlmAws7AQ4kOk7-07kLEJBu75ovXwym5N_zEy5lAUIk",
+   "title": "Territory Sales Director",
+   "latitude": 40.579813,
+   "description": "Job Overview: Territory Sales Director - Avenel, NJ and Lehigh Valley, PA The Territory Sales Director manages sales, operations and P&L of the branches to meet financial and company objectives for profitability and growth. Manage sales force in expanding market penetration and ensure timely product delivery and proper merchandising of Keurig Dr Pepper brands like 7UP, Snapple, Core, Bai and other fan favorites to retail stores within territory. Details  This position will be based out of Avene\u2026"
+  },
+  {
+   "latitude": 34.128581,
+   "longitude": -84.294854,
+   "salary_is_predicted": "1",
+   "contract_time": "full_time",
+   "salary_max": 139659.02,
+   "created": "2026-08-21T04:32:51Z",
+   "category": {
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "it-jobs"
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1MDc2NDY0MSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.NWsk85fvPdLmtlXzGKP2G6st0DI4po4xfrCOhHpQiFw",
+   "title": "Senior Sales Operations Analyst",
+   "description": "Overview: The Senior Sales Operations Analyst reports directly to the Sr. Director of Sales Operations and plays a key role in developing and maintaining the foundational infrastructure needed to support commercial analytics, reporting, processes, and cross functional alignment. As a key architect of the Sales Operations function, this role helps shape how Kuros uses data, process, and tools to drive revenue growth, operational rigor, and cross functional alignment as the organization continues\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5850764641?utm_medium=api&utm_source=38708645",
+   "company": {
+    "display_name": "Kuros Biosciences",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5850764641",
+   "salary_min": 139659.02,
+   "location": {
+    "area": [
+     "US",
+     "Georgia",
+     "Fulton County",
+     "Alpharetta"
+    ],
+    "display_name": "Alpharetta, Fulton County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   }
+  },
+  {
+   "latitude": 25.756014,
+   "description": "Sales Enablement Manager Reports to: Director of Sales Operations Department: GTM Operations Location: Miami, FL About the Role As eMed's first dedicated Sales Enablement hire, the Sales Enablement Manager will build the enablement function from the ground up \u2014 owning the content, process documentation, and training programs that make our sales, BDR, channel, and post-sales teams more effective. This role sits at the intersection of Sales, Revenue Operations, and Marketing, and is responsible f\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4MDEwNDYzMyIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.eH0l00HxzwPDL36QH6Y2kvW9w4UrEKwZ1lAmtuWuCMc",
+   "title": "Sales Enablement Manager",
+   "salary_max": 96600.69,
+   "redirect_url": "https://www.adzuna.com/details/5880104633?utm_medium=api&utm_source=38708645",
+   "longitude": -80.134484,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "id": "5880104633",
+   "salary_min": 96600.69,
+   "company": {
+    "display_name": "eMed, LLC",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-09-11T16:25:04Z",
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "display_name": "Miami, Miami-Dade County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Florida",
+     "Miami-Dade County",
+     "Miami"
+    ]
+   }
+  },
+  {
+   "location": {
+    "display_name": "Queen Anne, King County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Washington",
+     "King County",
+     "Queen Anne"
+    ]
+   },
+   "salary_min": 55000,
+   "id": "5859627712",
+   "company": {
+    "display_name": "Tasso",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "redirect_url": "https://www.adzuna.com/details/5859627712?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "description": "Who We Are Tasso is a fast-growing Seattle-based startup focused on delivering at-home diagnostic testing to those who need it most. We are growing our footprint with leading health systems, clinical research organizations, academic medical centers, and more who are looking to deliver clinical-grade, convenient diagnostic tests to their patients. Tasso was originally founded to find a better way to collect blood instead of a painful fingerstick or time-consuming venous draw. Since then, our pro\u2026",
+   "title": "Sales Operations Administrator",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODU5NjI3NzEyIn0.aKEHzljD6Oisqg0VsB6lT7eT_f8GLRNnifGkvrgxSUU",
+   "category": {
+    "tag": "admin-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Admin Jobs"
+   },
+   "created": "2026-08-28T07:10:18Z",
+   "salary_max": 68000,
+   "contract_time": "full_time",
+   "longitude": -122.367001,
+   "salary_is_predicted": "0",
+   "latitude": 47.63907
+  },
+  {
+   "company": {
+    "display_name": "Qureos Inc",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-09-12T08:12:21Z",
+   "salary_min": 110034.48,
+   "id": "5880990889",
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "New York City, New York",
+    "area": [
+     "US",
+     "New York",
+     "New York City"
+    ]
+   },
+   "description": "Are you a driven and diligent sales professional looking to make a significant impact on company sales goals? An eLearning company serving public sector agencies like the Navy, Army, Air Force, MTA, and more, is seeking an Experienced Account Executive to join our team. We value creativity and want you to make a difference in our company! About the Role We are building a Public Sector Workforce, Compliance C Credential Platform serving state and local government agencies. We are hiring a full-c\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODgwOTkwODg5In0.DiLQzrWGIoOLjxwzRhh2mlql9Md0HSjPWojEIY-RMF0",
+   "title": "Account Executive \u2013 Public Sector (SLED)",
+   "redirect_url": "https://www.adzuna.com/details/5880990889?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "salary_max": 110034.48
+  },
+  {
+   "id": "5850604489",
+   "salary_min": 65789.12,
+   "created": "2026-08-21T01:35:56Z",
+   "company": {
+    "display_name": "XPO",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Little Rock, Pulaski County",
+    "area": [
+     "US",
+     "Arkansas",
+     "Pulaski County",
+     "Little Rock"
+    ]
+   },
+   "latitude": 34.749966,
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODUwNjA0NDg5In0.KJ6GG_53zQCZ0WxzNCGLvlm-3HteWd87xgEyXPVS3uc",
+   "salary_max": 65789.12,
+   "redirect_url": "https://www.adzuna.com/details/5850604489?utm_medium=api&utm_source=38708645",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -92.285201
+  },
+  {
+   "salary_max": 79927.98,
+   "redirect_url": "https://www.adzuna.com/details/5858063017?utm_medium=api&utm_source=38708645",
+   "longitude": -85.957535,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "latitude": 41.674861,
+   "description": "At Conn Selmer, we're passionate about music and dedicated to producing the highest-quality instruments for musicians of all skill levels. As a member of our organization, we seek candidates who possess the following values: Integrity, Excellence, Teamwork, Inclusivity, and Innovation. Please see our Conn Selmer website (www.connselmer.com) for more information about who we are. The Import Sales and Operations Planner reports to the Director of Sales, Operations, and Planning and is responsible\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODU4MDYzMDE3In0.1psqwUMICfxTtcwSpJP5hxSfiISoLQOLY2u8Njc0-uQ",
+   "title": "Import Sales and Operations Planner",
+   "category": {
+    "tag": "manufacturing-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Manufacturing Jobs"
+   },
+   "location": {
+    "area": [
+     "US",
+     "Indiana",
+     "Elkhart County",
+     "Concord"
+    ],
+    "display_name": "Concord, Elkhart County",
+    "__CLASS__": "Adzuna::API::Response::Location"
+   },
+   "salary_min": 79927.98,
+   "id": "5858063017",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Conn-Selmer"
+   },
+   "created": "2026-08-27T04:44:59Z"
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "salary_is_predicted": "1",
+   "longitude": -78.169274,
+   "redirect_url": "https://www.adzuna.com/details/5884352755?utm_medium=api&utm_source=38708645",
+   "salary_max": 76935.73,
+   "title": "Local Account Executive",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NDM1Mjc1NSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.DM1aq-0gDXYsC78xhvp0I_XNrmZFKbu7y0FsA0Uo7JI",
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "latitude": 39.168183,
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Winchester City, Virginia",
+    "area": [
+     "US",
+     "Virginia",
+     "Winchester City"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "XPO"
+   },
+   "created": "2026-09-15T01:34:50Z",
+   "id": "5884352755",
+   "salary_min": 76935.73
+  },
+  {
+   "created": "2026-09-17T18:31:52Z",
+   "contract_type": "permanent",
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "latitude": 39.547137,
+   "longitude": -119.757467,
+   "salary_is_predicted": "1",
+   "contract_time": "full_time",
+   "salary_max": 92953.67,
+   "company": {
+    "display_name": "Via Seating",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5888271493",
+   "salary_min": 92953.67,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Greenbrae, Washoe County",
+    "area": [
+     "US",
+     "Nevada",
+     "Washoe County",
+     "Greenbrae"
+    ]
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg4MjcxNDkzIn0.-VBE2zVKTN4TCrknlRCtX6qUMQlkgqxHy326meCB7dM",
+   "title": "Client Engagement Manager",
+   "description": "Via Seating is hiring a Client Engagement Manager to join our Sales team The Client Engagement Manager is a sales-focused role responsible for helping Via Seating grow revenue, advance qualified opportunities, strengthen dealer and rep relationships, and support the successful execution of active accounts. Working closely with the Director of Sales Operations, Area Sales Managers, independent reps, dealers, marketing, and internal operations teams, this position turns customer and influencer en\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5888271493?utm_medium=api&utm_source=38708645"
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Riser Fitness"
+   },
+   "id": "5885952199",
+   "salary_min": 80000,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Bloomington Hills, Washington County",
+    "area": [
+     "US",
+     "Utah",
+     "Washington County",
+     "Bloomington Hills"
+    ]
+   },
+   "description": "DISTRICT MANAGER JOB TITLE : District Manager REPORTS TO : Director of Sales/Operations COMPENSATION : $80,000-85,000 Base Salary  Bonus Opportunity up to $36,000 annually JOB TYPE: Full Time COMPANY OVERVIEW: Riser Fitness, established in 2013, is a multi-unit operator and developer of the Club Pilates franchise system. We operate studios across AZ, CA, CO, MN, NV, OR, and WA and are one of the largest and longest-operating franchisees. Club Pilates offers group reformer Pilates classes cateri\u2026",
+   "title": "District Manager",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NTk1MjE5OSIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.IaSK0CC5j_LocvaadMouDjuwLemxF3BLLs0Bow5ukyo",
+   "redirect_url": "https://www.adzuna.com/details/5885952199?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "created": "2026-09-16T06:24:09Z",
+   "category": {
+    "tag": "sales-jobs",
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "latitude": 37.07893,
+   "contract_time": "full_time",
+   "longitude": -113.559486,
+   "salary_is_predicted": "0",
+   "salary_max": 85000
+  },
+  {
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Las Vegas, Clark County",
+    "area": [
+     "US",
+     "Nevada",
+     "Clark County",
+     "Las Vegas"
+    ]
+   },
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "created": "2026-08-27T06:41:52Z",
+   "company": {
+    "display_name": "Anthony & Sylvan Pools",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "id": "5858153473",
+   "salary_min": 50641.23,
+   "redirect_url": "https://www.adzuna.com/details/5858153473?utm_medium=api&utm_source=38708645",
+   "salary_is_predicted": "1",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -115.165201,
+   "salary_max": 50641.23,
+   "latitude": 35.920884,
+   "description": "General Summary of Position Responsible for running assigned appointments and meeting with potential customers to accomplish the ultimate objective of successfully closing a sale; generating positive profitability; and exceeding customer expectations. Essential Functions and Responsibilities Meet with customers to present and explain Anthony & Sylvan pool renovation options, backyard offerings, and services; assess customer needs and create designs or product recommendations using design softwa\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1ODE1MzQ3MyIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.Sc58ukzV0DUL60oTwCkrY91MNwFC8t1s4Mku3f0OBM8",
+   "title": "Swimming Pool Renovation Sales Specialist"
+  },
+  {
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODYwNzc3MDAzIn0.nwz4fTfUnbKy4ITT4qxy4dbz7AMCa46UQya_hYB9T80",
+   "title": "Local Account Executive",
+   "description": "What you\u2019ll need to succeed as a Local Account Executive at XPO Minimum qualifications: Bachelor\u2019s degree, 4 years of related work experience or equivalent military experience 1 year of direct business-to-business selling experience supporting both local and national sales efforts Experience with Microsoft Office (PowerPoint) Experience working with enterprise Customer Relationship Management (CRM) tools Available and flexible to work evenings and some weekends as needed Valid driver\u2019s license \u2026",
+   "latitude": 34.205403,
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -119.168137,
+   "salary_is_predicted": "1",
+   "redirect_url": "https://www.adzuna.com/details/5860777003?utm_medium=api&utm_source=38708645",
+   "salary_max": 80455.67,
+   "company": {
+    "display_name": "XPO",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-08-29T01:44:31Z",
+   "id": "5860777003",
+   "salary_min": 80455.67,
+   "location": {
+    "display_name": "Oxnard, Ventura County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "California",
+     "Ventura County",
+     "Oxnard"
+    ]
+   },
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   }
+  },
+  {
+   "salary_min": 80000,
+   "id": "5885743255",
+   "company": {
+    "display_name": "Riser Fitness",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "location": {
+    "display_name": "Fort Lowell, Pima County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Arizona",
+     "Pima County",
+     "Fort Lowell"
+    ]
+   },
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODg1NzQzMjU1In0.417hFoLMfz5E3Gw6pjtyZQV-F5vTg1dOEUVK3IHVzjw",
+   "title": "District Manager",
+   "description": "DISTRICT MANAGER JOB TITLE : District Manager REPORTS TO : Director of Sales/Operations COMPENSATION : $80,000-85,000 Base Salary  Bonus Opportunity up to $36,000 annually JOB TYPE: Full Time COMPANY OVERVIEW: Riser Fitness, established in 2013, is a multi-unit operator and developer of the Club Pilates franchise system. We operate studios across AZ, CA, CO, MN, NV, OR, and WA and are one of the largest and longest-operating franchisees. Club Pilates offers group reformer Pilates classes cateri\u2026",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5885743255?utm_medium=api&utm_source=38708645",
+   "created": "2026-09-16T02:11:08Z",
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "latitude": 32.272487,
+   "salary_max": 85000,
+   "longitude": -110.766104,
+   "salary_is_predicted": "0",
+   "contract_time": "full_time"
+  },
+  {
+   "location": {
+    "display_name": "Corn Creek, Clark County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Nevada",
+     "Clark County",
+     "Corn Creek"
+    ]
+   },
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Riser Fitness"
+   },
+   "salary_min": 80000,
+   "id": "5886300658",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "redirect_url": "https://www.adzuna.com/details/5886300658?utm_medium=api&utm_source=38708645",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4NjMwMDY1OCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.hmtKsBmFcmmbfo5hF2DXei1ntA3eMsb6SrEjb60faW8",
+   "title": "District Manager",
+   "description": "DISTRICT MANAGER JOB TITLE : District Manager REPORTS TO : Director of Sales/Operations COMPENSATION : $80,000-85,000 Base Salary  Bonus Opportunity up to $36,000 annually JOB TYPE: Full Time COMPANY OVERVIEW: Riser Fitness, established in 2013, is a multi-unit operator and developer of the Club Pilates franchise system. We operate studios across AZ, CA, CO, MN, NV, OR, and WA and are one of the largest and longest-operating franchisees. Club Pilates offers group reformer Pilates classes cateri\u2026",
+   "category": {
+    "label": "Sales Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "tag": "sales-jobs"
+   },
+   "created": "2026-09-16T10:42:47Z",
+   "longitude": -115.394311,
+   "salary_is_predicted": "0",
+   "contract_time": "full_time",
+   "salary_max": 85000,
+   "latitude": 36.375505
+  },
+  {
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "longitude": -92.344809,
+   "salary_is_predicted": "1",
+   "redirect_url": "https://www.adzuna.com/land/ad/5853243270?se=1mCKo2a08RGk6dCvHcHp9g&utm_medium=api&utm_source=38708645&v=7DAFDF5BCEB5C1749C1BAB7519A3B75DB7AD2173",
+   "salary_max": 96725.59,
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg1MzI0MzI3MCIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.RW6xCN4_2p45HExm3Fm28QsJvnMAQKxrPEeQ1i4OMTo",
+   "title": "Local Account Executive",
+   "latitude": 34.752418,
+   "description": "Local Account Executive Requisition Id: 389409 Business Unit: LTL Location: Little Rock, AR, US, 72206 What you'll need to succeed as a Local Account Executive at XPO Minimum qualifications:  Bachelor's degree, 4 years of related work experience or equivalent military experience  1 year of direct business-to-business selling experience supporting both local and national sales efforts  Experience with Microsoft Office (PowerPoint)  Experience working with enterprise Customer Relationship Managem\u2026",
+   "category": {
+    "tag": "sales-jobs",
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs"
+   },
+   "location": {
+    "display_name": "Cammack Village, Pulaski County",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US",
+     "Arkansas",
+     "Pulaski County",
+     "Cammack Village"
+    ]
+   },
+   "company": {
+    "display_name": "XPO, Inc.",
+    "__CLASS__": "Adzuna::API::Response::Company"
+   },
+   "created": "2026-08-22T22:54:10Z",
+   "id": "5853243270",
+   "salary_min": 96725.59
+  },
+  {
+   "title": "Senior Manager, Sales Operations",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJzIjoiMW1DS28yYTA4UkdrNmRDdkhjSHA5ZyIsImkiOiI1ODUxOTkwNTg3In0.zsDW6gM8XDL2QGPnVd17mJgYHgGY0LhWqStk-J9Ym5o",
+   "description": "About Docker Docker has been one of the most loved brands in developer tooling, trusted by more than 20 million monthly users and over 20 billion container image pulls. From solo founders to the world's largest companies, developers rely on Docker to build, share, and run their applications across our suite of products including Docker Desktop, Docker Hub, and Docker Scout. We are a globally distributed, remote-first team building the tools that define how software gets built and delivered. As \u2026",
+   "salary_max": 200000,
+   "salary_is_predicted": "0",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "contract_time": "full_time",
+   "redirect_url": "https://www.adzuna.com/details/5851990587?utm_medium=api&utm_source=38708645",
+   "id": "5851990587",
+   "salary_min": 128100,
+   "created": "2026-08-21T23:43:54Z",
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "Docker"
+   },
+   "category": {
+    "tag": "it-jobs",
+    "label": "IT Jobs",
+    "__CLASS__": "Adzuna::API::Response::Category"
+   },
+   "location": {
+    "display_name": "US",
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "area": [
+     "US"
+    ]
+   }
+  },
+  {
+   "company": {
+    "__CLASS__": "Adzuna::API::Response::Company",
+    "display_name": "eMed"
+   },
+   "id": "5882209042",
+   "salary_min": 112131.66,
+   "location": {
+    "__CLASS__": "Adzuna::API::Response::Location",
+    "display_name": "Seybold, Miami-Dade County",
+    "area": [
+     "US",
+     "Florida",
+     "Miami-Dade County",
+     "Seybold"
+    ]
+   },
+   "description": "Manager, Revenue Operations Location: Miami, FL Reports to: Director of Sales Operations Department: GTM Operations About the Role The Manager, Revenue Operations owns the operations behind eMed's top-of-funnel motion end to end \u2014 marketing operations, lead lifecycle and routing, campaign-to-pipeline visibility, and channel/partner referral deal operations. Today these motions have no dedicated operational owner; this role builds that home. You will define and govern how a lead moves from first\u2026",
+   "adref": "eyJhbGciOiJIUzI1NiJ9.eyJpIjoiNTg4MjIwOTA0MiIsInMiOiIxbUNLbzJhMDhSR2s2ZEN2SGNIcDlnIn0.EoDuGTN74g9Z0Uidd0MkK_64bWXniKtB-POzmFJvfQI",
+   "title": "Manager, Revenue Operations",
+   "redirect_url": "https://www.adzuna.com/details/5882209042?utm_medium=api&utm_source=38708645",
+   "__CLASS__": "Adzuna::API::Response::Job",
+   "created": "2026-09-13T00:29:55Z",
+   "category": {
+    "__CLASS__": "Adzuna::API::Response::Category",
+    "label": "Sales Jobs",
+    "tag": "sales-jobs"
+   },
+   "latitude": 25.786289,
+   "contract_time": "full_time",
+   "salary_is_predicted": "1",
+   "longitude": -80.189827,
+   "salary_max": 112131.66
+  }
+ ]
+}

@@ -1,0 +1,3 @@
+# Fixtures are byte-exact captures of what a server actually sent; line-ending
+# normalisation would edit the evidence.
+tests/fixtures/** -text

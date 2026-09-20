@@ -1,0 +1,18 @@
+{
+  "name": "jobscout",
+  "image": "python:3.14-bookworm",
+  "features": {
+    "ghcr.io/va-h/devcontainers-features/uv:1": {}
+  },
+  "postCreateCommand": "uv sync && uv run pre-commit install",
+  "remoteEnv": {
+    "JOBSCOUT_DB": "/workspaces/jobscout/.local/jobscout.db"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["charliermarsh.ruff", "ms-python.python"]
+    }
+  },
+  "//python": "3.14 rather than the devcontainers python image, which has no 3.14 tag yet: the inbound listener uses imaplib.IMAP4.idle(), which is stdlib only from 3.14.",
+  "//": "Dotfiles are attached by the client, not by this file: devpod up --dotfiles https://codeberg.org/alatartheblue/dotfiles"
+}

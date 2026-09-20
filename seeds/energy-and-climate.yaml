@@ -1,0 +1,13 @@
+# Energy and climate
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: energy-and-climate
+description: >-
+  Decarbonisation, energy systems, and climate accounting.
+
+companies:
+  - name: Watershed
+    board: https://boards.greenhouse.io/watershed
+    verified: 2026-09-19

@@ -1,0 +1,66 @@
+# The daily digest: poll, score, post, exit.
+#
+# A timer oneshot rather than a service, which is what choosing a review TUI
+# over Matrix replies bought — there is no sync connection to hold open, so
+# there is nothing to keep alive and nothing to watch for silent death.
+#
+# A user unit, like everything else on the host. `Exec=run` is one process
+# doing the whole day's work: one credential resolution, one exit status for
+# systemd, and no shell quoting fighting the image's entrypoint.
+#
+# This unit's token is scoped read-only to the `winnow` vault, which does NOT
+# contain the mailbox credential — verified, not assumed. That is the wall: a
+# bug anywhere in the fetch, score or digest path cannot email an employer,
+# because this process cannot authenticate to a mail server at all. Everything
+# else about the credential split is policy; this is the part that is enforced.
+
+[Unit]
+Description=winnow daily digest
+After=network-online.target
+Wants=network-online.target
+# A run that dies before the digest says nothing on its own. This is what
+# keeps a failure from looking like a quiet day.
+OnFailure=winnow-failure@%N.service
+
+[Container]
+# Restarts pick up what CI last built; without this the deployed image
+# silently never changes.
+# The homeserver is this same box, published on 127.0.0.1 behind Caddy, and
+# rootless container networking cannot route back to the host's loopback —
+# measured: the public name, host.containers.internal and the gateway are all
+# refused from the default namespace. nyx.container shares the host namespace
+# for the same reason.
+Network=host
+Pull=newer
+Image=ghcr.io/CHANGEME/winnow:latest
+ContainerName=winnow-digest
+# Rootless podman maps container UID 1000 to a subordinate uid, so files owned
+# by `core` on the host are unreadable inside — which is how the token file
+# first failed. keep-id makes the container's UID 1000 the host's `core`, so
+# ownership means the same thing on both sides of the boundary.
+UserNS=keep-id
+Exec=run
+# :z, not :Z. Uppercase assigns a private SELinux category pair per
+# container, so two containers sharing one volume relabel it out from
+# under each other — which is what denied op its config directory and
+# looked for a while like an intermittent 1Password failure.
+Volume=/var/winnow:/var/lib/winnow:z
+Volume=%h/.config/winnow:/etc/winnow:ro,z
+# The package is private because the repository is. Pull credentials live
+# beside the other secrets rather than in the ambient auth file, which for
+# rootless podman is under XDG_RUNTIME_DIR and does not survive a reboot.
+# PodmanArgs rather than AuthFile=, which this podman's quadlet rejects.
+PodmanArgs=--authfile=%h/.config/winnow/registry-auth.json
+# A path, never the value: `Environment=` would leave the token in
+# `systemctl show`, the journal, and every `ps` listing on the host.
+Environment=OP_SERVICE_ACCOUNT_TOKEN_FILE=/etc/winnow/op-token-digest
+Environment=WINNOW_DB=/var/lib/winnow/winnow.db
+Environment=WINNOW_PROFILE=/etc/winnow/profile.yaml
+NoNewPrivileges=true
+
+[Service]
+Type=oneshot
+TimeoutStartSec=900
+
+[Install]
+WantedBy=default.target

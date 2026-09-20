@@ -1,0 +1,31 @@
+# Reports a failed winnow unit to Matrix.
+#
+# Invoked by OnFailure= on the units that run unattended, with the failed
+# unit's name as the instance (%i). A plain service rather than a quadlet:
+# it is one short-lived podman invocation, and the indirection would buy
+# nothing.
+#
+# Why this exists at all: the design's rule is that silence and breakage must
+# never look alike. The digest says so inside a run it completes — but a run
+# that dies before the digest, or a listener that exits, says nothing at all
+# unless something outside it speaks up. This is that something.
+#
+# It holds the digest token, which can read the Matrix credentials and cannot
+# read the mailbox. A failure notifier is not a reason to widen anything.
+
+[Unit]
+Description=Report %i failing to Matrix
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/podman run --rm \
+  --userns=keep-id \
+  --network=host \
+  --authfile %h/.config/winnow/registry-auth.json \
+  -v %h/.config/winnow:/etc/winnow:ro,z \
+  -e OP_SERVICE_ACCOUNT_TOKEN_FILE=/etc/winnow/op-token-digest \
+  ghcr.io/CHANGEME/winnow:latest \
+  notify "winnow: %i FAILED on the host — journalctl --user -u %i -n 50"
+# The notifier failing is not worth a restart loop; the journal has it either way.
+TimeoutStartSec=120

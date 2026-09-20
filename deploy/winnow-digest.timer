@@ -1,0 +1,18 @@
+# Fires the digest once a day.
+#
+# Persistent so a host that was asleep or rebooted at the scheduled minute
+# still runs the poll when it comes back, rather than skipping a day quietly.
+# RandomizedDelaySec keeps twenty-odd public ATS endpoints from being hit on
+# the same second every morning.
+
+[Unit]
+Description=Run the winnow digest daily
+
+[Timer]
+OnCalendar=*-*-* 07:15:00
+RandomizedDelaySec=900
+Persistent=true
+Unit=winnow-digest.service
+
+[Install]
+WantedBy=timers.target

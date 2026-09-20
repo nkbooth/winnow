@@ -1,0 +1,32 @@
+# Cloud and infrastructure
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: cloud-and-infrastructure
+description: >-
+  Hosting, networking, operating systems, and the platforms other software runs on.
+
+companies:
+  - name: Canonical
+    board: https://boards.greenhouse.io/canonical
+    tags: [open-source, remote-first]
+    verified: 2026-09-19
+    note: "Ubuntu. Fully distributed."
+  - name: Cloudflare
+    board: https://boards.greenhouse.io/cloudflare
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Fastly
+    board: https://boards.greenhouse.io/fastly
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: MongoDB
+    board: https://boards.greenhouse.io/mongodb
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Red Hat
+    board: https://redhat.wd5.myworkdayjobs.com/jobs
+    tags: [enterprise, open-source]
+    verified: 2026-09-19
+    note: "Workday tenant, not Greenhouse."

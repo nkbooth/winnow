@@ -1,0 +1,40 @@
+# Security and privacy
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: security-and-privacy
+description: >-
+  Security products, identity, and privacy-first software.
+
+companies:
+  - name: 1Password
+    board: https://jobs.ashbyhq.com/1password
+    tags: [privacy-focused, remote-first]
+    verified: 2026-09-19
+  - name: Abnormal Security
+    board: https://boards.greenhouse.io/abnormalsecurity
+    verified: 2026-09-19
+    note: "Board self-identifies as 'Abnormal'."
+  - name: Bitwarden
+    board: https://boards.greenhouse.io/bitwarden
+    tags: [open-source, privacy-focused, remote-first]
+    verified: 2026-09-19
+  - name: Okta
+    board: https://boards.greenhouse.io/okta
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Oso
+    board: https://jobs.ashbyhq.com/oso
+    tags: [open-source]
+    verified: 2026-09-19
+  - name: Proton
+    board: https://boards.greenhouse.io/proton
+    tags: [nonprofit, privacy-focused]
+    verified: 2026-09-19
+    note: "Moved from Ashby to Greenhouse in 2026; slugs rot."
+  - name: Signal
+    board: https://signal.org/workworkwork/
+    tags: [nonprofit, open-source, privacy-focused]
+    verified: 2026-09-19
+    note: "No ATS: scraped. Often no open roles."

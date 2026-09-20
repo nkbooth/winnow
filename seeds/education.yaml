@@ -1,0 +1,22 @@
+# Education
+#
+# Every board here answered when it was last checked. Run
+# ./scripts/verify-seeds.py before adding to this file.
+
+category: education
+description: >-
+  Learning platforms, courseware, and schools.
+
+companies:
+  - name: Coursera
+    board: https://boards.greenhouse.io/coursera
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Duolingo
+    board: https://boards.greenhouse.io/duolingo
+    tags: [publicly-traded]
+    verified: 2026-09-19
+  - name: Khan Academy
+    board: https://boards.greenhouse.io/khanacademy
+    tags: [nonprofit]
+    verified: 2026-09-19
