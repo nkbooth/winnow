@@ -142,6 +142,22 @@ _CURRENCIES = ("USD", "CAD", "EUR", "GBP")
 # the one question the comp gate asks.
 _MINIMUM_CREDIBLE_ANNUAL = 1000
 
+#: An hourly rate outside these is something other than a wage.
+_MINIMUM_CREDIBLE_HOURLY = 10
+_MAXIMUM_CREDIBLE_HOURLY = 999
+
+#: Words a posting uses when the number that follows is the pay.
+_COMP_MARKERS = (
+    "salary",
+    "compensation",
+    "pay range",
+    "base pay",
+    "pay band",
+    "hourly rate",
+    "rate for this",
+    "range for this",
+)
+
 
 def parse_comp(text: str | None) -> CompRange | None:
     """Recover a compensation range from prose.
@@ -160,24 +176,97 @@ def parse_comp(text: str | None) -> CompRange | None:
     if not text:
         return None
 
-    matches = list(_MONEY.finditer(text))
-    if not matches:
+    candidates = _wage_candidates(text)
+    if not candidates:
         return None
 
-    low = _money_to_int(matches[0])
-    high = low
-    if len(matches) > 1 and _RANGE_SEPARATOR.match(text[matches[0].end() : matches[1].start()]):
-        high = _money_to_int(matches[1])
-
-    hourly = _HOURLY.search(text) is not None and low < _MINIMUM_CREDIBLE_ANNUAL
-    interval = CompInterval.HOUR if hourly else CompInterval.YEAR
-    if interval is CompInterval.YEAR and low < _MINIMUM_CREDIBLE_ANNUAL:
-        return None
+    # A posting that names its pay usually says so. Where two credible figures
+    # both look like wages — a funding round and a salary, say — the one the
+    # posting itself calls compensation is the one meant.
+    best = min(candidates, key=lambda c: (not c.announced, c.position))
 
     currency = next((code for code in _CURRENCIES if code in text), "USD")
     return CompRange(
-        minimum=min(low, high), maximum=max(low, high), currency=currency, interval=interval
+        minimum=min(best.low, best.high),
+        maximum=max(best.low, best.high),
+        currency=currency,
+        interval=best.interval,
     )
+
+
+@dataclass(frozen=True)
+class _WageCandidate:
+    """One figure or range in the text that could be a wage."""
+
+    low: int
+    high: int
+    interval: CompInterval
+    position: int
+    #: Whether compensation language introduces it, rather than it merely
+    #: being the first money mentioned.
+    announced: bool
+
+
+def _wage_candidates(text: str) -> list[_WageCandidate]:
+    """Every figure in the text that could credibly be somebody's pay.
+
+    The parser used to read the first money figure and give up when it was not
+    credible. Descriptions mention a market size, a monthly allowance and a
+    stipend before they get to the salary, so on a real Wrike posting stating
+    $180,000-$205,000 plainly, the whole range was invisible.
+    """
+    matches = list(_MONEY.finditer(text))
+    candidates: list[_WageCandidate] = []
+
+    index = 0
+    while index < len(matches):
+        match = matches[index]
+        low = _money_to_int(match)
+        high = low
+        consumed = 1
+
+        following = matches[index + 1] if index + 1 < len(matches) else None
+        if following and _RANGE_SEPARATOR.match(text[match.end() : following.start()]):
+            high = _money_to_int(following)
+            consumed = 2
+
+        interval = _interval_for(text, match.start(), low)
+        if _is_credible(low, interval):
+            candidates.append(
+                _WageCandidate(
+                    low=low,
+                    high=high,
+                    interval=interval,
+                    position=match.start(),
+                    announced=_announced_near(text, match.start()),
+                )
+            )
+        index += consumed
+
+    return candidates
+
+
+def _interval_for(text: str, position: int, amount: int) -> CompInterval:
+    """Decide hourly or annual from the words around the figure."""
+    window = text[max(0, position - 120) : position + 120]
+    hourly = _HOURLY.search(window) is not None and amount < _MINIMUM_CREDIBLE_ANNUAL
+    return CompInterval.HOUR if hourly else CompInterval.YEAR
+
+
+def _is_credible(amount: int, interval: CompInterval) -> bool:
+    """Whether a figure could be a wage at all.
+
+    A $40 allowance and a $14B market are both money and neither is a salary.
+    """
+    if interval is CompInterval.HOUR:
+        return _MINIMUM_CREDIBLE_HOURLY <= amount <= _MAXIMUM_CREDIBLE_HOURLY
+    return amount >= _MINIMUM_CREDIBLE_ANNUAL
+
+
+def _announced_near(text: str, position: int) -> bool:
+    """Whether compensation language introduces this figure."""
+    window = text[max(0, position - 160) : position].lower()
+    return any(marker in window for marker in _COMP_MARKERS)
 
 
 def parse_iso(value: str | None) -> datetime | None:

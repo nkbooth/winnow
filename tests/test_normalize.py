@@ -7,8 +7,8 @@ seniority words survive normalisation while decorations do not.
 
 import pytest
 
-from winnow.models import LocationClass
-from winnow.normalize import fingerprint, html_to_text, normalize_title
+from winnow.models import CompInterval, LocationClass
+from winnow.normalize import fingerprint, html_to_text, normalize_title, parse_comp
 
 
 def test_double_escaped_html_is_decoded_then_stripped():
@@ -116,3 +116,66 @@ def test_parse_comp_declines_to_guess(text):
     from winnow.normalize import parse_comp
 
     assert parse_comp(text) is None
+
+
+# ---------------------------------------------------------------------------
+# Compensation buried in prose that also mentions other money
+# ---------------------------------------------------------------------------
+
+
+def test_a_salary_after_other_money_is_still_found():
+    """Found live on a Wrike posting stating $180,000—$205,000 plainly.
+
+    The parser read the first money figure in the text and gave up when it was
+    not credible as a wage. That description mentions a $14B market, a $40
+    monthly allowance and a $500 stipend before it gets to the salary, so the
+    whole range was invisible and the posting reached review as comp-absent.
+
+    Benefits and market-size claims appear before the pay range constantly.
+    Greenhouse and Workday bury comp in prose when they carry it at all, so
+    this is the path by which those boards reach the comp gate at all.
+    """
+    text = (
+        "Collaborative work management is a $14B category growing at 15% a year.\n"
+        "Working from Home Allowance ($40 / Monthly)\n"
+        "$500 Working from Home home office set-up Stipend\n"
+        "Total compensation pay range\n"
+        "$180,000—$205,000 USD\n"
+    )
+
+    parsed = parse_comp(text)
+
+    assert parsed is not None
+    assert (parsed.minimum, parsed.maximum) == (180000, 205000)
+    assert parsed.currency == "USD"
+    assert parsed.interval is CompInterval.YEAR
+
+
+def test_the_range_nearest_compensation_language_wins():
+    """Two credible ranges: the one the posting calls pay is the pay."""
+    text = (
+        "We raised $200,000,000 - $250,000,000 in our Series D.\n"
+        "The base salary range for this role is $150,000 - $175,000 USD.\n"
+    )
+
+    parsed = parse_comp(text)
+
+    assert (parsed.minimum, parsed.maximum) == (150000, 175000)
+
+
+def test_a_lone_credible_salary_is_still_read():
+    assert parse_comp("The salary for this role is $185,000.").minimum == 185000
+
+
+def test_money_that_could_not_be_a_wage_is_not_one():
+    """A stipend and a market size are not salaries, and neither is a range."""
+    assert parse_comp("A $14B market. Allowance ($40 / Monthly). $500 stipend.") is None
+
+
+def test_an_hourly_rate_after_other_money_is_still_hourly():
+    text = "We are a $2B company.\nThe range for this contract is $200 - $250 per hour.\n"
+
+    parsed = parse_comp(text)
+
+    assert parsed.interval is CompInterval.HOUR
+    assert (parsed.minimum, parsed.maximum) == (200, 250)
