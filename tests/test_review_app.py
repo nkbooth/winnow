@@ -19,16 +19,16 @@ from winnow.scoring import BreakdownLine, ScoreRecord
 NOW = datetime(2026, 9, 18, 12, 0, tzinfo=UTC)
 
 
-def _record(score):
+def _record(score, vetoes=()):
     return ScoreRecord(
         score=score,
         breakdown=(BreakdownLine("growth_signal", 1.0, 20, 20.0, "own the function", False),),
-        vetoes=(),
+        vetoes=tuple(vetoes),
         flags=(),
         unverified=(),
         why_fits="Owns the function.",
         concern="Comp unresolved.",
-        vetoed=False,
+        vetoed=bool(vetoes),
         model="claude-opus-5",
         prompt_version="1",
         rubric_version="v1.test",
@@ -709,3 +709,22 @@ async def test_shift_a_reveals_everything_scored(app, conn, profile, make_postin
         await pilot.pause()
         assert app.query_one("#queue").row_count == 3
         assert "all scored" in app.sub_title
+
+
+async def test_hard_gate_vetoes_are_counted_in_the_title(app, conn, profile):
+    """Suppressing them silently would be the failure this project refuses."""
+    from winnow import learning as learning_module
+
+    cluster_id = conn.execute("SELECT id FROM clusters ORDER BY id").fetchone()["id"]
+    learning_module.record_score(
+        conn, cluster_id, _record(88, vetoes=({"gate": "onsite_required"},))
+    )
+
+    async with app.run_test() as pilot:
+        await pilot.pause()
+        assert "1 auto-rejected" in app.sub_title
+        assert app.query_one("#queue").row_count == 1
+
+        await pilot.press("A")
+        await pilot.pause()
+        assert app.query_one("#queue").row_count == 2

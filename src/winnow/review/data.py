@@ -78,6 +78,8 @@ class QueueRow:
     comp: str
     source: str
     vetoed: bool
+    #: Which gates the model vetoed on, if any.
+    veto_gates: tuple[str, ...] = ()
     age_days: int | None = None
 
 
@@ -187,6 +189,7 @@ def queue(
                 comp=format_comp(posting),
                 source=posting.source,
                 vetoed=record.vetoed,
+                veto_gates=tuple(str(v.get("gate")) for v in record.vetoes if isinstance(v, dict)),
             )
         )
     rows.sort(key=lambda row: -row.score)
@@ -200,9 +203,41 @@ def queue(
         rows = [
             row
             for row in rows
-            if row.score >= profile.score_threshold and row.cluster_id not in closed
+            if row.score >= profile.score_threshold
+            and row.cluster_id not in closed
+            and not _auto_rejected(row, profile)
         ]
     return rows
+
+
+def _auto_rejected(row: QueueRow, profile: Profile) -> bool:
+    """Whether a veto on this row names a gate the rubric calls auto-reject.
+
+    The rubric says a hard gate means "auto-reject, never surfaced". A
+    structured onsite requirement is gated before storage and never seen; the
+    same requirement written in prose became a veto, and vetoes were shown. So
+    whether a role the rubric rejects reached the operator depended on which
+    field the employer typed it into, which is not a distinction the rubric
+    makes.
+
+    A veto naming something the rubric does *not* declare a hard gate — the
+    boilerplate detector, say — still shows. That is a reason to look twice,
+    not a rule anybody wrote down.
+    """
+    return any(gate in profile.hard_gates for gate in row.veto_gates)
+
+
+def vetoed_count(conn: sqlite3.Connection, profile: Profile) -> int:
+    """How many scored, undecided rows a hard-gate veto is holding back."""
+    everything = queue(conn, profile=profile, include_below_threshold=True)
+    closed = _closed_clusters(conn)
+    return sum(
+        1
+        for row in everything
+        if row.cluster_id not in closed
+        and row.score >= profile.score_threshold
+        and _auto_rejected(row, profile)
+    )
 
 
 def _closed_clusters(conn: sqlite3.Connection) -> set[int]:
@@ -302,6 +337,7 @@ def _rows(
                 comp=format_comp(posting),
                 source=posting.source,
                 vetoed=record.vetoed,
+                veto_gates=tuple(str(v.get("gate")) for v in record.vetoes if isinstance(v, dict)),
                 age_days=_days_since(since, now),
             )
         )

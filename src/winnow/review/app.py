@@ -334,8 +334,15 @@ class ReviewApp(App[None]):
             return ""
         if self._show_below_threshold:
             return " — all scored"
+
+        notes = []
         held = data.below_threshold_count(self._conn, self._profile)
-        return f" · {held} below {self._profile.score_threshold}" if held else ""
+        if held:
+            notes.append(f"{held} below {self._profile.score_threshold}")
+        rejected = data.vetoed_count(self._conn, self._profile)
+        if rejected:
+            notes.append(f"{rejected} auto-rejected")
+        return f" · {' · '.join(notes)}" if notes else ""
 
     def action_show_all(self) -> None:
         """Toggle the below-threshold rows into the review queue."""

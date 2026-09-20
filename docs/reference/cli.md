@@ -73,11 +73,19 @@ requirement, relocation, an hours cap, or generated boilerplate. A veto
 overrides the score rather than reducing it, which is why a vetoed row can
 still read 88.
 
-Vetoed rows are shown; gated postings are not. The difference is what the
-judgement rests on. A gate reads a stated structured field and is trusted. A
-veto is a model reading prose — it must quote the span it relied on, and an
-unquotable veto is dropped, but a quotable one can still be a misreading.
-Hiding those would make a model error invisible and unappealable.
+**A veto naming one of your `hard_gates` is suppressed**, and counted in the
+title. Your rubric says a hard gate means "auto-reject, never surfaced", and a
+structured onsite requirement is gated before storage and never seen. The same
+requirement written in prose used to become a veto and be shown — so whether a
+role your rubric rejects reached you depended on which field the employer typed
+it into, which is not a distinction the rubric makes.
+
+A veto naming something you have *not* declared a hard gate still shows. The
+boilerplate detector is a reason to look twice, not a rule you wrote down.
+
+Nothing is destroyed. The model must quote the span it relied on, an unquotable
+veto is already dropped, and a quotable one can still be a misreading — so `A`
+reveals them with the evidence intact.
 
 ## Pass reasons
 

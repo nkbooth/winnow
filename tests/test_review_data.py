@@ -545,3 +545,49 @@ def test_a_closed_role_is_still_reachable_with_everything_else(conn, seeded, pro
 
     everything = data.queue(conn, profile=profile, include_below_threshold=True)
     assert cluster_id in [row.cluster_id for row in everything]
+
+
+def test_a_veto_matching_a_hard_gate_is_not_surfaced(conn, seeded, profile):
+    """The rubric says hard gates are 'auto-reject, never surfaced'.
+
+    A structured onsite requirement is gated before storage and never seen. The
+    same requirement written in prose became a veto, and vetoes were shown —
+    so whether a role your rubric auto-rejects reaches you depended on which
+    field the employer typed it into.
+
+    Measured at 217 boards: 26 of 66 queue rows, every one of them hybrid or
+    onsite, both declared hard gates. Reported as a parsing bug, which is the
+    clearest evidence the behaviour did not match the rubric's own contract.
+    """
+    cluster_id = seeded["Director of RevOps"]
+    learning.record_score(conn, cluster_id, _record(88, vetoes=({"gate": "hybrid_required"},)))
+
+    assert cluster_id not in [row.cluster_id for row in data.queue(conn, profile=profile)]
+
+
+def test_a_veto_the_rubric_does_not_declare_a_hard_gate_still_shows(conn, seeded, profile):
+    """Boilerplate is a reason to look twice, not a rule you wrote down."""
+    cluster_id = seeded["Director of RevOps"]
+    learning.record_score(
+        conn, cluster_id, _record(88, vetoes=({"gate": "llm_generated_boilerplate"},))
+    )
+
+    rows = data.queue(conn, profile=profile)
+    assert cluster_id in [row.cluster_id for row in rows]
+    assert next(r for r in rows if r.cluster_id == cluster_id).vetoed
+
+
+def test_a_hard_gate_veto_is_still_reachable_for_overruling(conn, seeded, profile):
+    """The model can misread a span, so the row is hidden and not destroyed."""
+    cluster_id = seeded["Director of RevOps"]
+    learning.record_score(conn, cluster_id, _record(88, vetoes=({"gate": "onsite_required"},)))
+
+    everything = data.queue(conn, profile=profile, include_below_threshold=True)
+    assert cluster_id in [row.cluster_id for row in everything]
+
+
+def test_the_count_of_auto_rejected_rows_is_reported(conn, seeded, profile):
+    cluster_id = seeded["Director of RevOps"]
+    learning.record_score(conn, cluster_id, _record(88, vetoes=({"gate": "onsite_required"},)))
+
+    assert data.vetoed_count(conn, profile) == 1
