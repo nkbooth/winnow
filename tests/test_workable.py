@@ -152,3 +152,32 @@ def test_every_posting_in_the_snapshot_normalises(nuvei):
 
     assert len({posting.source_id for posting in postings}) == 61
     assert all(posting.title for posting in postings)
+
+
+def test_pay_stated_in_the_description_is_read(nuvei):
+    """Workable's widget publishes no salary field at all, only the body.
+
+    So prose was the only place comp could come from, and the adapter never
+    looked — every Workable posting reported comp-absent regardless of what it
+    said. Same gap Ashby had, for a different reason.
+    """
+    from winnow.models import CompSource
+
+    raw = dict(nuvei["jobs"][0])
+    raw["description"] = (
+        "<p>We are a $2B payments company.</p>"
+        "<p>The base salary range for this role is $165,000 - $195,000 USD.</p>"
+    )
+
+    posting = WorkableAdapter(client=_client(nuvei)).normalize(raw, NUVEI, now=NOW)
+
+    assert (posting.comp_min, posting.comp_max) == (165000, 195000)
+    assert posting.comp_source is CompSource.PARSED
+
+
+def test_a_description_that_states_no_pay_stays_absent(nuvei):
+    from winnow.models import CompSource
+
+    posting = WorkableAdapter(client=_client(nuvei)).normalize(nuvei["jobs"][0], NUVEI, now=NOW)
+
+    assert posting.comp_source is CompSource.ABSENT

@@ -133,7 +133,16 @@ class CompRange:
 
 
 _MONEY = re.compile(r"\$\s?(\d[\d,]*(?:\.\d+)?)\s*([kK])?")
-_RANGE_SEPARATOR = re.compile(r"^\s*(?:-|–|—|to|and)\s*$")
+#: What may sit between the two halves of a range. The connector is required;
+#: a currency code or a period phrase either side of it is tolerated, because
+#: "$113,000 USD and $158,000 USD" and "$150,000 per year to $180,000" are both
+#: ordinary ways to write one. Allowing arbitrary words would pair a salary
+#: with the next unrelated number in the sentence.
+_RANGE_SEPARATOR = re.compile(
+    r"^\s*(?:USD|CAD|EUR|GBP|AUD)?\s*(?:per\s+(?:year|hour|annum)|annually|/\s*(?:yr|hr))?"
+    r"\s*(?:-|–|—|to|and)\s*$",
+    re.IGNORECASE,
+)
 _HOURLY = re.compile(r"(?i)per\s+hour|/\s?hour|/\s?hr\b|\bhourly\b|an hour")
 _CURRENCIES = ("USD", "CAD", "EUR", "GBP")
 

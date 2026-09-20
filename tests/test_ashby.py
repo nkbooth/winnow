@@ -26,6 +26,7 @@ from winnow.sources.registry import VENDORS
 BOARD = Board(vendor="ashby", identifier={"slug": "1password"}, company="1Password")
 NOW = datetime(2026, 9, 18, 12, 0, tzinfo=UTC)
 CLICKHOUSE = Board(vendor="ashby", identifier={"slug": "clickhouse"}, company="ClickHouse")
+ROBOFLOW = Board(vendor="ashby", identifier={"slug": "roboflow"}, company="Roboflow")
 
 
 @pytest.fixture
@@ -61,10 +62,16 @@ def test_remote_is_structured(gtm_analyst):
     assert posting.remote_source is RemoteSource.STRUCTURED
 
 
-def test_withheld_compensation_is_not_absent_compensation(gtm_analyst):
+def test_pay_written_into_the_body_beats_a_hidden_field(gtm_analyst):
+    """This posting hides the structured field and states the band in prose.
+
+    It used to report WITHHELD, which claimed the employer chose not to publish
+    a salary they had in fact written down two paragraphs into the description.
+    """
     posting = AshbyAdapter().normalize(gtm_analyst, BOARD, now=NOW)
-    assert posting.comp_source is CompSource.WITHHELD
-    assert (posting.comp_min, posting.comp_max) == (None, None)
+
+    assert posting.comp_source is CompSource.PARSED
+    assert (posting.comp_min, posting.comp_max) == (113000, 158000)
 
 
 def test_published_at_has_milliseconds(gtm_analyst):
@@ -243,6 +250,57 @@ def test_a_withheld_salary_is_still_distinguished_from_an_absent_one(fixtures):
     payload = fixtures("ashby_clickhouse_jobs.json")
     raw = next(
         j for j in payload["jobs"] if j.get("shouldDisplayCompensationOnJobPostings") is False
+    )
+
+    posting = AshbyAdapter().normalize(raw, CLICKHOUSE, now=NOW)
+
+    assert posting.comp_source is CompSource.WITHHELD
+    assert posting.comp_min is None
+
+
+def test_pay_stated_in_the_description_is_read_when_the_field_is_not_shown(fixtures):
+    """Roboflow's Solutions Architect: field hidden, pay written in the body.
+
+    `shouldDisplayCompensationOnJobPostings: false` means do not show the
+    structured field. It does not mean the employer never said what the job
+    pays — this one wrote "$170,000-$240,000" into the description. Reporting
+    WITHHELD claimed the pay was deliberately unpublished when it was on the
+    page, and withheld satisfies no floor, so the role reached review with its
+    salary invisible.
+    """
+    payload = fixtures("ashby_roboflow_prose_comp.json")
+    raw = next(j for j in payload["jobs"] if j["id"].startswith("5fff1882"))
+    assert raw["shouldDisplayCompensationOnJobPostings"] is False
+
+    posting = AshbyAdapter().normalize(raw, ROBOFLOW, now=NOW)
+
+    assert (posting.comp_min, posting.comp_max) == (170000, 240000)
+    assert posting.comp_source is CompSource.PARSED, "prose, not the employer's own field"
+
+
+def test_the_structured_field_still_wins_when_it_is_published(fixtures):
+    """Prose is the fallback, never the preference."""
+    payload = fixtures("ashby_clickhouse_jobs.json")
+    raw = next(j for j in payload["jobs"] if j["id"].startswith("e0a5ee0f"))
+
+    posting = AshbyAdapter().normalize(raw, CLICKHOUSE, now=NOW)
+
+    assert posting.comp_source is CompSource.STATED
+    assert (posting.comp_min, posting.comp_max) == (110000, 165000)
+
+
+def test_withheld_still_means_withheld_when_nothing_is_stated(fixtures):
+    """Configured-and-hidden remains a different fact from never mentioned."""
+    payload = fixtures("ashby_clickhouse_jobs.json")
+    # A dollar sign is not a salary: all 44 of these mention perks. The test
+    # is whether a *wage* can be read, which is the question the adapter asks.
+    from winnow.normalize import html_to_text, parse_comp
+
+    raw = next(
+        j
+        for j in payload["jobs"]
+        if j.get("shouldDisplayCompensationOnJobPostings") is False
+        and parse_comp(html_to_text(j.get("descriptionHtml") or "")) is None
     )
 
     posting = AshbyAdapter().normalize(raw, CLICKHOUSE, now=NOW)

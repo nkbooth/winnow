@@ -179,3 +179,31 @@ def test_an_hourly_rate_after_other_money_is_still_hourly():
 
     assert parsed.interval is CompInterval.HOUR
     assert (parsed.minimum, parsed.maximum) == (200, 250)
+
+
+def test_a_currency_code_between_the_figures_does_not_break_the_range():
+    """ "$113,000 USD and $158,000 USD" is a range, not a single figure.
+
+    The separator pattern allowed only the connector between the two numbers,
+    so a currency code after the first one broke the pair and the maximum
+    collapsed onto the minimum. A floor gate reads comp_max, so that
+    understates a role by the whole width of its band.
+    """
+    text = "The annual base salary for this role is between $113,000 USD and $158,000 USD."
+
+    parsed = parse_comp(text)
+
+    assert (parsed.minimum, parsed.maximum) == (113000, 158000)
+
+
+def test_a_range_written_with_per_year_still_pairs():
+    parsed = parse_comp("$150,000 per year to $180,000 per year")
+
+    assert (parsed.minimum, parsed.maximum) == (150000, 180000)
+
+
+def test_two_unrelated_figures_are_not_forced_into_a_range():
+    """A separator has to be a separator, not any words at all."""
+    parsed = parse_comp("The salary is $180,000. We also raised $400,000,000 last year.")
+
+    assert parsed.maximum == 180000

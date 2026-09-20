@@ -129,3 +129,26 @@ def test_an_unknown_site_is_refused():
     board = Board(vendor="careers_page", identifier={"site": "nobody"}, company="Nobody")
     with pytest.raises(KeyError):
         list(CareersPageAdapter(client=_client("<html></html>")).fetch_list(board))
+
+
+def test_pay_stated_on_a_scraped_page_is_read(nextcloud_html):
+    """A hand-parsed page has no fields at all, so prose is the only source."""
+    from winnow.models import CompSource
+
+    adapter = CareersPageAdapter(client=_client(nextcloud_html))
+    row = dict(next(iter(adapter.fetch_list(NEXTCLOUD))))
+    row["description"] = "We offer a salary of $150,000 - $175,000 USD for this role."
+
+    posting = adapter.normalize(row, NEXTCLOUD, now=NOW)
+
+    assert (posting.comp_min, posting.comp_max) == (150000, 175000)
+    assert posting.comp_source is CompSource.PARSED
+
+
+def test_a_scraped_page_that_states_no_pay_stays_absent(nextcloud_html):
+    from winnow.models import CompSource
+
+    adapter = CareersPageAdapter(client=_client(nextcloud_html))
+    posting = adapter.normalize(next(iter(adapter.fetch_list(NEXTCLOUD))), NEXTCLOUD, now=NOW)
+
+    assert posting.comp_source is CompSource.ABSENT

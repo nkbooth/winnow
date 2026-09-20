@@ -30,7 +30,7 @@ from winnow.models import (
     RemoteSource,
     RemoteStatus,
 )
-from winnow.normalize import fingerprint, html_to_text, parse_iso
+from winnow.normalize import fingerprint, html_to_text, parse_comp, parse_iso
 from winnow.sources.base import default_client, request_headers
 from winnow.sources.registry import VENDORS
 
@@ -80,9 +80,9 @@ class WorkableAdapter:
             now: First-seen timestamp; injected so normalisation stays pure.
 
         Returns:
-            The normalised posting. Workable states no compensation on this
-            endpoint even where the employer configured one, so comp is absent
-            rather than withheld — nothing here distinguishes the two.
+            The normalised posting. Workable publishes no compensation field on
+            this endpoint, so anything it says about pay is in the description
+            and arrives as ``parsed``.
         """
         now = now or datetime.now(UTC)
         company = str(board.company)
@@ -92,6 +92,10 @@ class WorkableAdapter:
         employment_type, employment_source = _employment_type(raw.get("employment_type"))
         posted_at = _published_on(raw.get("published_on"))
         description = html_to_text(raw.get("description"))
+        # The widget publishes no salary field, so the body is the only place
+        # comp can come from — and not looking meant every Workable posting
+        # reported absent regardless of what it said.
+        parsed = parse_comp(description)
 
         return Posting(
             source=self.name,
@@ -109,11 +113,11 @@ class WorkableAdapter:
             locations=locations,
             employment_type=employment_type,
             employment_type_source=employment_source,
-            comp_min=None,
-            comp_max=None,
-            comp_currency=None,
-            comp_interval=CompInterval.UNKNOWN,
-            comp_source=CompSource.ABSENT,
+            comp_min=parsed.minimum if parsed else None,
+            comp_max=parsed.maximum if parsed else None,
+            comp_currency=parsed.currency if parsed else None,
+            comp_interval=parsed.interval if parsed else CompInterval.UNKNOWN,
+            comp_source=CompSource.PARSED if parsed else CompSource.ABSENT,
             description_text=description,
             description_complete=description is not None,
             department=raw.get("department"),

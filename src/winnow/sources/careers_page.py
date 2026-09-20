@@ -39,7 +39,7 @@ from winnow.models import (
     RemoteSource,
     RemoteStatus,
 )
-from winnow.normalize import fingerprint, html_to_text
+from winnow.normalize import fingerprint, html_to_text, parse_comp
 from winnow.sources.base import default_client, request_headers
 
 #: Sent instead of the JSON Accept header the ATS adapters use: these are pages.
@@ -189,6 +189,9 @@ class CareersPageAdapter:
         title = str(raw["title"])
         description = raw.get("description")
         remote, remote_source = _arrangement(title, description)
+        # No structured fields exist on a page somebody wrote by hand, so the
+        # prose is the only place a salary can be.
+        parsed = parse_comp(description)
 
         return Posting(
             source=self.name,
@@ -207,11 +210,11 @@ class CareersPageAdapter:
             locations=(),
             employment_type=EmploymentType.UNKNOWN,
             employment_type_source=EmploymentTypeSource.ABSENT,
-            comp_min=None,
-            comp_max=None,
-            comp_currency=None,
-            comp_interval=CompInterval.UNKNOWN,
-            comp_source=CompSource.ABSENT,
+            comp_min=parsed.minimum if parsed else None,
+            comp_max=parsed.maximum if parsed else None,
+            comp_currency=parsed.currency if parsed else None,
+            comp_interval=parsed.interval if parsed else CompInterval.UNKNOWN,
+            comp_source=CompSource.PARSED if parsed else CompSource.ABSENT,
             description_text=description,
             description_complete=description is not None,
             department=None,

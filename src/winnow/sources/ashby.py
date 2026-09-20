@@ -97,7 +97,7 @@ class AshbyAdapter:
         remote, remote_source = _arrangement(raw)
         employment_type, employment_source = _employment_type(raw.get("employmentType"))
         description = raw.get("descriptionPlain") or html_to_text(raw.get("descriptionHtml"))
-        comp_min, comp_max, currency, interval, comp_source = _compensation(raw)
+        comp_min, comp_max, currency, interval, comp_source = _compensation(raw, description)
 
         title = str(raw["title"])
         location_class = classify(locations, remote)
@@ -173,7 +173,7 @@ def _interval(value: object) -> CompInterval:
 
 
 def _compensation(
-    raw: dict,
+    raw: dict, description: str | None = None
 ) -> tuple[int | None, int | None, str | None, CompInterval, CompSource]:
     compensation = raw.get("compensation") or {}
 
@@ -211,6 +211,21 @@ def _compensation(
             parsed.interval,
             CompSource.STATED,
         )
+    # The flag says not to show the structured field. It does not say the
+    # employer never mentioned pay — plenty write it into the body instead, and
+    # reporting WITHHELD for one of those claims the salary was deliberately
+    # unpublished when it is on the page. Withheld satisfies no floor, so the
+    # role arrives with its pay invisible.
+    prose = parse_comp(description)
+    if prose is not None:
+        return (
+            prose.minimum,
+            prose.maximum,
+            prose.currency,
+            prose.interval,
+            CompSource.PARSED,
+        )
+
     if raw.get("shouldDisplayCompensationOnJobPostings") is False:
         return None, None, None, CompInterval.UNKNOWN, CompSource.WITHHELD
     return None, None, None, CompInterval.UNKNOWN, CompSource.ABSENT
