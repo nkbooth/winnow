@@ -8,25 +8,150 @@ description: >-
   Hosting, networking, operating systems, and the platforms other software runs on.
 
 companies:
+  - name: Acquia
+    board: https://boards.greenhouse.io/acquia
+    verified: 2026-09-20
+  - name: Backblaze
+    board: https://boards.greenhouse.io/backblaze
+    verified: 2026-09-20
   - name: Canonical
     board: https://boards.greenhouse.io/canonical
     tags: [open-source, remote-first]
     verified: 2026-09-19
     note: "Ubuntu. Fully distributed."
+  - name: Chalk
+    board: https://jobs.ashbyhq.com/chalk
+    verified: 2026-09-20
   - name: Cloudflare
     board: https://boards.greenhouse.io/cloudflare
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: CloudZero
+    board: https://jobs.ashbyhq.com/cloudzero
+    verified: 2026-09-20
+  - name: CockroachLabs
+    board: https://boards.greenhouse.io/cockroachlabs
+    verified: 2026-09-20
+  - name: Cortex Labs
+    board: https://boards.greenhouse.io/cortex
+    verified: 2026-09-20
+  - name: Dashlane
+    board: https://boards.greenhouse.io/dashlane
+    verified: 2026-09-20
+  - name: Databento
+    board: https://boards.greenhouse.io/databento
+    verified: 2026-09-20
+  - name: Delinea
+    board: https://jobs.ashbyhq.com/delinea
+    verified: 2026-09-20
+  - name: Docker
+    board: https://jobs.ashbyhq.com/docker
+    verified: 2026-09-20
+  - name: Domino Data Lab
+    board: https://boards.greenhouse.io/dominodatalab
+    verified: 2026-09-20
+  - name: Doppler
+    board: https://jobs.ashbyhq.com/doppler
+    verified: 2026-09-20
+  - name: Druva
+    board: https://boards.greenhouse.io/druva
+    verified: 2026-09-20
+  - name: EDB
+    board: https://boards.greenhouse.io/edb
+    verified: 2026-09-20
   - name: Fastly
     board: https://boards.greenhouse.io/fastly
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Finout
+    board: https://jobs.ashbyhq.com/finout
+    verified: 2026-09-20
+  - name: Gcore
+    board: https://jobs.smartrecruiters.com/gcore
+    verified: 2026-09-20
+  - name: Infisical
+    board: https://jobs.ashbyhq.com/infisical
+    verified: 2026-09-20
+  - name: JFrog
+    board: https://boards.greenhouse.io/jfrog
+    verified: 2026-09-20
+  - name: Keeper Security
+    board: https://boards.greenhouse.io/keepersecurity
+    verified: 2026-09-20
+  - name: Kinsta
+    board: https://jobs.lever.co/kinsta
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: MinIO
+    board: https://boards.greenhouse.io/minio
+    verified: 2026-09-20
+  - name: Mirantis
+    board: https://jobs.smartrecruiters.com/mirantis
+    verified: 2026-09-20
   - name: MongoDB
     board: https://boards.greenhouse.io/mongodb
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: MotherDuck
+    board: https://jobs.ashbyhq.com/motherduck
+    verified: 2026-09-20
+  - name: Neo4j
+    board: https://boards.greenhouse.io/neo4j
+    verified: 2026-09-20
+  - name: Nextdata
+    board: https://jobs.ashbyhq.com/nextdata
+    verified: 2026-09-20
+  - name: Pantheon
+    board: https://boards.greenhouse.io/pantheon
+    verified: 2026-09-20
+  - name: Platform.sh
+    board: https://boards.greenhouse.io/platformsh
+    verified: 2026-09-20
+  - name: Porter
+    board: https://boards.greenhouse.io/porter
+    verified: 2026-09-20
+  - name: Railway
+    board: https://jobs.ashbyhq.com/railway
+    verified: 2026-09-20
   - name: Red Hat
     board: https://redhat.wd5.myworkdayjobs.com/jobs
     tags: [enterprise, open-source]
     verified: 2026-09-19
     note: "Workday tenant, not Greenhouse."
+  - name: Redis
+    board: https://jobs.ashbyhq.com/redis
+    verified: 2026-09-20
+  - name: Rubrik
+    board: https://boards.greenhouse.io/rubrik
+    verified: 2026-09-20
+  - name: Scaleway
+    board: https://jobs.lever.co/scaleway
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Scality
+    board: https://jobs.lever.co/scality
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: SingleStore
+    board: https://boards.greenhouse.io/singlestore
+    verified: 2026-09-20
+  - name: Sonatype
+    board: https://jobs.lever.co/sonatype
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Sysdig
+    board: https://jobs.lever.co/sysdig
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Vantage
+    board: https://jobs.ashbyhq.com/vantage
+    verified: 2026-09-20
+  - name: Vultr
+    board: https://jobs.ashbyhq.com/vultr
+    verified: 2026-09-20
+  - name: Wasabi
+    board: https://boards.greenhouse.io/wasabi
+    verified: 2026-09-20
+  - name: Yugabyte
+    board: https://boards.greenhouse.io/yugabyte
+    verified: 2026-09-20

@@ -8,13 +8,38 @@ description: >-
   Documents, design, chat, files, and how teams work together.
 
 companies:
+  - name: Agiloft
+    board: https://jobs.lever.co/agiloft
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
   - name: Airtable
     board: https://boards.greenhouse.io/airtable
     verified: 2026-09-19
+  - name: Alchemer
+    board: https://boards.greenhouse.io/alchemer
+    verified: 2026-09-20
+  - name: Align
+    board: https://boards.greenhouse.io/align
+    verified: 2026-09-20
   - name: Asana
     board: https://boards.greenhouse.io/asana
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Butter
+    board: https://jobs.ashbyhq.com/butter
+    verified: 2026-09-20
+  - name: Calendly
+    board: https://boards.greenhouse.io/calendly
+    verified: 2026-09-20
+  - name: ClickUp
+    board: https://jobs.ashbyhq.com/clickup
+    verified: 2026-09-20
+  - name: Conga
+    board: https://boards.greenhouse.io/conga
+    verified: 2026-09-20
+  - name: Dovetail
+    board: https://jobs.ashbyhq.com/dovetail
+    verified: 2026-09-20
   - name: Dropbox
     board: https://boards.greenhouse.io/dropbox
     tags: [publicly-traded, remote-first]
@@ -25,16 +50,88 @@ companies:
     tags: [privacy-focused]
     verified: 2026-09-19
     note: "Workable board; often empty."
+  - name: Feathery
+    board: https://jobs.ashbyhq.com/feathery
+    verified: 2026-09-20
+  - name: Fellow
+    board: https://boards.greenhouse.io/fellow
+    verified: 2026-09-20
   - name: Figma
     board: https://boards.greenhouse.io/figma
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Great Question
+    board: https://jobs.ashbyhq.com/greatquestion
+    verified: 2026-09-20
+  - name: Guidde
+    board: https://boards.greenhouse.io/guidde
+    verified: 2026-09-20
+  - name: Juro
+    board: https://jobs.ashbyhq.com/juro
+    verified: 2026-09-20
+  - name: Lucid Software
+    board: https://boards.greenhouse.io/lucidsoftware
+    verified: 2026-09-20
   - name: Mattermost
     board: https://boards.greenhouse.io/mattermost
     tags: [open-source, remote-first]
     verified: 2026-09-19
+  - name: Mural
+    board: https://jobs.ashbyhq.com/mural
+    verified: 2026-09-20
   - name: Nextcloud
     board: https://nextcloud.com/jobs/
     tags: [open-source, privacy-focused]
     verified: 2026-09-19
     note: "No ATS: scraped from their own page."
+  - name: Nintex
+    board: https://boards.greenhouse.io/nintex
+    verified: 2026-09-20
+  - name: Otter
+    board: https://boards.greenhouse.io/otter
+    verified: 2026-09-20
+  - name: PandaDoc
+    board: https://boards.greenhouse.io/pandadoc
+    verified: 2026-09-20
+  - name: Process Street
+    board: https://boards.greenhouse.io/processstreet
+    verified: 2026-09-20
+  - name: Prolific
+    board: https://boards.greenhouse.io/prolific
+    verified: 2026-09-20
+  - name: Qualtrics
+    board: https://boards.greenhouse.io/qualtrics
+    verified: 2026-09-20
+  - name: Qwilr
+    board: https://jobs.smartrecruiters.com/qwilr
+    verified: 2026-09-20
+  - name: Rocket.Chat
+    board: https://boards.greenhouse.io/rocketchat
+    verified: 2026-09-20
+  - name: Scribe
+    board: https://jobs.ashbyhq.com/scribe
+    verified: 2026-09-20
+  - name: Shepherd
+    board: https://jobs.ashbyhq.com/shepherd
+    verified: 2026-09-20
+  - name: Smartsheet
+    board: https://boards.greenhouse.io/smartsheet
+    verified: 2026-09-20
+  - name: Sprig
+    board: https://jobs.ashbyhq.com/sprig
+    verified: 2026-09-20
+  - name: SurveyMonkey
+    board: https://jobs.ashbyhq.com/surveymonkey
+    verified: 2026-09-20
+  - name: Tango
+    board: https://jobs.ashbyhq.com/tango
+    verified: 2026-09-20
+  - name: tldraw
+    board: https://jobs.ashbyhq.com/tldraw
+    verified: 2026-09-20
+  - name: Typeform
+    board: https://boards.greenhouse.io/typeform
+    verified: 2026-09-20
+  - name: Wrike
+    board: https://boards.greenhouse.io/wrike
+    verified: 2026-09-20

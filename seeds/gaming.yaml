@@ -8,9 +8,110 @@ description: >-
   Game studios and engines.
 
 companies:
+  - name: 2K
+    board: https://boards.greenhouse.io/2k
+    verified: 2026-09-20
+  - name: Animoca Brands
+    board: https://jobs.lever.co/animocabrands
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: AppLovin
+    board: https://boards.greenhouse.io/applovin
+    verified: 2026-09-20
+  - name: Avalanche Studios
+    board: https://jobs.lever.co/avalanchestudios
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Bandai Namco
+    board: https://boards.greenhouse.io/bandainamco
+    verified: 2026-09-20
+  - name: Bungie
+    board: https://boards.greenhouse.io/bungie
+    verified: 2026-09-20
+  - name: Cloud9
+    board: https://boards.greenhouse.io/cloud9
+    verified: 2026-09-20
+  - name: Crytek
+    board: https://jobs.lever.co/crytek
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Digital Extremes
+    board: https://boards.greenhouse.io/digitalextremes
+    verified: 2026-09-20
+  - name: Dream Games
+    board: https://boards.greenhouse.io/dreamgames
+    verified: 2026-09-20
   - name: Epic Games
     board: https://boards.greenhouse.io/epicgames
     verified: 2026-09-19
+  - name: Firesprite
+    board: https://boards.greenhouse.io/firesprite
+    verified: 2026-09-20
+  - name: Fnatic
+    board: https://jobs.ashbyhq.com/fnatic
+    verified: 2026-09-20
+  - name: Hangar 13
+    board: https://boards.greenhouse.io/hangar13
+    verified: 2026-09-20
+  - name: Housemarque
+    board: https://boards.greenhouse.io/housemarque
+    verified: 2026-09-20
+  - name: Immutable
+    board: https://jobs.lever.co/immutable
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Jam City
+    board: https://jobs.lever.co/jamcity
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Krafton
+    board: https://boards.greenhouse.io/krafton
+    verified: 2026-09-20
+  - name: Moon Active
+    board: https://jobs.ashbyhq.com/moonactive
+    verified: 2026-09-20
+  - name: Naughty Dog
+    board: https://boards.greenhouse.io/naughtydog
+    verified: 2026-09-20
+  - name: Peak Games
+    board: https://jobs.lever.co/peakgames
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: People Can Fly
+    board: https://jobs.smartrecruiters.com/peoplecanfly
+    verified: 2026-09-20
   - name: Riot Games
     board: https://boards.greenhouse.io/riotgames
     verified: 2026-09-19
+  - name: Roblox
+    board: https://boards.greenhouse.io/roblox
+    verified: 2026-09-20
+  - name: Rockstar Games
+    board: https://boards.greenhouse.io/rockstargames
+    verified: 2026-09-20
+  - name: Scopely
+    board: https://boards.greenhouse.io/scopely
+    verified: 2026-09-20
+  - name: Second Dinner
+    board: https://jobs.ashbyhq.com/seconddinner
+    verified: 2026-09-20
+  - name: Sky Mavis
+    board: https://jobs.ashbyhq.com/skymavis
+    verified: 2026-09-20
+  - name: Supercell
+    board: https://jobs.ashbyhq.com/supercell
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Tactile Games
+    board: https://boards.greenhouse.io/tactilegames
+    verified: 2026-09-20
+  - name: Take-Two
+    board: https://boards.greenhouse.io/taketwo
+    verified: 2026-09-20
+  - name: Theorycraft Games
+    board: https://jobs.lever.co/theorycraftgames
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Voodoo
+    board: https://jobs.ashbyhq.com/voodoo
+    verified: 2026-09-20

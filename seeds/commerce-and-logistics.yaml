@@ -8,18 +8,192 @@ description: >-
   Retail, marketplaces, freight, fleets, and moving physical things.
 
 companies:
+  - name: Airspace
+    board: https://boards.greenhouse.io/airspace
+    verified: 2026-09-20
+  - name: Ambi Robotics
+    board: https://jobs.lever.co/ambirobotics
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Arrive Logistics
+    board: https://boards.greenhouse.io/arrivelogistics
+    verified: 2026-09-20
+  - name: Assent
+    board: https://jobs.smartrecruiters.com/assent
+    verified: 2026-09-20
+  - name: Bark
+    board: https://boards.greenhouse.io/bark
+    verified: 2026-09-20
+  - name: Cin7
+    board: https://jobs.lever.co/cin7
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Coupa
+    board: https://jobs.lever.co/coupa
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Dexterity
+    board: https://jobs.lever.co/dexterity
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Factor
+    board: https://jobs.lever.co/factor
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Faire
+    board: https://boards.greenhouse.io/faire
+    verified: 2026-09-20
+  - name: Fairmarkit
+    board: https://boards.greenhouse.io/fairmarkit
+    verified: 2026-09-20
+  - name: Flexe
+    board: https://boards.greenhouse.io/flexe
+    verified: 2026-09-20
   - name: Flexport
     board: https://boards.greenhouse.io/flexport
     verified: 2026-09-19
+  - name: Flink
+    board: https://jobs.ashbyhq.com/flink
+    verified: 2026-09-20
+  - name: Forto
+    board: https://jobs.ashbyhq.com/forto
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: FourKites
+    board: https://boards.greenhouse.io/fourkites
+    verified: 2026-09-20
+  - name: Gopuff
+    board: https://jobs.lever.co/gopuff
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: HelloFresh
+    board: https://boards.greenhouse.io/hellofresh
+    verified: 2026-09-20
+  - name: HungryRoot
+    board: https://boards.greenhouse.io/hungryroot
+    verified: 2026-09-20
   - name: Instacart
     board: https://boards.greenhouse.io/instacart
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Ivalua
+    board: https://boards.greenhouse.io/ivalua
+    verified: 2026-09-20
+  - name: Katana
+    board: https://jobs.ashbyhq.com/katana
+    verified: 2026-09-20
+  - name: Kpler
+    board: https://jobs.lever.co/kpler
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Levelpath
+    board: https://jobs.ashbyhq.com/levelpath
+    verified: 2026-09-20
+  - name: Loadsmart
+    board: https://jobs.lever.co/loadsmart
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Locus Robotics
+    board: https://boards.greenhouse.io/locusrobotics
+    verified: 2026-09-20
+  - name: Misfits Market
+    board: https://boards.greenhouse.io/misfitsmarket
+    verified: 2026-09-20
+  - name: Motive
+    board: https://boards.greenhouse.io/motive
+    verified: 2026-09-20
+  - name: Netradyne
+    board: https://boards.greenhouse.io/netradyne
+    verified: 2026-09-20
+  - name: Nimble Robotics
+    board: https://boards.greenhouse.io/nimblerobotics
+    verified: 2026-09-20
+  - name: Nom Nom
+    board: https://boards.greenhouse.io/nomnom
+    verified: 2026-09-20
   - name: Nuro
     board: https://boards.greenhouse.io/nuro
     tags: [robotics]
     verified: 2026-09-19
+  - name: Omnea
+    board: https://jobs.ashbyhq.com/omnea
+    verified: 2026-09-20
+  - name: Osaro
+    board: https://jobs.lever.co/osaro
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Pivot
+    board: https://jobs.ashbyhq.com/pivot
+    verified: 2026-09-20
+  - name: Platform Science
+    board: https://boards.greenhouse.io/platformscience
+    verified: 2026-09-20
+  - name: Portcast
+    board: https://jobs.lever.co/portcast
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Poshmark
+    board: https://jobs.ashbyhq.com/poshmark
+    verified: 2026-09-20
+  - name: Project44
+    board: https://boards.greenhouse.io/project44
+    verified: 2026-09-20
+  - name: Rebag
+    board: https://boards.greenhouse.io/rebag
+    verified: 2026-09-20
+  - name: Resilinc
+    board: https://jobs.lever.co/resilinc
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Rover
+    board: https://jobs.lever.co/rover
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Saltbox
+    board: https://boards.greenhouse.io/saltbox
+    verified: 2026-09-20
   - name: Samsara
     board: https://boards.greenhouse.io/samsara
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Sayari
+    board: https://boards.greenhouse.io/sayari
+    verified: 2026-09-20
+  - name: Serve Robotics
+    board: https://jobs.ashbyhq.com/serverobotics
+    verified: 2026-09-20
+  - name: Shein
+    board: https://boards.greenhouse.io/shein
+    verified: 2026-09-20
+  - name: ShipMonk
+    board: https://boards.greenhouse.io/shipmonk
+    verified: 2026-09-20
+  - name: StockX
+    board: https://boards.greenhouse.io/stockx
+    verified: 2026-09-20
+  - name: Thrive Market
+    board: https://boards.greenhouse.io/thrivemarket
+    verified: 2026-09-20
+  - name: Torc Robotics
+    board: https://boards.greenhouse.io/torcrobotics
+    verified: 2026-09-20
+  - name: Turvo
+    board: https://jobs.lever.co/turvo
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Uber Freight
+    board: https://boards.greenhouse.io/uberfreight
+    verified: 2026-09-20
+  - name: Vestiaire Collective
+    board: https://jobs.lever.co/vestiairecollective
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Wayfair
+    board: https://jobs.smartrecruiters.com/wayfair
+    verified: 2026-09-20
+  - name: Weee
+    board: https://boards.greenhouse.io/weee
+    verified: 2026-09-20
+  - name: Wing
+    board: https://boards.greenhouse.io/wing
+    verified: 2026-09-20

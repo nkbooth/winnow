@@ -8,15 +8,124 @@ description: >-
   Customer messaging, CRM, and the systems revenue teams run on.
 
 companies:
+  - name: ActiveCampaign
+    board: https://jobs.lever.co/activecampaign
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Airship
+    board: https://boards.greenhouse.io/airship
+    verified: 2026-09-20
+  - name: Amplemarket
+    board: https://boards.greenhouse.io/amplemarket
+    verified: 2026-09-20
+  - name: Apollo.io
+    board: https://boards.greenhouse.io/apolloio
+    verified: 2026-09-20
+  - name: Attentive
+    board: https://boards.greenhouse.io/attentive
+    verified: 2026-09-20
+  - name: BigCommerce
+    board: https://jobs.smartrecruiters.com/bigcommerce
+    verified: 2026-09-20
+  - name: Bloomreach
+    board: https://boards.greenhouse.io/bloomreach
+    verified: 2026-09-20
   - name: Braze
     board: https://boards.greenhouse.io/braze
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Cognism
+    board: https://boards.greenhouse.io/cognism
+    verified: 2026-09-20
+  - name: Commercetools
+    board: https://boards.greenhouse.io/commercetools
+    verified: 2026-09-20
+  - name: Community
+    board: https://boards.greenhouse.io/community
+    verified: 2026-09-20
+  - name: Constant Contact
+    board: https://boards.greenhouse.io/constantcontact
+    verified: 2026-09-20
+  - name: Contentful
+    board: https://boards.greenhouse.io/contentful
+    verified: 2026-09-20
+  - name: Customer.io
+    board: https://boards.greenhouse.io/customerio
+    verified: 2026-09-20
+  - name: Duda
+    board: https://boards.greenhouse.io/duda
+    verified: 2026-09-20
+  - name: Endgame
+    board: https://jobs.ashbyhq.com/endgame
+    verified: 2026-09-20
+  - name: Gainsight
+    board: https://jobs.ashbyhq.com/gainsight
+    verified: 2026-09-20
+  - name: Ghost
+    board: https://boards.greenhouse.io/ghost
+    verified: 2026-09-20
+  - name: Insider
+    board: https://boards.greenhouse.io/insider
+    verified: 2026-09-20
+  - name: Iterable
+    board: https://boards.greenhouse.io/iterable
+    verified: 2026-09-20
   - name: Klaviyo
     board: https://boards.greenhouse.io/klaviyo
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Knock
+    board: https://boards.greenhouse.io/knock
+    verified: 2026-09-20
+  - name: Omnisend
+    board: https://jobs.lever.co/omnisend
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Outreach
+    board: https://jobs.lever.co/outreach
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Postscript
+    board: https://boards.greenhouse.io/postscript
+    verified: 2026-09-20
+  - name: Resend
+    board: https://jobs.ashbyhq.com/resend
+    verified: 2026-09-20
+  - name: Salesloft
+    board: https://boards.greenhouse.io/salesloft
+    verified: 2026-09-20
+  - name: Salsify
+    board: https://boards.greenhouse.io/salsify
+    verified: 2026-09-20
+  - name: Sanity
+    board: https://jobs.ashbyhq.com/sanity
+    verified: 2026-09-20
+  - name: Squarespace
+    board: https://boards.greenhouse.io/squarespace
+    verified: 2026-09-20
+  - name: Storyblok
+    board: https://boards.greenhouse.io/storyblok
+    verified: 2026-09-20
+  - name: Syndigo
+    board: https://boards.greenhouse.io/syndigo
+    verified: 2026-09-20
   - name: Twilio
     board: https://boards.greenhouse.io/twilio
     tags: [publicly-traded, remote-first]
     verified: 2026-09-19
+  - name: Unbounce
+    board: https://boards.greenhouse.io/unbounce
+    verified: 2026-09-20
+  - name: Unify
+    board: https://jobs.ashbyhq.com/unify
+    verified: 2026-09-20
+  - name: Vitally
+    board: https://jobs.ashbyhq.com/vitally
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Webflow
+    board: https://boards.greenhouse.io/webflow
+    verified: 2026-09-20
+  - name: ZoomInfo
+    board: https://boards.greenhouse.io/zoominfo
+    verified: 2026-09-20

@@ -8,11 +8,240 @@ description: >-
   Payroll, benefits, hiring, and employment infrastructure.
 
 companies:
+  - name: A.Team
+    board: https://jobs.ashbyhq.com/a-team
+    verified: 2026-09-20
+  - name: Accurate Background
+    board: https://jobs.smartrecruiters.com/accuratebackground
+    verified: 2026-09-20
+  - name: Achievers
+    board: https://jobs.lever.co/achievers
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Andela
+    board: https://jobs.ashbyhq.com/andela
+    verified: 2026-09-20
+  - name: Ashby
+    board: https://jobs.ashbyhq.com/ashby
+    verified: 2026-09-20
+  - name: Atlas
+    board: https://jobs.ashbyhq.com/atlas
+    verified: 2026-09-20
+  - name: Atomic
+    board: https://jobs.ashbyhq.com/atomic
+    verified: 2026-09-20
+  - name: Awardco
+    board: https://boards.greenhouse.io/awardco
+    verified: 2026-09-20
+  - name: Baselayer
+    board: https://boards.greenhouse.io/baselayer
+    verified: 2026-09-20
+  - name: Benepass
+    board: https://jobs.ashbyhq.com/benepass
+    verified: 2026-09-20
+  - name: Bicycle Health
+    board: https://boards.greenhouse.io/bicyclehealth
+    verified: 2026-09-20
+  - name: Boulder Care
+    board: https://boards.greenhouse.io/bouldercare
+    verified: 2026-09-20
+  - name: Branch
+    board: https://boards.greenhouse.io/branch
+    verified: 2026-09-20
+  - name: BrightHire
+    board: https://boards.greenhouse.io/brighthire
+    verified: 2026-09-20
+  - name: Catalant
+    board: https://jobs.ashbyhq.com/catalant
+    verified: 2026-09-20
+  - name: Charlie Health
+    board: https://boards.greenhouse.io/charliehealth
+    verified: 2026-09-20
+  - name: Checkr
+    board: https://boards.greenhouse.io/checkr
+    verified: 2026-09-20
+  - name: Clair
+    board: https://jobs.ashbyhq.com/clair
+    verified: 2026-09-20
+  - name: ClassPass
+    board: https://boards.greenhouse.io/classpass
+    verified: 2026-09-20
+  - name: CoderPad
+    board: https://jobs.lever.co/coderpad
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: ComplyAdvantage
+    board: https://boards.greenhouse.io/complyadvantage
+    verified: 2026-09-20
+  - name: Contra
+    board: https://jobs.ashbyhq.com/contra
+    verified: 2026-09-20
+  - name: Culture Amp
+    board: https://boards.greenhouse.io/cultureamp
+    verified: 2026-09-20
+  - name: DailyPay
+    board: https://jobs.ashbyhq.com/dailypay
+    verified: 2026-09-20
+  - name: EarnIn
+    board: https://boards.greenhouse.io/earnin
+    verified: 2026-09-20
+  - name: Findem
+    board: https://jobs.lever.co/findem
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Fiverr
+    board: https://jobs.smartrecruiters.com/fiverr
+    verified: 2026-09-20
+  - name: Forma
+    board: https://jobs.ashbyhq.com/forma
+    verified: 2026-09-20
+  - name: GoodHire
+    board: https://jobs.smartrecruiters.com/goodhire
+    verified: 2026-09-20
+  - name: Greenhouse Software
+    board: https://boards.greenhouse.io/greenhouse
+    verified: 2026-09-20
+  - name: Grow Therapy
+    board: https://jobs.ashbyhq.com/grow-therapy
+    verified: 2026-09-20
   - name: Gusto
     board: https://boards.greenhouse.io/gusto
     verified: 2026-09-19
+  - name: HackerRank
+    board: https://boards.greenhouse.io/hackerrank
+    verified: 2026-09-20
+  - name: Handshake
+    board: https://boards.greenhouse.io/handshake
+    verified: 2026-09-20
+  - name: Hastee
+    board: https://jobs.smartrecruiters.com/hastee
+    verified: 2026-09-20
+  - name: Hibob
+    board: https://jobs.smartrecruiters.com/hibob
+    verified: 2026-09-20
+  - name: Incode
+    board: https://boards.greenhouse.io/incode
+    verified: 2026-09-20
+  - name: Jobvite
+    board: https://jobs.lever.co/jobvite
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Jumio
+    board: https://boards.greenhouse.io/jumio
+    verified: 2026-09-20
+  - name: Justworks
+    board: https://boards.greenhouse.io/justworks
+    verified: 2026-09-20
+  - name: Karat
+    board: https://boards.greenhouse.io/karat
+    verified: 2026-09-20
+  - name: Lattice
+    board: https://boards.greenhouse.io/lattice
+    verified: 2026-09-20
+  - name: Meru Health
+    board: https://boards.greenhouse.io/meruhealth
+    verified: 2026-09-20
+  - name: Metaview
+    board: https://jobs.ashbyhq.com/metaview
+    verified: 2026-09-20
+  - name: Middesk
+    board: https://jobs.ashbyhq.com/middesk
+    verified: 2026-09-20
+  - name: Modern Health
+    board: https://boards.greenhouse.io/modernhealth
+    verified: 2026-09-20
+  - name: Namely
+    board: https://jobs.smartrecruiters.com/namely
+    verified: 2026-09-20
+  - name: Nova Credit
+    board: https://boards.greenhouse.io/novacredit
+    verified: 2026-09-20
+  - name: Octave
+    board: https://boards.greenhouse.io/octave
+    verified: 2026-09-20
+  - name: Ophelia
+    board: https://boards.greenhouse.io/ophelia
+    verified: 2026-09-20
+  - name: Oyster
+    board: https://jobs.ashbyhq.com/oyster
+    verified: 2026-09-20
+  - name: Payactiv
+    board: https://jobs.lever.co/payactiv
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Pinwheel
+    board: https://jobs.smartrecruiters.com/pinwheel
+    verified: 2026-09-20
+  - name: Prove
+    board: https://boards.greenhouse.io/prove
+    verified: 2026-09-20
+  - name: Rain
+    board: https://jobs.ashbyhq.com/rain
+    verified: 2026-09-20
   - name: Remote
     board: https://boards.greenhouse.io/remotecom
     tags: [remote-first]
     verified: 2026-09-19
     note: "Slug is remotecom."
+  - name: Rula
+    board: https://jobs.ashbyhq.com/rula
+    verified: 2026-09-20
+  - name: Sana Benefits
+    board: https://jobs.lever.co/sanabenefits
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: SeekOut
+    board: https://boards.greenhouse.io/seekout
+    verified: 2026-09-20
+  - name: Sentilink
+    board: https://jobs.ashbyhq.com/sentilink
+    verified: 2026-09-20
+  - name: SmartRecruiters
+    board: https://jobs.smartrecruiters.com/smartrecruiters
+    verified: 2026-09-20
+  - name: Sterling
+    board: https://boards.greenhouse.io/sterling
+    verified: 2026-09-20
+  - name: Thatch
+    board: https://boards.greenhouse.io/thatch
+    verified: 2026-09-20
+  - name: Toptal
+    board: https://jobs.lever.co/toptal
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Trulioo
+    board: https://jobs.ashbyhq.com/trulioo
+    verified: 2026-09-20
+  - name: Turing
+    board: https://boards.greenhouse.io/turing
+    verified: 2026-09-20
+  - name: Two Chairs
+    board: https://boards.greenhouse.io/twochairs
+    verified: 2026-09-20
+  - name: Unmind
+    board: https://jobs.ashbyhq.com/unmind
+    verified: 2026-09-20
+  - name: Upwork
+    board: https://boards.greenhouse.io/upwork
+    verified: 2026-09-20
+  - name: Veremark
+    board: https://jobs.smartrecruiters.com/veremark
+    verified: 2026-09-20
+  - name: Veriff
+    board: https://boards.greenhouse.io/veriff
+    verified: 2026-09-20
+  - name: Workboard
+    board: https://boards.greenhouse.io/workboard
+    verified: 2026-09-20
+  - name: Workhuman
+    board: https://jobs.ashbyhq.com/workhuman
+    verified: 2026-09-20
+  - name: Workit Health
+    board: https://boards.greenhouse.io/workithealth
+    verified: 2026-09-20
+  - name: ZayZoon
+    board: https://jobs.ashbyhq.com/zayzoon
+    verified: 2026-09-20
+  - name: Zenefits
+    board: https://jobs.smartrecruiters.com/zenefits
+    verified: 2026-09-20

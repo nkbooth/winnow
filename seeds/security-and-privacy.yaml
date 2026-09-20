@@ -16,25 +16,171 @@ companies:
     board: https://boards.greenhouse.io/abnormalsecurity
     verified: 2026-09-19
     note: "Board self-identifies as 'Abnormal'."
+  - name: Anomali
+    board: https://jobs.lever.co/anomali
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Armis
+    board: https://jobs.smartrecruiters.com/armis
+    verified: 2026-09-20
+  - name: Axonius
+    board: https://boards.greenhouse.io/axonius
+    verified: 2026-09-20
+  - name: BigID
+    board: https://boards.greenhouse.io/bigid
+    verified: 2026-09-20
   - name: Bitwarden
     board: https://boards.greenhouse.io/bitwarden
     tags: [open-source, privacy-focused, remote-first]
     verified: 2026-09-19
+  - name: Blumira
+    board: https://boards.greenhouse.io/blumira
+    verified: 2026-09-20
+  - name: Brave
+    board: https://boards.greenhouse.io/brave
+    verified: 2026-09-20
+  - name: Bugcrowd
+    board: https://boards.greenhouse.io/bugcrowd
+    verified: 2026-09-20
+  - name: Cato Networks
+    board: https://boards.greenhouse.io/catonetworks
+    verified: 2026-09-20
+  - name: Censys
+    board: https://boards.greenhouse.io/censys
+    verified: 2026-09-20
+  - name: DataGrail
+    board: https://boards.greenhouse.io/datagrail
+    verified: 2026-09-20
+  - name: Dragos
+    board: https://boards.greenhouse.io/dragos
+    verified: 2026-09-20
+  - name: Drata
+    board: https://jobs.ashbyhq.com/drata
+    verified: 2026-09-20
+  - name: Dropzone AI
+    board: https://boards.greenhouse.io/dropzoneai
+    verified: 2026-09-20
+  - name: Evervault
+    board: https://jobs.ashbyhq.com/evervault
+    verified: 2026-09-20
+  - name: Expel
+    board: https://boards.greenhouse.io/expel
+    verified: 2026-09-20
+  - name: HackerOne
+    board: https://jobs.ashbyhq.com/hackerone
+    verified: 2026-09-20
+  - name: Hoxhunt
+    board: https://jobs.ashbyhq.com/hoxhunt
+    verified: 2026-09-20
+  - name: Huntress
+    board: https://boards.greenhouse.io/huntress
+    verified: 2026-09-20
+  - name: Hyperproof
+    board: https://boards.greenhouse.io/hyperproof
+    verified: 2026-09-20
+  - name: Illumio
+    board: https://jobs.ashbyhq.com/illumio
+    verified: 2026-09-20
+  - name: Immuta
+    board: https://jobs.lever.co/immuta
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Ketch
+    board: https://boards.greenhouse.io/ketch
+    verified: 2026-09-20
+  - name: KnowBe4
+    board: https://boards.greenhouse.io/knowbe4
+    verified: 2026-09-20
+  - name: LogicGate
+    board: https://boards.greenhouse.io/logicgate
+    verified: 2026-09-20
+  - name: Material Security
+    board: https://jobs.ashbyhq.com/materialsecurity
+    verified: 2026-09-20
+  - name: Netskope
+    board: https://boards.greenhouse.io/netskope
+    verified: 2026-09-20
+  - name: Nozomi Networks
+    board: https://boards.greenhouse.io/nozominetworks
+    verified: 2026-09-20
   - name: Okta
     board: https://boards.greenhouse.io/okta
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: OneTrust
+    board: https://boards.greenhouse.io/onetrust
+    verified: 2026-09-20
+  - name: Orca Security
+    board: https://boards.greenhouse.io/orcasecurity
+    verified: 2026-09-20
+  - name: Osano
+    board: https://boards.greenhouse.io/osano
+    verified: 2026-09-20
   - name: Oso
     board: https://jobs.ashbyhq.com/oso
     tags: [open-source]
     verified: 2026-09-19
+  - name: Prophet Security
+    board: https://jobs.ashbyhq.com/prophet-security
+    verified: 2026-09-20
   - name: Proton
     board: https://boards.greenhouse.io/proton
     tags: [nonprofit, privacy-focused]
     verified: 2026-09-19
     note: "Moved from Ashby to Greenhouse in 2026; slugs rot."
+  - name: Recorded Future
+    board: https://boards.greenhouse.io/recordedfuture
+    verified: 2026-09-20
+  - name: Runzero
+    board: https://boards.greenhouse.io/runzero
+    verified: 2026-09-20
+  - name: SafeBreach
+    board: https://boards.greenhouse.io/safebreach
+    verified: 2026-09-20
+  - name: Secureframe
+    board: https://jobs.ashbyhq.com/secureframe
+    verified: 2026-09-20
+  - name: Securiti
+    board: https://jobs.smartrecruiters.com/securiti
+    verified: 2026-09-20
+  - name: SecurityScorecard
+    board: https://boards.greenhouse.io/securityscorecard
+    verified: 2026-09-20
   - name: Signal
     board: https://signal.org/workworkwork/
     tags: [nonprofit, open-source, privacy-focused]
     verified: 2026-09-19
     note: "No ATS: scraped. Often no open roles."
+  - name: Skyflow
+    board: https://jobs.ashbyhq.com/skyflow
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Synack
+    board: https://boards.greenhouse.io/synack
+    verified: 2026-09-20
+  - name: Tines
+    board: https://boards.greenhouse.io/tines
+    verified: 2026-09-20
+  - name: Torq
+    board: https://boards.greenhouse.io/torq
+    verified: 2026-09-20
+  - name: TrustArc
+    board: https://jobs.lever.co/trustarc
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: UpGuard
+    board: https://jobs.ashbyhq.com/upguard
+    verified: 2026-09-20
+  - name: Vanta
+    board: https://jobs.ashbyhq.com/vanta
+    verified: 2026-09-20
+  - name: Veracode
+    board: https://boards.greenhouse.io/veracode
+    verified: 2026-09-20
+  - name: Very Good Security
+    board: https://jobs.lever.co/verygoodsecurity
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Zscaler
+    board: https://boards.greenhouse.io/zscaler
+    verified: 2026-09-20

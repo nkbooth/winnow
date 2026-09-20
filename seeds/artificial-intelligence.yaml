@@ -8,15 +8,184 @@ description: >-
   Model labs, training infrastructure, and companies whose product is a model.
 
 companies:
+  - name: Abridge
+    board: https://jobs.ashbyhq.com/abridge
+    verified: 2026-09-20
   - name: Anthropic
     board: https://boards.greenhouse.io/anthropic
     tags: [ai]
     verified: 2026-09-19
+  - name: Anyscale
+    board: https://jobs.ashbyhq.com/anyscale
+    verified: 2026-09-20
+  - name: AssemblyAI
+    board: https://boards.greenhouse.io/assemblyai
+    verified: 2026-09-20
+  - name: Baseten
+    board: https://jobs.ashbyhq.com/baseten
+    verified: 2026-09-20
+  - name: Braintrust
+    board: https://jobs.ashbyhq.com/braintrust
+    verified: 2026-09-20
+  - name: Cerebras
+    board: https://jobs.ashbyhq.com/cerebras
+    verified: 2026-09-20
+  - name: Cohere
+    board: https://jobs.ashbyhq.com/cohere
+    verified: 2026-09-20
+  - name: Comet
+    board: https://boards.greenhouse.io/comet
+    verified: 2026-09-20
+  - name: Cresta
+    board: https://boards.greenhouse.io/cresta
+    verified: 2026-09-20
+  - name: Decagon
+    board: https://jobs.ashbyhq.com/decagon
+    verified: 2026-09-20
+  - name: Deepgram
+    board: https://jobs.ashbyhq.com/deepgram
+    verified: 2026-09-20
+  - name: Descript
+    board: https://boards.greenhouse.io/descript
+    verified: 2026-09-20
+  - name: ElevenLabs
+    board: https://jobs.ashbyhq.com/elevenlabs
+    verified: 2026-09-20
+  - name: Encord
+    board: https://jobs.ashbyhq.com/encord
+    verified: 2026-09-20
+  - name: Eve
+    board: https://boards.greenhouse.io/eve
+    verified: 2026-09-20
+  - name: Fiddler AI
+    board: https://jobs.ashbyhq.com/fiddler-ai
+    verified: 2026-09-20
+  - name: Fireworks AI
+    board: https://jobs.ashbyhq.com/fireworks
+    verified: 2026-09-20
+  - name: Galileo
+    board: https://boards.greenhouse.io/galileo
+    verified: 2026-09-20
+  - name: Gamma
+    board: https://jobs.ashbyhq.com/gamma
+    verified: 2026-09-20
+  - name: Glean
+    board: https://jobs.smartrecruiters.com/glean
+    verified: 2026-09-20
+  - name: Gong
+    board: https://jobs.smartrecruiters.com/gong
+    verified: 2026-09-20
+  - name: Graphcore
+    board: https://boards.greenhouse.io/graphcore
+    verified: 2026-09-20
+  - name: Harvey
+    board: https://jobs.ashbyhq.com/harvey
+    verified: 2026-09-20
+  - name: HeyGen
+    board: https://boards.greenhouse.io/heygen
+    verified: 2026-09-20
+  - name: HiddenLayer
+    board: https://boards.greenhouse.io/hiddenlayer
+    verified: 2026-09-20
   - name: Hugging Face
     board: https://apply.workable.com/huggingface
     tags: [ai, open-source, remote-first]
     verified: 2026-09-19
+  - name: Labelbox
+    board: https://boards.greenhouse.io/labelbox
+    verified: 2026-09-20
+  - name: LangChain
+    board: https://jobs.ashbyhq.com/langchain
+    verified: 2026-09-20
+  - name: Legora
+    board: https://jobs.ashbyhq.com/legora
+    verified: 2026-09-20
+  - name: LlamaIndex
+    board: https://jobs.ashbyhq.com/llamaindex
+    verified: 2026-09-20
+  - name: Lovable
+    board: https://boards.greenhouse.io/lovable
+    verified: 2026-09-20
+  - name: Luma AI
+    board: https://jobs.ashbyhq.com/lumaai
+    verified: 2026-09-20
+  - name: Modal
+    board: https://jobs.ashbyhq.com/modal
+    verified: 2026-09-20
+  - name: Nabla
+    board: https://jobs.ashbyhq.com/nabla
+    verified: 2026-09-20
+  - name: Observe.AI
+    board: https://boards.greenhouse.io/observeai
+    verified: 2026-09-20
+  - name: OpenAI
+    board: https://jobs.ashbyhq.com/openai
+    verified: 2026-09-20
+  - name: Opus Clip
+    board: https://jobs.ashbyhq.com/opusclip
+    verified: 2026-09-20
+  - name: Otter.ai
+    board: https://boards.greenhouse.io/otterai
+    verified: 2026-09-20
+  - name: Parloa
+    board: https://boards.greenhouse.io/parloa
+    verified: 2026-09-20
+  - name: Perplexity
+    board: https://jobs.ashbyhq.com/perplexity
+    verified: 2026-09-20
+  - name: Photoroom
+    board: https://jobs.ashbyhq.com/photoroom
+    verified: 2026-09-20
+  - name: Pinecone
+    board: https://jobs.ashbyhq.com/pinecone
+    verified: 2026-09-20
+  - name: PolyAI
+    board: https://boards.greenhouse.io/polyai
+    verified: 2026-09-20
+  - name: Poolside
+    board: https://jobs.ashbyhq.com/poolside
+    verified: 2026-09-20
+  - name: Roboflow
+    board: https://jobs.ashbyhq.com/roboflow
+    verified: 2026-09-20
   - name: Scale AI
     board: https://boards.greenhouse.io/scaleai
     tags: [ai]
     verified: 2026-09-19
+  - name: Sierra
+    board: https://jobs.ashbyhq.com/sierra
+    verified: 2026-09-20
+  - name: Snorkel AI
+    board: https://boards.greenhouse.io/snorkelai
+    verified: 2026-09-20
+  - name: Speechmatics
+    board: https://boards.greenhouse.io/speechmatics
+    verified: 2026-09-20
+  - name: Surge AI
+    board: https://jobs.ashbyhq.com/surge-ai
+    verified: 2026-09-20
+  - name: Synthesia
+    board: https://jobs.ashbyhq.com/synthesia
+    verified: 2026-09-20
+  - name: Tenstorrent
+    board: https://boards.greenhouse.io/tenstorrent
+    verified: 2026-09-20
+  - name: Together AI
+    board: https://boards.greenhouse.io/togetherai
+    verified: 2026-09-20
+  - name: Typeface
+    board: https://boards.greenhouse.io/typeface
+    verified: 2026-09-20
+  - name: Unstructured
+    board: https://jobs.ashbyhq.com/unstructured
+    verified: 2026-09-20
+  - name: Weaviate
+    board: https://jobs.ashbyhq.com/weaviate
+    verified: 2026-09-20
+  - name: Writer
+    board: https://jobs.ashbyhq.com/writer
+    verified: 2026-09-20
+  - name: Zilliz
+    board: https://jobs.lever.co/zilliz
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."

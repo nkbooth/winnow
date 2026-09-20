@@ -8,9 +8,49 @@ description: >-
   Software engineers are the customer: CI, editors, APIs, deployment.
 
 companies:
+  - name: Akuity
+    board: https://boards.greenhouse.io/akuity
+    verified: 2026-09-20
+  - name: Apollo GraphQL
+    board: https://jobs.ashbyhq.com/apollo-graphql
+    verified: 2026-09-20
+  - name: Buildkite
+    board: https://boards.greenhouse.io/buildkite
+    verified: 2026-09-20
+  - name: Chainguard
+    board: https://boards.greenhouse.io/chainguard
+    verified: 2026-09-20
+  - name: Checkly
+    board: https://jobs.ashbyhq.com/checkly
+    verified: 2026-09-20
+  - name: Chromatic
+    board: https://jobs.ashbyhq.com/chromatic
+    verified: 2026-09-20
   - name: CircleCI
     board: https://boards.greenhouse.io/circleci
     verified: 2026-09-19
+  - name: Clerk
+    board: https://jobs.ashbyhq.com/clerk
+    verified: 2026-09-20
+  - name: Coder
+    board: https://jobs.ashbyhq.com/coder
+    verified: 2026-09-20
+  - name: Cursor
+    board: https://jobs.ashbyhq.com/cursor
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Depot
+    board: https://jobs.ashbyhq.com/depot
+    verified: 2026-09-20
+  - name: Descope
+    board: https://boards.greenhouse.io/descope
+    verified: 2026-09-20
+  - name: Endor Labs
+    board: https://boards.greenhouse.io/endorlabs
+    verified: 2026-09-20
+  - name: Fig
+    board: https://jobs.ashbyhq.com/fig
+    verified: 2026-09-20
   - name: GitLab
     board: https://boards.greenhouse.io/gitlab
     tags: [open-source, publicly-traded, remote-first]
@@ -20,6 +60,42 @@ companies:
     board: https://boards.greenhouse.io/grafanalabs
     tags: [open-source, remote-first]
     verified: 2026-09-19
+  - name: Gremlin
+    board: https://boards.greenhouse.io/gremlin
+    verified: 2026-09-20
+  - name: Honeycomb
+    board: https://boards.greenhouse.io/honeycomb
+    verified: 2026-09-20
+  - name: Inngest
+    board: https://jobs.ashbyhq.com/inngest
+    verified: 2026-09-20
+  - name: Jellyfish
+    board: https://jobs.ashbyhq.com/jellyfish
+    verified: 2026-09-20
+  - name: JetBrains
+    board: https://boards.greenhouse.io/jetbrains
+    verified: 2026-09-20
+  - name: Kong
+    board: https://jobs.ashbyhq.com/kong
+    verified: 2026-09-20
+  - name: LaunchDarkly
+    board: https://boards.greenhouse.io/launchdarkly
+    verified: 2026-09-20
+  - name: Linear
+    board: https://jobs.ashbyhq.com/linear
+    verified: 2026-09-20
+  - name: Mabl
+    board: https://boards.greenhouse.io/mabl
+    verified: 2026-09-20
+  - name: Make
+    board: https://boards.greenhouse.io/make
+    verified: 2026-09-20
+  - name: Mintlify
+    board: https://jobs.ashbyhq.com/mintlify
+    verified: 2026-09-20
+  - name: Neon
+    board: https://jobs.ashbyhq.com/neon
+    verified: 2026-09-20
   - name: Netlify
     board: https://boards.greenhouse.io/netlify
     tags: [remote-first]
@@ -28,19 +104,71 @@ companies:
     board: https://jobs.ashbyhq.com/percona
     tags: [open-source, remote-first]
     verified: 2026-09-19
+  - name: PlanetScale
+    board: https://boards.greenhouse.io/planetscale
+    verified: 2026-09-20
+  - name: Raygun
+    board: https://jobs.smartrecruiters.com/raygun
+    verified: 2026-09-20
   - name: Render
     board: https://jobs.ashbyhq.com/render
     verified: 2026-09-19
+  - name: Replit
+    board: https://jobs.ashbyhq.com/replit
+    verified: 2026-09-20
+  - name: Restate
+    board: https://jobs.ashbyhq.com/restate
+    verified: 2026-09-20
+  - name: Sauce Labs
+    board: https://boards.greenhouse.io/saucelabs
+    verified: 2026-09-20
+  - name: Semgrep
+    board: https://jobs.ashbyhq.com/semgrep
+    verified: 2026-09-20
+  - name: Sentry
+    board: https://jobs.ashbyhq.com/sentry
+    verified: 2026-09-20
+  - name: Socket
+    board: https://boards.greenhouse.io/socket
+    verified: 2026-09-20
+  - name: SonarSource
+    board: https://jobs.lever.co/sonarsource
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
   - name: Sourcegraph
     board: https://boards.greenhouse.io/sourcegraph91
     tags: [remote-first]
     verified: 2026-09-19
     note: "Slug is sourcegraph91, not sourcegraph."
+  - name: Speakeasy
+    board: https://jobs.ashbyhq.com/speakeasy
+    verified: 2026-09-20
+  - name: Swarmia
+    board: https://jobs.ashbyhq.com/swarmia
+    verified: 2026-09-20
+  - name: Temporal
+    board: https://jobs.ashbyhq.com/temporal
+    verified: 2026-09-20
+  - name: Trigger.dev
+    board: https://jobs.ashbyhq.com/triggerdev
+    verified: 2026-09-20
   - name: Vercel
     board: https://boards.greenhouse.io/vercel
     tags: [remote-first]
     verified: 2026-09-19
+  - name: Warp
+    board: https://boards.greenhouse.io/warp
+    verified: 2026-09-20
+  - name: WorkOS
+    board: https://jobs.ashbyhq.com/workos
+    verified: 2026-09-20
+  - name: WunderGraph
+    board: https://jobs.ashbyhq.com/wundergraph
+    verified: 2026-09-20
   - name: Zapier
     board: https://jobs.ashbyhq.com/zapier
     tags: [remote-first]
     verified: 2026-09-19
+  - name: Zed
+    board: https://jobs.ashbyhq.com/zed
+    verified: 2026-09-20

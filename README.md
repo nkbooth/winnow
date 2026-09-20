@@ -70,7 +70,7 @@ uv run winnow company add --from seeds --tag remote-first
 uv run winnow run
 ```
 
-`seeds/` holds 65 verified company boards across 18 sectors. Import a file, a
+`seeds/` holds 872 verified company boards across 18 sectors. Import a file, a
 tag, or the lot, then prune. See [seeds/README.md](seeds/README.md) — it is
 built to take pull requests.
 
@@ -85,7 +85,7 @@ The [quickstart](docs/quickstart.md) walks through the same ground more slowly.
 **How-to guides**
 
 - [Add a company board](docs/how-to/add-a-board.md)
-- [Seed lists](seeds/README.md) — 65 verified boards, and how to add yours
+- [Seed lists](seeds/README.md) — 872 verified boards, and how to add yours
 - [Choose where the digest goes](docs/how-to/choose-delivery.md)
 - [Run it on a server](docs/how-to/deploy.md)
 

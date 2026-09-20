@@ -8,21 +8,279 @@ description: >-
   Payments, banking, cards, and crypto exchanges.
 
 companies:
+  - name: Acorns
+    board: https://jobs.ashbyhq.com/acorns
+    verified: 2026-09-20
+  - name: Adyen
+    board: https://boards.greenhouse.io/adyen
+    verified: 2026-09-20
+  - name: Affirm
+    board: https://boards.greenhouse.io/affirm
+    verified: 2026-09-20
+  - name: Alchemy
+    board: https://jobs.ashbyhq.com/alchemy
+    verified: 2026-09-20
+  - name: Alloy
+    board: https://boards.greenhouse.io/alloy
+    verified: 2026-09-20
+  - name: Alpaca
+    board: https://boards.greenhouse.io/alpaca
+    verified: 2026-09-20
+  - name: Altruist
+    board: https://boards.greenhouse.io/altruist
+    verified: 2026-09-20
+  - name: AngelList
+    board: https://jobs.lever.co/angellist
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Anrok
+    board: https://jobs.ashbyhq.com/anrok
+    verified: 2026-09-20
+  - name: Astra
+    board: https://jobs.ashbyhq.com/astra
+    verified: 2026-09-20
+  - name: Belvo
+    board: https://jobs.ashbyhq.com/belvo
+    verified: 2026-09-20
+  - name: Betterment
+    board: https://boards.greenhouse.io/betterment
+    verified: 2026-09-20
+  - name: Bill.com
+    board: https://boards.greenhouse.io/billcom
+    verified: 2026-09-20
+  - name: BitGo
+    board: https://boards.greenhouse.io/bitgo
+    verified: 2026-09-20
+  - name: Bitpanda
+    board: https://boards.greenhouse.io/bitpanda
+    verified: 2026-09-20
+  - name: Blockdaemon
+    board: https://jobs.ashbyhq.com/blockdaemon
+    verified: 2026-09-20
   - name: Brex
     board: https://boards.greenhouse.io/brex
     verified: 2026-09-19
+  - name: Brigit
+    board: https://jobs.ashbyhq.com/brigit
+    verified: 2026-09-20
+  - name: Bybit
+    board: https://boards.greenhouse.io/bybit
+    verified: 2026-09-20
+  - name: Carta
+    board: https://boards.greenhouse.io/carta
+    verified: 2026-09-20
+  - name: CB Insights
+    board: https://boards.greenhouse.io/cbinsights
+    verified: 2026-09-20
+  - name: Chime
+    board: https://boards.greenhouse.io/chime
+    verified: 2026-09-20
+  - name: Circle
+    board: https://jobs.ashbyhq.com/circle
+    verified: 2026-09-20
+  - name: Clear Street
+    board: https://boards.greenhouse.io/clearstreet
+    verified: 2026-09-20
   - name: Coinbase
     board: https://boards.greenhouse.io/coinbase
     tags: [publicly-traded, remote-first]
     verified: 2026-09-19
     note: "Crypto sector: check your rubric's crypto floor."
+  - name: Column
+    board: https://jobs.ashbyhq.com/column
+    verified: 2026-09-20
+  - name: Copilot Money
+    board: https://jobs.ashbyhq.com/copilot-money
+    verified: 2026-09-20
+  - name: Current
+    board: https://boards.greenhouse.io/current
+    verified: 2026-09-20
+  - name: Dave
+    board: https://jobs.ashbyhq.com/dave
+    verified: 2026-09-20
+  - name: Drivewealth
+    board: https://boards.greenhouse.io/drivewealth
+    verified: 2026-09-20
+  - name: Elliptic
+    board: https://jobs.ashbyhq.com/elliptic
+    verified: 2026-09-20
+  - name: eMoney Advisor
+    board: https://boards.greenhouse.io/emoneyadvisor
+    verified: 2026-09-20
+  - name: EquityZen
+    board: https://boards.greenhouse.io/equityzen
+    verified: 2026-09-20
+  - name: Expensify
+    board: https://jobs.ashbyhq.com/expensify
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: FalconX
+    board: https://boards.greenhouse.io/falconx
+    verified: 2026-09-20
+  - name: FastSpring
+    board: https://boards.greenhouse.io/fastspring
+    verified: 2026-09-20
+  - name: Fireblocks
+    board: https://boards.greenhouse.io/fireblocks
+    verified: 2026-09-20
+  - name: Forter
+    board: https://boards.greenhouse.io/forter
+    verified: 2026-09-20
+  - name: Gemini
+    board: https://boards.greenhouse.io/gemini
+    verified: 2026-09-20
+  - name: Happy Money
+    board: https://boards.greenhouse.io/happymoney
+    verified: 2026-09-20
+  - name: Harmonic
+    board: https://jobs.ashbyhq.com/harmonic
+    verified: 2026-09-20
+  - name: IEX
+    board: https://boards.greenhouse.io/iex
+    verified: 2026-09-20
+  - name: Lago
+    board: https://jobs.ashbyhq.com/lago
+    verified: 2026-09-20
+  - name: Ledger
+    board: https://jobs.ashbyhq.com/ledger
+    verified: 2026-09-20
+  - name: Ledgy
+    board: https://boards.greenhouse.io/ledgy
+    verified: 2026-09-20
+  - name: Lithic
+    board: https://boards.greenhouse.io/lithic
+    verified: 2026-09-20
+  - name: M1 Finance
+    board: https://jobs.smartrecruiters.com/m1finance
+    verified: 2026-09-20
+  - name: Melio
+    board: https://boards.greenhouse.io/melio
+    verified: 2026-09-20
+  - name: MEMX
+    board: https://boards.greenhouse.io/memx
+    verified: 2026-09-20
+  - name: Mercury
+    board: https://boards.greenhouse.io/mercury
+    verified: 2026-09-20
+  - name: Modern Treasury
+    board: https://jobs.ashbyhq.com/moderntreasury
+    verified: 2026-09-20
+  - name: Mollie
+    board: https://jobs.ashbyhq.com/mollie
+    verified: 2026-09-20
+  - name: Monarch Money
+    board: https://jobs.ashbyhq.com/monarchmoney
+    verified: 2026-09-20
+  - name: Monzo
+    board: https://boards.greenhouse.io/monzo
+    verified: 2026-09-20
+  - name: N26
+    board: https://boards.greenhouse.io/n26
+    verified: 2026-09-20
+  - name: Nubank
+    board: https://jobs.ashbyhq.com/nubank
+    verified: 2026-09-20
+  - name: OKX
+    board: https://boards.greenhouse.io/okx
+    verified: 2026-09-20
+  - name: Orb
+    board: https://jobs.ashbyhq.com/orb
+    verified: 2026-09-20
+  - name: Paddle
+    board: https://jobs.ashbyhq.com/paddle
+    verified: 2026-09-20
+  - name: Paxos
+    board: https://jobs.ashbyhq.com/paxos
+    verified: 2026-09-20
+  - name: Persona
+    board: https://jobs.ashbyhq.com/persona
+    verified: 2026-09-20
+  - name: Plaid
+    board: https://jobs.ashbyhq.com/plaid
+    verified: 2026-09-20
+  - name: Pleo
+    board: https://jobs.ashbyhq.com/pleo
+    verified: 2026-09-20
+  - name: Prosper
+    board: https://jobs.lever.co/prosper
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Public
+    board: https://boards.greenhouse.io/public
+    verified: 2026-09-20
+  - name: QuickNode
+    board: https://jobs.ashbyhq.com/quicknode
+    verified: 2026-09-20
   - name: Ramp
     board: https://jobs.ashbyhq.com/ramp
     verified: 2026-09-19
+  - name: Range
+    board: https://boards.greenhouse.io/range
+    verified: 2026-09-20
+  - name: Riskified
+    board: https://boards.greenhouse.io/riskified
+    verified: 2026-09-20
+  - name: Robinhood
+    board: https://boards.greenhouse.io/robinhood
+    verified: 2026-09-20
+  - name: Sage Intacct
+    board: https://jobs.smartrecruiters.com/sageintacct
+    verified: 2026-09-20
+  - name: Sardine
+    board: https://jobs.ashbyhq.com/sardine
+    verified: 2026-09-20
+  - name: Sift
+    board: https://jobs.ashbyhq.com/sift
+    verified: 2026-09-20
+  - name: Socure
+    board: https://jobs.ashbyhq.com/socure
+    verified: 2026-09-20
+  - name: SoFi
+    board: https://boards.greenhouse.io/sofi
+    verified: 2026-09-20
+  - name: Specter
+    board: https://jobs.ashbyhq.com/specter
+    verified: 2026-09-20
+  - name: Stigg
+    board: https://jobs.ashbyhq.com/stigg
+    verified: 2026-09-20
   - name: Stripe
     board: https://boards.greenhouse.io/stripe
     verified: 2026-09-19
+  - name: Teller
+    board: https://jobs.lever.co/teller
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Trade Republic
+    board: https://boards.greenhouse.io/traderepublic
+    verified: 2026-09-20
+  - name: TRM Labs
+    board: https://jobs.ashbyhq.com/trm-labs
+    verified: 2026-09-20
+  - name: Unit
+    board: https://jobs.ashbyhq.com/unit
+    verified: 2026-09-20
+  - name: Upstart
+    board: https://boards.greenhouse.io/upstart
+    verified: 2026-09-20
+  - name: Vise
+    board: https://jobs.ashbyhq.com/vise
+    verified: 2026-09-20
+  - name: Wealthfront
+    board: https://jobs.lever.co/wealthfront
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Wealthsimple
+    board: https://jobs.ashbyhq.com/wealthsimple
+    verified: 2026-09-20
   - name: Wise
     board: https://boards.greenhouse.io/wise
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Zeta
+    board: https://jobs.lever.co/zeta
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Zip
+    board: https://jobs.ashbyhq.com/zip
+    verified: 2026-09-20

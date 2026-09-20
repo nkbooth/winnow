@@ -8,6 +8,144 @@ description: >-
   Decarbonisation, energy systems, and climate accounting.
 
 companies:
+  - name: Amperon
+    board: https://boards.greenhouse.io/amperon
+    verified: 2026-09-20
+  - name: Arcadia
+    board: https://jobs.lever.co/arcadia
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Array Technologies
+    board: https://boards.greenhouse.io/array
+    verified: 2026-09-20
+  - name: Aurora Solar
+    board: https://jobs.ashbyhq.com/aurorasolar
+    verified: 2026-09-20
+  - name: Base Power
+    board: https://jobs.ashbyhq.com/base-power
+    verified: 2026-09-20
+  - name: Carbon Direct
+    board: https://boards.greenhouse.io/carbondirect
+    verified: 2026-09-20
+  - name: Carbon Robotics
+    board: https://boards.greenhouse.io/carbonrobotics
+    verified: 2026-09-20
+  - name: Charm Industrial
+    board: https://jobs.lever.co/charmindustrial
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Cloverly
+    board: https://boards.greenhouse.io/cloverly
+    verified: 2026-09-20
+  - name: Crusoe
+    board: https://jobs.ashbyhq.com/crusoe
+    verified: 2026-09-20
+  - name: David Energy
+    board: https://jobs.ashbyhq.com/davidenergy
+    verified: 2026-09-20
+  - name: EnergyHub
+    board: https://boards.greenhouse.io/energyhub
+    verified: 2026-09-20
+  - name: Enode
+    board: https://jobs.ashbyhq.com/enode
+    verified: 2026-09-20
+  - name: Factorial Energy
+    board: https://boards.greenhouse.io/factorialenergy
+    verified: 2026-09-20
+  - name: Fervo Energy
+    board: https://boards.greenhouse.io/fervoenergy
+    verified: 2026-09-20
+  - name: Form Energy
+    board: https://jobs.ashbyhq.com/formenergy
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Group14
+    board: https://boards.greenhouse.io/group14
+    verified: 2026-09-20
+  - name: Hysata
+    board: https://boards.greenhouse.io/hysata
+    verified: 2026-09-20
+  - name: Isometric
+    board: https://jobs.ashbyhq.com/isometric
+    verified: 2026-09-20
+  - name: Leap
+    board: https://jobs.ashbyhq.com/leap
+    verified: 2026-09-20
+  - name: LevelTen Energy
+    board: https://boards.greenhouse.io/leveltenenergy
+    verified: 2026-09-20
+  - name: Living Carbon
+    board: https://jobs.lever.co/livingcarbon
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Lunar Energy
+    board: https://boards.greenhouse.io/lunarenergy
+    verified: 2026-09-20
+  - name: Modo Energy
+    board: https://boards.greenhouse.io/modoenergy
+    verified: 2026-09-20
+  - name: Overstory
+    board: https://boards.greenhouse.io/overstory
+    verified: 2026-09-20
+  - name: Palmetto
+    board: https://boards.greenhouse.io/palmetto
+    verified: 2026-09-20
+  - name: Pano AI
+    board: https://jobs.ashbyhq.com/pano-ai
+    verified: 2026-09-20
+  - name: Patch
+    board: https://boards.greenhouse.io/patch
+    verified: 2026-09-20
+  - name: Quaise
+    board: https://boards.greenhouse.io/quaise
+    verified: 2026-09-20
+  - name: Redwood Materials
+    board: https://boards.greenhouse.io/redwoodmaterials
+    verified: 2026-09-20
+  - name: Rondo Energy
+    board: https://boards.greenhouse.io/rondoenergy
+    verified: 2026-09-20
+  - name: SES AI
+    board: https://boards.greenhouse.io/sesai
+    verified: 2026-09-20
+  - name: Sila
+    board: https://jobs.lever.co/sila
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Sila Nanotechnologies
+    board: https://boards.greenhouse.io/silananotechnologies
+    verified: 2026-09-20
+  - name: Silfab Solar
+    board: https://jobs.smartrecruiters.com/silfabsolar
+    verified: 2026-09-20
+  - name: Solid Power
+    board: https://boards.greenhouse.io/solidpower
+    verified: 2026-09-20
+  - name: SPAN
+    board: https://jobs.ashbyhq.com/span
+    verified: 2026-09-20
+  - name: Sunnova
+    board: https://boards.greenhouse.io/sunnova
+    verified: 2026-09-20
+  - name: Sweep
+    board: https://jobs.ashbyhq.com/sweep
+    verified: 2026-09-20
+  - name: Swift Solar
+    board: https://boards.greenhouse.io/swiftsolar
+    verified: 2026-09-20
+  - name: Sylvera
+    board: https://jobs.ashbyhq.com/sylvera
+    verified: 2026-09-20
+  - name: Tandem PV
+    board: https://jobs.ashbyhq.com/tandempv
+    verified: 2026-09-20
+  - name: Twelve
+    board: https://jobs.ashbyhq.com/twelve
+    verified: 2026-09-20
+  - name: Verdigris
+    board: https://jobs.lever.co/verdigris
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
   - name: Watershed
     board: https://boards.greenhouse.io/watershed
     verified: 2026-09-19

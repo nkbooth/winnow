@@ -8,10 +8,108 @@ description: >-
   Publishing platforms, creator tools, and communities.
 
 companies:
+  - name: Axios
+    board: https://boards.greenhouse.io/axios
+    verified: 2026-09-20
+  - name: Barstool Sports
+    board: https://boards.greenhouse.io/barstoolsports
+    verified: 2026-09-20
+  - name: Bitmovin
+    board: https://boards.greenhouse.io/bitmovin
+    verified: 2026-09-20
+  - name: BuzzFeed
+    board: https://boards.greenhouse.io/buzzfeed
+    verified: 2026-09-20
+  - name: Cloudinary
+    board: https://jobs.lever.co/cloudinary
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Crunchyroll
+    board: https://boards.greenhouse.io/crunchyroll
+    verified: 2026-09-20
   - name: Discord
     board: https://boards.greenhouse.io/discord
     tags: [remote-first]
     verified: 2026-09-19
+  - name: Feedly
+    board: https://jobs.smartrecruiters.com/feedly
+    verified: 2026-09-20
+  - name: Gimlet
+    board: https://jobs.ashbyhq.com/gimlet
+    verified: 2026-09-20
+  - name: Ground News
+    board: https://jobs.ashbyhq.com/groundnews
+    verified: 2026-09-20
+  - name: Hearst
+    board: https://boards.greenhouse.io/hearst
+    verified: 2026-09-20
+  - name: iHeartMedia
+    board: https://jobs.smartrecruiters.com/iheartmedia
+    verified: 2026-09-20
+  - name: Morning Brew
+    board: https://jobs.lever.co/morningbrew
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: MUBI
+    board: https://jobs.ashbyhq.com/mubi
+    verified: 2026-09-20
+  - name: Mux
+    board: https://jobs.ashbyhq.com/mux
+    verified: 2026-09-20
+  - name: News Break
+    board: https://boards.greenhouse.io/newsbreak
+    verified: 2026-09-20
+  - name: Outside
+    board: https://boards.greenhouse.io/outside
+    verified: 2026-09-20
+  - name: Panopto
+    board: https://jobs.lever.co/panopto
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Patreon
+    board: https://jobs.ashbyhq.com/patreon
+    verified: 2026-09-20
+  - name: ProPublica
+    board: https://boards.greenhouse.io/propublica
+    verified: 2026-09-20
+  - name: Raindrop
+    board: https://jobs.ashbyhq.com/raindrop
+    verified: 2026-09-20
+  - name: Restream
+    board: https://jobs.ashbyhq.com/restream
+    verified: 2026-09-20
+  - name: Roku
+    board: https://boards.greenhouse.io/roku
+    verified: 2026-09-20
+  - name: Rumble
+    board: https://boards.greenhouse.io/rumble
+    verified: 2026-09-20
+  - name: Semafor
+    board: https://boards.greenhouse.io/semafor
+    verified: 2026-09-20
+  - name: Spotify
+    board: https://jobs.lever.co/spotify
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
   - name: Substack
     board: https://jobs.ashbyhq.com/substack
     verified: 2026-09-19
+  - name: The Athletic
+    board: https://jobs.lever.co/theathletic
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Tubi
+    board: https://boards.greenhouse.io/tubi
+    verified: 2026-09-20
+  - name: Twitch
+    board: https://boards.greenhouse.io/twitch
+    verified: 2026-09-20
+  - name: Vox Media
+    board: https://boards.greenhouse.io/voxmedia
+    verified: 2026-09-20
+  - name: Wistia
+    board: https://jobs.ashbyhq.com/wistia
+    verified: 2026-09-20
+  - name: Zencastr
+    board: https://jobs.ashbyhq.com/zencastr
+    verified: 2026-09-20

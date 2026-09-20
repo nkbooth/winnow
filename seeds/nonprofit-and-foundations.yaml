@@ -8,10 +8,66 @@ description: >-
   Foundations, nonprofits, and public-benefit organisations.
 
 companies:
+  - name: Acumen
+    board: https://boards.greenhouse.io/acumen
+    verified: 2026-09-20
+  - name: Ashoka
+    board: https://jobs.lever.co/ashoka
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Bloomerang
+    board: https://boards.greenhouse.io/bloomerang
+    verified: 2026-09-20
+  - name: Candid
+    board: https://boards.greenhouse.io/candid
+    verified: 2026-09-20
+  - name: Chan Zuckerberg Initiative
+    board: https://boards.greenhouse.io/chanzuckerberginitiative
+    verified: 2026-09-20
+  - name: Charity Water
+    board: https://jobs.lever.co/charitywater
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Dimagi
+    board: https://boards.greenhouse.io/dimagi
+    verified: 2026-09-20
+  - name: Donorbox
+    board: https://boards.greenhouse.io/donorbox
+    verified: 2026-09-20
+  - name: Fluxx
+    board: https://boards.greenhouse.io/fluxx
+    verified: 2026-09-20
+  - name: Givebutter
+    board: https://jobs.ashbyhq.com/givebutter
+    verified: 2026-09-20
+  - name: GiveDirectly
+    board: https://boards.greenhouse.io/givedirectly
+    verified: 2026-09-20
+  - name: GiveWell
+    board: https://boards.greenhouse.io/givewell
+    verified: 2026-09-20
   - name: Mozilla
     board: https://boards.greenhouse.io/mozilla
     tags: [nonprofit, open-source, privacy-focused, remote-first]
     verified: 2026-09-19
+  - name: Omidyar Network
+    board: https://boards.greenhouse.io/omidyarnetwork
+    verified: 2026-09-20
+  - name: One Acre Fund
+    board: https://boards.greenhouse.io/oneacrefund
+    verified: 2026-09-20
+  - name: Submittable
+    board: https://boards.greenhouse.io/submittable
+    verified: 2026-09-20
+  - name: Thorn
+    board: https://boards.greenhouse.io/thorn
+    verified: 2026-09-20
+  - name: Tides
+    board: https://jobs.ashbyhq.com/tides
+    verified: 2026-09-20
+  - name: Virtuous
+    board: https://jobs.ashbyhq.com/virtuous
+    verified: 2026-09-20
   - name: Wikimedia Foundation
     board: https://boards.greenhouse.io/wikimedia
     tags: [nonprofit, open-source, remote-first]

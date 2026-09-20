@@ -8,8 +8,151 @@ description: >-
   Physical products, devices, and autonomous systems.
 
 companies:
+  - name: 1X
+    board: https://jobs.ashbyhq.com/1x
+    verified: 2026-09-20
+  - name: Aeva
+    board: https://jobs.lever.co/aeva
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Agility Robotics
+    board: https://boards.greenhouse.io/agilityrobotics
+    verified: 2026-09-20
+  - name: Apptronik
+    board: https://boards.greenhouse.io/apptronik
+    verified: 2026-09-20
+  - name: Arlo
+    board: https://jobs.ashbyhq.com/arlo
+    verified: 2026-09-20
+  - name: Axelera
+    board: https://jobs.ashbyhq.com/axelera
+    verified: 2026-09-20
+  - name: Bright Machines
+    board: https://jobs.lever.co/brightmachines
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Carbon
+    board: https://boards.greenhouse.io/carbon
+    verified: 2026-09-20
+  - name: ChargePoint
+    board: https://boards.greenhouse.io/chargepoint
+    verified: 2026-09-20
+  - name: Deepx
+    board: https://jobs.smartrecruiters.com/deepx
+    verified: 2026-09-20
+  - name: Divergent
+    board: https://boards.greenhouse.io/divergent
+    verified: 2026-09-20
+  - name: Eight Sleep
+    board: https://jobs.ashbyhq.com/eightsleep
+    verified: 2026-09-20
+  - name: Fictiv
+    board: https://boards.greenhouse.io/fictiv
+    verified: 2026-09-20
+  - name: Figure
+    board: https://boards.greenhouse.io/figure
+    verified: 2026-09-20
+  - name: Formlabs
+    board: https://boards.greenhouse.io/formlabs
+    verified: 2026-09-20
   - name: Framework
     board: https://ats.rippling.com/framework
     tags: [open-source]
     verified: 2026-09-19
     note: "Repairable laptops. Rippling board."
+  - name: Helm.ai
+    board: https://jobs.ashbyhq.com/helm-ai
+    verified: 2026-09-20
+  - name: Iceye
+    board: https://jobs.ashbyhq.com/iceye
+    verified: 2026-09-20
+  - name: Lucid Motors
+    board: https://boards.greenhouse.io/lucidmotors
+    verified: 2026-09-20
+  - name: Markforged
+    board: https://boards.greenhouse.io/markforged
+    verified: 2026-09-20
+  - name: May Mobility
+    board: https://boards.greenhouse.io/maymobility
+    verified: 2026-09-20
+  - name: Motional
+    board: https://boards.greenhouse.io/motional
+    verified: 2026-09-20
+  - name: Muon Space
+    board: https://boards.greenhouse.io/muonspace
+    verified: 2026-09-20
+  - name: Nabu Casa
+    board: https://jobs.ashbyhq.com/nabucasa
+    verified: 2026-09-20
+  - name: Netgear
+    board: https://jobs.ashbyhq.com/netgear
+    verified: 2026-09-20
+  - name: Oura
+    board: https://boards.greenhouse.io/oura
+    verified: 2026-09-20
+  - name: Path Robotics
+    board: https://boards.greenhouse.io/pathrobotics
+    verified: 2026-09-20
+  - name: Peloton
+    board: https://boards.greenhouse.io/peloton
+    verified: 2026-09-20
+  - name: Physical Intelligence
+    board: https://jobs.ashbyhq.com/physicalintelligence
+    verified: 2026-09-20
+  - name: Planet Labs
+    board: https://boards.greenhouse.io/planetlabs
+    verified: 2026-09-20
+  - name: Polar
+    board: https://jobs.ashbyhq.com/polar
+    verified: 2026-09-20
+  - name: Protolabs
+    board: https://jobs.lever.co/protolabs
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Rocket Lab
+    board: https://boards.greenhouse.io/rocketlab
+    verified: 2026-09-20
+  - name: Sanctuary AI
+    board: https://jobs.ashbyhq.com/sanctuary
+    verified: 2026-09-20
+  - name: SimpliSafe
+    board: https://boards.greenhouse.io/simplisafe
+    verified: 2026-09-20
+  - name: Tonal
+    board: https://jobs.ashbyhq.com/tonal
+    verified: 2026-09-20
+  - name: Toradex
+    board: https://boards.greenhouse.io/toradex
+    verified: 2026-09-20
+  - name: Ubiquiti
+    board: https://boards.greenhouse.io/ubiquiti
+    verified: 2026-09-20
+  - name: Universal Audio
+    board: https://boards.greenhouse.io/universalaudio
+    verified: 2026-09-20
+  - name: Ursa Major
+    board: https://boards.greenhouse.io/ursamajor
+    verified: 2026-09-20
+  - name: Varda Space
+    board: https://boards.greenhouse.io/vardaspace
+    verified: 2026-09-20
+  - name: Velo3D
+    board: https://jobs.lever.co/velo3d
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Wayve
+    board: https://boards.greenhouse.io/wayve
+    verified: 2026-09-20
+  - name: Whoop
+    board: https://jobs.ashbyhq.com/whoop
+    verified: 2026-09-20
+  - name: Xometry
+    board: https://boards.greenhouse.io/xometry
+    verified: 2026-09-20
+  - name: Zoox
+    board: https://jobs.lever.co/zoox
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Zwift
+    board: https://boards.greenhouse.io/zwift
+    verified: 2026-09-20

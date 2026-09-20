@@ -62,7 +62,7 @@ Fastest route — import a curated list:
 uv run winnow company add --from seeds/developer-tools.yaml
 ```
 
-`seeds/` holds 65 verified boards across 18 sectors, and `--tag remote-first`
+`seeds/` holds 872 verified boards across 18 sectors, and `--tag remote-first`
 works across all of them. See [seeds/README.md](../seeds/README.md).
 
 To add one company yourself, open their careers page and copy the URL of the

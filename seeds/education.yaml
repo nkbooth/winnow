@@ -8,15 +8,149 @@ description: >-
   Learning platforms, courseware, and schools.
 
 companies:
+  - name: 360Learning
+    board: https://jobs.lever.co/360learning
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Absorb LMS
+    board: https://jobs.ashbyhq.com/absorblms
+    verified: 2026-09-20
+  - name: Babbel
+    board: https://jobs.ashbyhq.com/babbel
+    verified: 2026-09-20
+  - name: BetterUp
+    board: https://jobs.ashbyhq.com/betterup
+    verified: 2026-09-20
+  - name: Brilliant
+    board: https://jobs.lever.co/brilliant
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Cambly
+    board: https://jobs.ashbyhq.com/cambly
+    verified: 2026-09-20
+  - name: ClassDojo
+    board: https://jobs.ashbyhq.com/classdojo
+    verified: 2026-09-20
+  - name: Clever
+    board: https://boards.greenhouse.io/clever
+    verified: 2026-09-20
   - name: Coursera
     board: https://boards.greenhouse.io/coursera
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: D2L
+    board: https://boards.greenhouse.io/d2l
+    verified: 2026-09-20
+  - name: DataCamp
+    board: https://boards.greenhouse.io/datacamp
+    verified: 2026-09-20
+  - name: Degreed
+    board: https://boards.greenhouse.io/degreed
+    verified: 2026-09-20
+  - name: Disco
+    board: https://boards.greenhouse.io/disco
+    verified: 2026-09-20
+  - name: Docebo
+    board: https://jobs.ashbyhq.com/docebo
+    verified: 2026-09-20
   - name: Duolingo
     board: https://boards.greenhouse.io/duolingo
     tags: [publicly-traded]
     verified: 2026-09-19
+  - name: Edpuzzle
+    board: https://jobs.lever.co/edpuzzle
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Educative
+    board: https://jobs.lever.co/educative
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Flip
+    board: https://boards.greenhouse.io/flip
+    verified: 2026-09-20
+  - name: General Assembly
+    board: https://boards.greenhouse.io/generalassembly
+    verified: 2026-09-20
+  - name: GoGuardian
+    board: https://boards.greenhouse.io/goguardian
+    verified: 2026-09-20
+  - name: InStride
+    board: https://boards.greenhouse.io/instride
+    verified: 2026-09-20
+  - name: Instructure
+    board: https://jobs.ashbyhq.com/instructure
+    verified: 2026-09-20
+  - name: italki
+    board: https://jobs.smartrecruiters.com/italki
+    verified: 2026-09-20
+  - name: IXL Learning
+    board: https://boards.greenhouse.io/ixllearning
+    verified: 2026-09-20
   - name: Khan Academy
     board: https://boards.greenhouse.io/khanacademy
     tags: [nonprofit]
     verified: 2026-09-19
+  - name: LearnUpon
+    board: https://boards.greenhouse.io/learnupon
+    verified: 2026-09-20
+  - name: Lightspeed Systems
+    board: https://boards.greenhouse.io/lightspeedsystems
+    verified: 2026-09-20
+  - name: Litmos
+    board: https://boards.greenhouse.io/litmos
+    verified: 2026-09-20
+  - name: MasterClass
+    board: https://boards.greenhouse.io/masterclass
+    verified: 2026-09-20
+  - name: Mighty
+    board: https://boards.greenhouse.io/mighty
+    verified: 2026-09-20
+  - name: Mighty Networks
+    board: https://boards.greenhouse.io/mightynetworks
+    verified: 2026-09-20
+  - name: Miro
+    board: https://jobs.ashbyhq.com/miro
+    verified: 2026-09-20
+  - name: Newsela
+    board: https://boards.greenhouse.io/newsela
+    verified: 2026-09-20
+  - name: Notion
+    board: https://jobs.ashbyhq.com/notion
+    verified: 2026-09-20
+  - name: Osmo
+    board: https://jobs.ashbyhq.com/osmo
+    verified: 2026-09-20
+  - name: Outschool
+    board: https://boards.greenhouse.io/outschool
+    verified: 2026-09-20
+  - name: Padlet
+    board: https://jobs.ashbyhq.com/padlet
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Preply
+    board: https://jobs.ashbyhq.com/preply
+    verified: 2026-09-20
+  - name: SchoolMint
+    board: https://boards.greenhouse.io/schoolmint
+    verified: 2026-09-20
+  - name: Seesaw
+    board: https://boards.greenhouse.io/seesaw
+    verified: 2026-09-20
+  - name: Springboard
+    board: https://boards.greenhouse.io/springboard
+    verified: 2026-09-20
+  - name: Thinkific
+    board: https://jobs.ashbyhq.com/thinkific
+    verified: 2026-09-20
+  - name: Together Software
+    board: https://jobs.smartrecruiters.com/together
+    verified: 2026-09-20
+  - name: Udacity
+    board: https://boards.greenhouse.io/udacity
+    verified: 2026-09-20
+  - name: Udemy
+    board: https://boards.greenhouse.io/udemy
+    verified: 2026-09-20
+  - name: Unacademy
+    board: https://jobs.smartrecruiters.com/unacademy
+    verified: 2026-09-20

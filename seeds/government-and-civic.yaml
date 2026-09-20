@@ -8,10 +8,74 @@ description: >-
   Public sector, civic technology, and the agencies that buy it.
 
 companies:
+  - name: Accela
+    board: https://boards.greenhouse.io/accela
+    verified: 2026-09-20
+  - name: ActBlue
+    board: https://boards.greenhouse.io/actblue
+    verified: 2026-09-20
+  - name: Axon
+    board: https://boards.greenhouse.io/axon
+    verified: 2026-09-20
+  - name: Brookings
+    board: https://jobs.lever.co/brookings
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: CACI
+    board: https://jobs.smartrecruiters.com/caci
+    verified: 2026-09-20
+  - name: CivicPlus
+    board: https://boards.greenhouse.io/civicplus
+    verified: 2026-09-20
+  - name: Civitech
+    board: https://jobs.lever.co/civitech
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: ClearGov
+    board: https://boards.greenhouse.io/cleargov
+    verified: 2026-09-20
   - name: Code for America
     board: https://boards.greenhouse.io/codeforamerica
     tags: [nonprofit, remote-first]
     verified: 2026-09-19
+  - name: Epirus
+    board: https://boards.greenhouse.io/epirus
+    verified: 2026-09-20
+  - name: Equal Experts
+    board: https://boards.greenhouse.io/equalexperts
+    verified: 2026-09-20
+  - name: Govini
+    board: https://jobs.smartrecruiters.com/govini
+    verified: 2026-09-20
   - name: Mark43
     board: https://boards.greenhouse.io/mark43
     verified: 2026-09-19
+  - name: OpenGov
+    board: https://jobs.ashbyhq.com/opengov
+    verified: 2026-09-20
+  - name: Palantir
+    board: https://jobs.lever.co/palantir
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Primer
+    board: https://jobs.ashbyhq.com/primer
+    verified: 2026-09-20
+  - name: Results for America
+    board: https://boards.greenhouse.io/resultsforamerica
+    verified: 2026-09-20
+  - name: Saronic
+    board: https://jobs.ashbyhq.com/saronic
+    verified: 2026-09-20
+  - name: Scott Logic
+    board: https://jobs.lever.co/scottlogic
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Shield AI
+    board: https://boards.greenhouse.io/shield
+    verified: 2026-09-20
+  - name: Unanet
+    board: https://boards.greenhouse.io/unanet
+    verified: 2026-09-20
+  - name: Versaterm
+    board: https://boards.greenhouse.io/versaterm
+    verified: 2026-09-20

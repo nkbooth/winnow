@@ -8,6 +8,34 @@ description: >-
   Warehouses, pipelines, observability, and product analytics.
 
 companies:
+  - name: Airbyte
+    board: https://jobs.ashbyhq.com/airbyte
+    verified: 2026-09-20
+  - name: Amplitude
+    board: https://boards.greenhouse.io/amplitude
+    verified: 2026-09-20
+  - name: Anomalo
+    board: https://jobs.ashbyhq.com/anomalo
+    verified: 2026-09-20
+  - name: Astronomer
+    board: https://jobs.ashbyhq.com/astronomer
+    verified: 2026-09-20
+  - name: Atlan
+    board: https://jobs.ashbyhq.com/atlan
+    verified: 2026-09-20
+  - name: ClickHouse
+    board: https://jobs.ashbyhq.com/clickhouse
+    verified: 2026-09-20
+  - name: Collibra
+    board: https://boards.greenhouse.io/collibra
+    verified: 2026-09-20
+  - name: Confluent
+    board: https://jobs.ashbyhq.com/confluent
+    verified: 2026-09-20
+  - name: Contentsquare
+    board: https://jobs.lever.co/contentsquare
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
   - name: Cribl
     board: https://jobs.ashbyhq.com/cribl
     tags: [remote-first]
@@ -15,6 +43,15 @@ companies:
   - name: Databricks
     board: https://boards.greenhouse.io/databricks
     verified: 2026-09-19
+  - name: Dataiku
+    board: https://boards.greenhouse.io/dataiku
+    verified: 2026-09-20
+  - name: Deepnote
+    board: https://jobs.ashbyhq.com/deepnote
+    verified: 2026-09-20
+  - name: Dremio
+    board: https://boards.greenhouse.io/dremio
+    verified: 2026-09-20
   - name: Elastic
     board: https://boards.greenhouse.io/elastic
     tags: [publicly-traded, remote-first]
@@ -23,11 +60,102 @@ companies:
   - name: Fivetran
     board: https://boards.greenhouse.io/fivetran
     verified: 2026-09-19
+  - name: Freshpaint
+    board: https://jobs.ashbyhq.com/freshpaint
+    verified: 2026-09-20
+  - name: FullStory
+    board: https://jobs.ashbyhq.com/fullstory
+    verified: 2026-09-20
+  - name: GoodData
+    board: https://jobs.ashbyhq.com/gooddata
+    verified: 2026-09-20
+  - name: Hevo Data
+    board: https://jobs.lever.co/hevodata
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Hex
+    board: https://jobs.ashbyhq.com/hex
+    verified: 2026-09-20
+  - name: Hightouch
+    board: https://boards.greenhouse.io/hightouch
+    verified: 2026-09-20
+  - name: Imply
+    board: https://boards.greenhouse.io/imply
+    verified: 2026-09-20
+  - name: InfluxData
+    board: https://jobs.ashbyhq.com/influxdata
+    verified: 2026-09-20
+  - name: Keboola
+    board: https://jobs.lever.co/keboola
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Lightdash
+    board: https://jobs.ashbyhq.com/lightdash
+    verified: 2026-09-20
+  - name: LogRocket
+    board: https://jobs.lever.co/logrocket
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Materialize
+    board: https://jobs.ashbyhq.com/materialize
+    verified: 2026-09-20
+  - name: Matillion
+    board: https://jobs.lever.co/matillion
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Metabase
+    board: https://jobs.lever.co/metabase
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Mixpanel
+    board: https://boards.greenhouse.io/mixpanel
+    verified: 2026-09-20
+  - name: New Relic
+    board: https://boards.greenhouse.io/newrelic
+    verified: 2026-09-20
+  - name: Pendo
+    board: https://boards.greenhouse.io/pendo
+    verified: 2026-09-20
+  - name: Portable
+    board: https://boards.greenhouse.io/portable
+    verified: 2026-09-20
   - name: PostHog
     board: https://jobs.ashbyhq.com/posthog
     tags: [open-source, remote-first]
     verified: 2026-09-19
+  - name: Prefect
+    board: https://jobs.ashbyhq.com/prefect
+    verified: 2026-09-20
+  - name: Quantum Metric
+    board: https://jobs.lever.co/quantummetric
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Sifflet
+    board: https://jobs.ashbyhq.com/sifflet
+    verified: 2026-09-20
+  - name: Sigma Computing
+    board: https://boards.greenhouse.io/sigmacomputing
+    verified: 2026-09-20
+  - name: Snowflake
+    board: https://jobs.ashbyhq.com/snowflake
+    verified: 2026-09-20
+  - name: Starburst
+    board: https://boards.greenhouse.io/starburst
+    verified: 2026-09-20
+  - name: StarTree
+    board: https://boards.greenhouse.io/startree
+    verified: 2026-09-20
+  - name: Sumo Logic
+    board: https://boards.greenhouse.io/sumologic
+    verified: 2026-09-20
   - name: Supabase
     board: https://jobs.ashbyhq.com/supabase
     tags: [open-source, remote-first]
     verified: 2026-09-19
+  - name: Tinybird
+    board: https://jobs.lever.co/tinybird
+    verified: 2026-09-20
+    note: "Slug-verified only; this vendor publishes no board name to check."
+  - name: Umami
+    board: https://jobs.smartrecruiters.com/umami
+    verified: 2026-09-20

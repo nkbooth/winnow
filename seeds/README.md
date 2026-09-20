@@ -33,26 +33,28 @@ A company belongs to **exactly one** file. A test enforces it.
 
 ## Categories
 
-| File | Contains |
-|---|---|
-| `artificial-intelligence.yaml` | Model labs and training infrastructure |
-| `cloud-and-infrastructure.yaml` | Hosting, networking, operating systems |
-| `commerce-and-logistics.yaml` | Retail, marketplaces, freight, fleets |
-| `data-and-analytics.yaml` | Warehouses, pipelines, observability |
-| `developer-tools.yaml` | Engineers are the customer |
-| `education.yaml` | Learning platforms and schools |
-| `energy-and-climate.yaml` | Decarbonisation and energy systems |
-| `fintech-and-payments.yaml` | Payments, banking, exchanges |
-| `gaming.yaml` | Studios and engines |
-| `government-and-civic.yaml` | Public sector and civic technology |
-| `hardware-and-robotics.yaml` | Physical products and autonomous systems |
-| `healthcare-and-biotech.yaml` | Care delivery and life sciences |
-| `marketing-and-sales-tech.yaml` | CRM, messaging, revenue systems |
-| `media-and-publishing.yaml` | Publishing, creator tools, communities |
-| `nonprofit-and-foundations.yaml` | Foundations and public-benefit organisations |
-| `productivity-and-collaboration.yaml` | Documents, design, chat, files |
-| `security-and-privacy.yaml` | Security products, identity, privacy-first software |
-| `workforce-and-hr.yaml` | Payroll, benefits, employment infrastructure |
+872 boards, every one of them probed before it was written down.
+
+| File | Boards | Contains |
+|---|---|---|
+| `artificial-intelligence.yaml` | 59 | Model labs, training infrastructure, and companies whose product is a model |
+| `cloud-and-infrastructure.yaml` | 45 | Hosting, networking, operating systems, and the platforms other software runs on |
+| `commerce-and-logistics.yaml` | 57 | Retail, marketplaces, freight, fleets, and moving physical things |
+| `data-and-analytics.yaml` | 46 | Warehouses, pipelines, observability, and product analytics |
+| `developer-tools.yaml` | 51 | Software engineers are the customer: CI, editors, APIs, deployment |
+| `education.yaml` | 46 | Learning platforms, courseware, and schools |
+| `energy-and-climate.yaml` | 45 | Decarbonisation, energy systems, and climate accounting |
+| `fintech-and-payments.yaml` | 89 | Payments, banking, cards, and crypto exchanges |
+| `gaming.yaml` | 33 | Game studios and engines |
+| `government-and-civic.yaml` | 22 | Public sector, civic technology, and the agencies that buy it |
+| `hardware-and-robotics.yaml` | 47 | Physical products, devices, and autonomous systems |
+| `healthcare-and-biotech.yaml` | 72 | Care delivery, health platforms, and life sciences |
+| `marketing-and-sales-tech.yaml` | 38 | Customer messaging, CRM, and the systems revenue teams run on |
+| `media-and-publishing.yaml` | 33 | Publishing platforms, creator tools, and communities |
+| `nonprofit-and-foundations.yaml` | 20 | Foundations, nonprofits, and public-benefit organisations |
+| `productivity-and-collaboration.yaml` | 39 | Documents, design, chat, files, and how teams work together |
+| `security-and-privacy.yaml` | 54 | Security products, identity, and privacy-first software |
+| `workforce-and-hr.yaml` | 76 | Payroll, benefits, hiring, and employment infrastructure |
 
 Missing a sector? Add the file. The schema is below and the tests will tell you
 if you got it wrong.
@@ -103,13 +105,38 @@ moves vendor.
 ### Do not guess slugs
 
 A slug is rarely the company name. Sourcegraph's is `sourcegraph91`; Remote's
-is `remotecom`. Of the first fifty slugs guessed while building these files,
-fourteen were wrong — they either 404 or belong to a different company.
+is `remotecom`. Across the sweeps that built these files, **roughly six in ten
+guesses were wrong** — they 404, or they belong to somebody else.
 
-`verify-seeds.py` exists so that guesses become facts before they reach a file.
-Greenhouse and Workable state their own board name, and the script reports a
-mismatch, which is the only guard against adding a board that answers for
-somebody else.
+Two scripts exist so that guesses become facts before they reach a file:
+
+```bash
+./scripts/find-boards.py names.tsv   # sector<TAB>Company -> the board, if any
+./scripts/verify-seeds.py            # re-check everything already listed
+```
+
+`find-boards.py` tries the slugs a company plausibly registered against every
+vendor and reports only what answered.
+
+### Verification is not uniform
+
+The vendors differ in what they will tell you, and that matters more than the
+hit rate:
+
+| Vendor | States its own name | Check available |
+|---|---|---|
+| Greenhouse | Yes | Name match |
+| Workable | Yes | Name match |
+| SmartRecruiters | Yes | Name match |
+| Ashby | Sometimes | Name match where the board sets a page title |
+| Lever | No | Slug only |
+
+A **name match is the only check that catches a slug belonging to a different
+company** — the failure that put Element Solutions' board under Element during
+early resolver testing. Where no name is published, the entry carries a note
+saying so, and the slug being an exact normalisation of the company name makes
+a collision unlikely rather than impossible. Those entries deserve a human
+glance.
 
 ### What not to add
 
