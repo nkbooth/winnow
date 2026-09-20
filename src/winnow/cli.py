@@ -375,10 +375,16 @@ def _fetch(_args: argparse.Namespace) -> int:
         report = pipeline.run_poll(
             conn, profile, boards, adapter_factory=lambda vendor: adapter_for(vendor)
         )
+        pending = len(learning.clusters_awaiting_score(conn))
     finally:
         conn.close()
 
-    print(f"polled {report.boards_polled} boards — {len(report.clusters)} to score")
+    # Not len(report.clusters): that counts every cluster the poll touched,
+    # scored or not, and reading it as a backlog overstates the work. A poll
+    # reporting "109 to score" against 109 clusters already scored that morning
+    # says a model run is due when none is, and a number naming a cost has to
+    # be the cost.
+    print(f"polled {report.boards_polled} boards — {pending} awaiting a score")
     if report.suppressed:
         print(f"{report.suppressed} already decided, suppressed")
     for gate, count in sorted(report.tally.items(), key=lambda item: -item[1]):

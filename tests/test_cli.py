@@ -629,3 +629,32 @@ def test_re_importing_reports_skipped_rather_than_failed(tmp_path, monkeypatch, 
     assert "  failed" not in output, "no entry should be reported as a failure"
     assert "0 failed" in output
     assert "already recorded" in output
+
+
+def test_fetch_reports_how_many_clusters_actually_need_scoring(tmp_path, monkeypatch, capsys):
+    """ "N to score" counted clusters the poll touched, scored or not.
+
+    Read as a backlog it overstated the work: a poll reporting "109 to score"
+    against 109 clusters already scored that morning says a model run is due
+    when none is. A number that names a cost has to be the cost.
+    """
+    from winnow import cli, pipeline
+
+    monkeypatch.setenv("WINNOW_DB", str(tmp_path / "test.db"))
+    monkeypatch.setenv("WINNOW_PROFILE", "examples/profile.yaml")
+    cli.main(["db", "init"])
+
+    monkeypatch.setattr(cli.store, "active_boards", lambda _conn: [object()])
+    monkeypatch.setattr(
+        cli.pipeline,
+        "run_poll",
+        lambda *a, **k: pipeline.PollReport(
+            clusters=(), tally={}, failed_sources=(), suppressed=0, boards_polled=7
+        ),
+    )
+
+    assert cli.main(["fetch"]) == 0
+
+    out = capsys.readouterr().out
+    assert "polled 7 boards" in out
+    assert "0 awaiting a score" in out
