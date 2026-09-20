@@ -129,7 +129,15 @@ VENDORS: dict[str, Vendor] = {
             name="ashby",
             identifier_keys=("slug",),
             url_patterns=(r"^https?://jobs\.ashbyhq\.com/(?P<slug>[A-Za-z0-9._-]+)",),
-            list_url_template="https://api.ashbyhq.com/posting-api/job-board/{slug}",
+            # includeCompensation is not a refinement. Without it the response
+            # carries neither the compensation block nor the flag saying
+            # whether comp was withheld - no keys at all - so every posting
+            # reads as comp-absent and the floor gate can never fire. Found
+            # live on a ClickHouse posting whose salary is plainly published.
+            list_url_template=(
+                "https://api.ashbyhq.com/posting-api/job-board/{slug}"
+                "?includeCompensation=true"
+            ),
             list_key="jobs",
         ),
         Vendor(

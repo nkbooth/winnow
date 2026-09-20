@@ -162,10 +162,43 @@ def _employment_type(value: object) -> tuple[EmploymentType, EmploymentTypeSourc
     return employment_type, EmploymentTypeSource.STRUCTURED
 
 
+def _interval(value: object) -> CompInterval:
+    """Map Ashby's interval, which it writes as prose like ``1 YEAR``."""
+    text = str(value or "").upper()
+    if "HOUR" in text:
+        return CompInterval.HOUR
+    if "YEAR" in text:
+        return CompInterval.YEAR
+    return CompInterval.UNKNOWN
+
+
 def _compensation(
     raw: dict,
 ) -> tuple[int | None, int | None, str | None, CompInterval, CompSource]:
     compensation = raw.get("compensation") or {}
+
+    # summaryComponents carries integers across every tier; the summary strings
+    # are text written for a human to read. Both agree today, and reading the
+    # numbers means a change in how Ashby formats a salary for display cannot
+    # quietly change what a hard gate decides.
+    #
+    # Across tiers it is the union that matters: a posting paying 110-165k over
+    # two tiers is a different proposition from one paying 130-165k, and
+    # collapsing to a single tier would hide the spread the range-ratio check
+    # exists to catch.
+    for component in compensation.get("summaryComponents") or ():
+        if not isinstance(component, dict) or component.get("compensationType") != "Salary":
+            continue
+        minimum, maximum = component.get("minValue"), component.get("maxValue")
+        if isinstance(minimum, int | float) and isinstance(maximum, int | float):
+            return (
+                int(minimum),
+                int(maximum),
+                component.get("currencyCode"),
+                _interval(component.get("interval")),
+                CompSource.STATED,
+            )
+
     summary = compensation.get("compensationTierSummary") or compensation.get(
         "scrapeableCompensationSalarySummary"
     )

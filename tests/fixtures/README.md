@@ -10,6 +10,7 @@ offline, with no network.
 | `greenhouse_tailscale_board.json` | Greenhouse board | `name: "Tailscale"` — the only vendor that self-identifies, used for resolver auto-accept |
 | `greenhouse_404_elementsolutions.json` | Greenhouse | Error shape for a slug that exists on another vendor |
 | `lever_elementsolutions_postings.json` | Lever, 2 postings | **`salaryRange` structured comp**; `workplaceType`; `categories.commitment`; `createdAt` in **epoch milliseconds** |
+| `ashby_clickhouse_jobs.json` | Ashby, 202 jobs (captured 2026-09-20) | **Compensation, which the endpoint omits entirely unless `includeCompensation=true` is asked for.** 158 publish a salary, 44 withhold one, 42 span multiple tiers. Captured from the URL the adapter actually requests — the earlier Ashby fixture was not, which is how the missing parameter survived. |
 | `ashby_1password_jobs.json` | Ashby, 62 jobs | `employmentType` enum; `isRemote` boolean; `isListed`; **`shouldDisplayCompensationOnJobPostings: false`** (withheld ≠ absent); zero within-board duplication |
 | `smartrecruiters_bosch_postings.json` | SmartRecruiters, 20 of 4,819 (captured 2026-09-19) | `company.name` self-identifies; `location.remote` and `location.hybrid` as **booleans**; `typeOfEmployment.label`; no description in the list payload |
 | `smartrecruiters_bosch_detail.json` | SmartRecruiters detail | `jobAd.sections.{jobDescription,qualifications,additionalInformation,companyDescription}` as HTML, plus `applyUrl` |
@@ -23,3 +24,8 @@ offline, with no network.
 
 Boards change. These are a dated snapshot precisely so tests do not drift with them —
 do not refresh them casually, and if you do, re-check the gotchas above still reproduce.
+
+**Capture from the URL the adapter requests, not a URL you composed by hand.** An Ashby
+fixture captured with `includeCompensation=true`, against an adapter that requested the
+endpoint without it, made every published salary invisible in production while the tests
+stayed green for weeks. A fixture from a different URL is a test of something nobody runs.
