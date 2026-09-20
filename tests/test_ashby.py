@@ -223,13 +223,13 @@ def test_structured_numbers_are_preferred_over_the_display_string(fixtures):
     """
     payload = fixtures("ashby_clickhouse_jobs.json")
     raw = next(
-        j for j in payload["jobs"]
+        j
+        for j in payload["jobs"]
         if (j.get("compensation") or {}).get("summaryComponents")
         and j.get("shouldDisplayCompensationOnJobPostings")
     )
     salary = next(
-        c for c in raw["compensation"]["summaryComponents"]
-        if c.get("compensationType") == "Salary"
+        c for c in raw["compensation"]["summaryComponents"] if c.get("compensationType") == "Salary"
     )
 
     posting = AshbyAdapter().normalize(raw, CLICKHOUSE, now=NOW)

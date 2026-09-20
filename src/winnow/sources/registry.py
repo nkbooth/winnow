@@ -135,8 +135,7 @@ VENDORS: dict[str, Vendor] = {
             # reads as comp-absent and the floor gate can never fire. Found
             # live on a ClickHouse posting whose salary is plainly published.
             list_url_template=(
-                "https://api.ashbyhq.com/posting-api/job-board/{slug}"
-                "?includeCompensation=true"
+                "https://api.ashbyhq.com/posting-api/job-board/{slug}?includeCompensation=true"
             ),
             list_key="jobs",
         ),
