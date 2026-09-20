@@ -13,6 +13,7 @@ from __future__ import annotations
 import os
 import sqlite3
 import webbrowser
+from datetime import datetime
 from pathlib import Path
 
 from textual import on, work
@@ -263,6 +264,7 @@ class ReviewApp(App[None]):
         self.status: str = ""
         self._view: str = _VIEWS[0]
         self._show_below_threshold: bool = False
+        self._showing_all: bool = False
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -274,7 +276,7 @@ class ReviewApp(App[None]):
         table = self.query_one("#queue", DataTable)
         table.cursor_type = "row"
         table.add_columns("score", "title", "company", "comp", "source", "")
-        self.action_reload()
+        self._rebuild()
 
     def action_cycle_view(self) -> None:
         """Move between the three lists a search actually has.
@@ -285,15 +287,31 @@ class ReviewApp(App[None]):
         been in the queue.
         """
         self._view = _VIEWS[(_VIEWS.index(self._view) + 1) % len(_VIEWS)]
-        self.action_reload()
+        self._rebuild()
 
     def action_reload(self) -> None:
+        """Rebuild the current list, and say that it happened.
+
+        The rebuild takes about eighty milliseconds, so the key is never slow —
+        but on a queue that has not changed it produces no visible difference,
+        which is indistinguishable from the key doing nothing. The timestamp
+        moves whether or not the rows did.
+
+        Only the keystroke reports. Every other action rebuilds too, and their
+        own message is the more useful one.
+        """
+        self._rebuild()
+        self.status = f"reloaded {datetime.now().strftime('%H:%M:%S')}"
+        self.query_one("#detail", Static).update(self.status)
+
+    def _rebuild(self) -> None:
         """Rebuild the current list from the store."""
         table = self.query_one("#queue", DataTable)
         table.clear()
         self._rows.clear()
 
-        for row in self._current_rows():
+        view = self._current_view()
+        for row in view.rows:
             key = str(row.cluster_id)
             self._rows[key] = row.cluster_id
             table.add_row(
@@ -306,48 +324,33 @@ class ReviewApp(App[None]):
                 key=key,
             )
 
-        self.sub_title = f"{len(self._rows)} {_LABELS[self._view]}{self._withheld_note()}"
+        note = " — all scored" if self._showing_all else _withheld_note(view)
+        self.sub_title = f"{len(self._rows)} {_LABELS[self._view]}{note}"
         self._show_detail()
 
-    def _current_rows(self) -> list[data.QueueRow]:
-        """The rows for the list being shown.
+    def _current_view(self) -> data.ReviewLists:
+        """The rows for the list being shown, and anything held back.
 
         Only the review queue filters on score. The other lists hold roles a
         decision has already been made about, and hiding one because the rubric
         has since been retuned would lose work rather than tidy it.
         """
         if self._view != "review":
-            return _LISTS[self._view](self._conn)
-        return data.queue(
+            return data.ReviewLists(
+                rows=_LISTS[self._view](self._conn), below_threshold=0, auto_rejected=0
+            )
+        self._showing_all = self._show_below_threshold
+        return data.review_lists(
             self._conn,
-            profile=self._profile,
+            self._profile,
             include_below_threshold=self._show_below_threshold,
         )
-
-    def _withheld_note(self) -> str:
-        """Say how many rows the threshold is holding back, if any.
-
-        A list that quietly got shorter reads as a quiet day, and this project
-        does not let a number do that.
-        """
-        if self._view != "review":
-            return ""
-        if self._show_below_threshold:
-            return " — all scored"
-
-        notes = []
-        held = data.below_threshold_count(self._conn, self._profile)
-        if held:
-            notes.append(f"{held} below {self._profile.score_threshold}")
-        rejected = data.vetoed_count(self._conn, self._profile)
-        if rejected:
-            notes.append(f"{rejected} auto-rejected")
-        return f" · {' · '.join(notes)}" if notes else ""
 
     def action_show_all(self) -> None:
         """Toggle the below-threshold rows into the review queue."""
         self._show_below_threshold = not self._show_below_threshold
-        self.action_reload()
+        self._rebuild()
+        self.status = "showing everything scored" if self._show_below_threshold else "filtered"
 
     @on(DataTable.RowHighlighted)
     def _highlighted(self, _event: DataTable.RowHighlighted) -> None:
@@ -510,7 +513,7 @@ class ReviewApp(App[None]):
                 return
             learning.record_final(self._conn, draft.id, body, source="pasted")
             self.status = "sent version recorded"
-            self.action_reload()
+            self._rebuild()
 
         self.push_screen(RevisionScreen(draft.final_body or draft.body), saved)
 
@@ -535,7 +538,7 @@ class ReviewApp(App[None]):
 
         learning.mark_submitted(self._conn, drafts[0].id)
         self.status = "marked submitted"
-        self.action_reload()
+        self._rebuild()
 
     def action_send(self) -> None:
         """Send the newest unsent draft for the selected opportunity."""
@@ -605,7 +608,7 @@ class ReviewApp(App[None]):
             return
 
         self.status = f"undid {undone.decision}: {undone.company} — {undone.title}"
-        self.action_reload()
+        self._rebuild()
 
     def _decide(
         self, decision: str, reason: str | None = None, cluster_id: int | None = None
@@ -624,7 +627,21 @@ class ReviewApp(App[None]):
         # mistake goes unnoticed until the row is looked for later.
         named = f"{row.company} — {row.title}" if row else ""
         self.status = f"{_PAST_TENSE[decision]} {named} · u to undo"
-        self.action_reload()
+        self._rebuild()
+
+
+def _withheld_note(view: data.ReviewLists) -> str:
+    """Say how many rows are being held back, if any.
+
+    A list that quietly got shorter reads as a quiet day, and this project does
+    not let a number do that.
+    """
+    notes = []
+    if view.below_threshold:
+        notes.append(f"{view.below_threshold} below threshold")
+    if view.auto_rejected:
+        notes.append(f"{view.auto_rejected} auto-rejected")
+    return f" · {' · '.join(notes)}" if notes else ""
 
 
 def _misfire_note(count: int) -> str:

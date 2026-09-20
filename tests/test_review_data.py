@@ -591,3 +591,44 @@ def test_the_count_of_auto_rejected_rows_is_reported(conn, seeded, profile):
     learning.record_score(conn, cluster_id, _record(88, vetoes=({"gate": "onsite_required"},)))
 
     assert data.vetoed_count(conn, profile) == 1
+
+
+def test_one_pass_produces_the_rows_and_both_counts(conn, seeded, profile, make_posting):
+    """Reload built the whole queue three times: rows, then each count.
+
+    83ms at this size, so nobody would notice — but the work grows with the
+    store, and a number shown beside a list should come from the same pass that
+    produced the list rather than from two more walks of it.
+    """
+    _weak_cluster(conn, profile, make_posting)
+    learning.record_score(
+        conn, seeded["Director of RevOps"], _record(88, vetoes=({"gate": "onsite_required"},))
+    )
+
+    view = data.review_lists(conn, profile)
+
+    assert [row.cluster_id for row in view.rows] == [seeded["Director, Business Systems"]]
+    assert view.below_threshold == 1
+    assert view.auto_rejected == 1
+
+
+def test_the_one_pass_view_agrees_with_the_separate_calls(conn, seeded, profile, make_posting):
+    """Two ways of asking must not be able to disagree."""
+    _weak_cluster(conn, profile, make_posting)
+
+    view = data.review_lists(conn, profile)
+
+    assert [r.cluster_id for r in view.rows] == [
+        r.cluster_id for r in data.queue(conn, profile=profile)
+    ]
+    assert view.below_threshold == data.below_threshold_count(conn, profile)
+    assert view.auto_rejected == data.vetoed_count(conn, profile)
+
+
+def test_showing_everything_holds_nothing_back(conn, seeded, profile, make_posting):
+    _weak_cluster(conn, profile, make_posting)
+
+    view = data.review_lists(conn, profile, include_below_threshold=True)
+
+    assert len(view.rows) == 3
+    assert (view.below_threshold, view.auto_rejected) == (0, 0)

@@ -728,3 +728,26 @@ async def test_hard_gate_vetoes_are_counted_in_the_title(app, conn, profile):
         await pilot.press("A")
         await pilot.pause()
         assert app.query_one("#queue").row_count == 2
+
+
+async def test_r_says_it_reloaded_even_when_nothing_changed(app):
+    """No visible difference is indistinguishable from the key not working."""
+    async with app.run_test() as pilot:
+        await pilot.press("r")
+        await pilot.pause()
+        first = app.status
+        assert "reloaded" in first
+
+        await pilot.press("r")
+        await pilot.pause()
+        assert "reloaded" in app.status
+
+
+async def test_a_decision_still_reports_itself_not_the_reload(app, conn):
+    """Every action rebuilds; their own message is the more useful one."""
+    async with app.run_test() as pilot:
+        await pilot.press("i")
+        await pilot.pause()
+
+    assert "reloaded" not in app.status
+    assert "interested" in app.status

@@ -210,6 +210,51 @@ def queue(
     return rows
 
 
+@dataclass(frozen=True)
+class ReviewLists:
+    """The review queue and what it is holding back, from one pass.
+
+    The counts belong to the list they sit beside, so they are produced by the
+    walk that produced it rather than by two more walks of the same data.
+    """
+
+    rows: list[QueueRow]
+    below_threshold: int
+    auto_rejected: int
+
+
+def review_lists(
+    conn: sqlite3.Connection, profile: Profile, *, include_below_threshold: bool = False
+) -> ReviewLists:
+    """Build the review queue and its held-back counts together.
+
+    Args:
+        conn: An open connection.
+        profile: The rubric, whose threshold and hard gates decide what shows.
+        include_below_threshold: Show everything scored, holding nothing back.
+
+    Returns:
+        The rows to display and how many were withheld, and why.
+    """
+    everything = queue(conn, profile=profile, include_below_threshold=True)
+    if include_below_threshold:
+        return ReviewLists(rows=everything, below_threshold=0, auto_rejected=0)
+
+    closed = _closed_clusters(conn)
+    rows, below, rejected = [], 0, 0
+    for row in everything:
+        if row.cluster_id in closed:
+            continue
+        if row.score < profile.score_threshold:
+            below += 1
+        elif _auto_rejected(row, profile):
+            rejected += 1
+        else:
+            rows.append(row)
+
+    return ReviewLists(rows=rows, below_threshold=below, auto_rejected=rejected)
+
+
 def _auto_rejected(row: QueueRow, profile: Profile) -> bool:
     """Whether a veto on this row names a gate the rubric calls auto-reject.
 
