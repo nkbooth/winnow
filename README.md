@@ -123,8 +123,9 @@ Comments explain **why**. The code says what it does; a comment earns its place
 by recording a constraint, a measurement, or a mistake worth not repeating.
 
 ```bash
-./scripts/dev.sh uv run pytest        # 700+ tests, no network
-./scripts/dev.sh uv run ruff check src tests
+./scripts/dev.sh uv run pytest        # 760+ tests, no network
+./scripts/dev.sh uv run ruff check    # the whole repo, as CI does
+./scripts/dev.sh uv run ruff format --check
 ```
 
 ## Licence

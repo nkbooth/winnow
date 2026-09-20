@@ -20,8 +20,8 @@ The access token goes straight from the homeserver into 1Password. It is never
 printed, so it never needs rotating because of where it was seen.
 """
 
-import os
 import argparse
+import os
 import sys
 
 import httpx
