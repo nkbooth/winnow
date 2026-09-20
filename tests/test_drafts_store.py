@@ -197,14 +197,37 @@ def test_the_drafter_is_shown_what_was_actually_sent(conn, cluster):
     assert learning.recent_sent_letters(conn, limit=3) == ("The revised one.",)
 
 
-def test_an_unrevised_but_sent_letter_is_also_an_example(conn, cluster):
-    """If he sent it untouched, that is a letter he was happy with."""
-    draft_id = learning.record_draft(conn, cluster, _draft())
-    learning.mark_submitted(conn, draft_id)
+def test_an_emailed_letter_is_an_example_because_the_body_is_what_left(conn, cluster):
+    """`s` sends the stored body verbatim, so here the proposal is the letter."""
+    draft_id = learning.record_draft(conn, cluster, _draft(recipient="jobs@example.com"))
+    learning.mark_draft_sent(conn, draft_id, "<x@example.invalid>")
 
     examples = learning.recent_sent_letters(conn, limit=3)
     assert len(examples) == 1
     assert examples[0].startswith("Dear hiring team,")
+
+
+def test_a_submission_with_no_captured_text_is_not_a_voice_example(conn, cluster):
+    """Marking `a` after pasting into a form says an application happened.
+
+    It says nothing about what text went out. If the letter was rewritten
+    before pasting — the usual reason to rewrite it — then feeding the stored
+    proposal back as an exemplar teaches the model that its own output is how
+    he writes. That is the feedback loop running backwards: it reinforces the
+    register it exists to correct, and looks like it is learning while it does.
+    """
+    draft_id = learning.record_draft(conn, cluster, _draft())
+    learning.mark_submitted(conn, draft_id)
+
+    assert learning.recent_sent_letters(conn, limit=3) == ()
+
+
+def test_capturing_the_sent_text_makes_it_an_example(conn, cluster):
+    """Which is what `e`, and the Sent-folder sweep, are for."""
+    draft_id = learning.record_draft(conn, cluster, _draft())
+    learning.record_final(conn, draft_id, "What actually went out.", source="pasted")
+
+    assert learning.recent_sent_letters(conn, limit=3) == ("What actually went out.",)
 
 
 def test_an_unsent_draft_is_not_an_example(conn, cluster):

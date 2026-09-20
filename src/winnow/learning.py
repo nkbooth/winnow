@@ -658,11 +658,25 @@ def recent_sent_letters(conn: sqlite3.Connection, *, limit: int = 3) -> tuple[st
             enough more would start teaching the model to repeat sentences.
 
     Returns:
-        The sent text of each, revised where it was revised.
+        The text that actually went out, newest first.
+
+        Only letters whose text is *known* qualify. ``final_body`` is text
+        somebody captured — pasted in during review, or read back out of the
+        Sent folder. ``sent_at`` means this process emailed the stored body, so
+        there the proposal is the letter.
+
+        A submission marked by hand with neither is deliberately excluded. It
+        records that an application happened and says nothing about what was
+        sent, and if the letter was rewritten before pasting — the usual reason
+        to rewrite one — then offering the stored proposal as an exemplar
+        teaches the model that its own output is how he writes. That is this
+        loop running backwards: reinforcing the register it exists to correct,
+        while looking like it is learning.
     """
     rows = conn.execute(
         "SELECT coalesce(final_body, body) AS text FROM drafts "
-        "WHERE submitted_at IS NOT NULL ORDER BY submitted_at DESC, id DESC LIMIT ?",
+        "WHERE final_body IS NOT NULL OR sent_at IS NOT NULL "
+        "ORDER BY coalesce(submitted_at, sent_at) DESC, id DESC LIMIT ?",
         (limit,),
     ).fetchall()
     return tuple(row["text"] for row in rows)
