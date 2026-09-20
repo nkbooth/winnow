@@ -7,6 +7,7 @@ it is asserted here — a later edit that hands the digest timer the mail token
 would otherwise be invisible until it mattered.
 """
 
+import re
 from pathlib import Path
 
 import pytest
@@ -228,3 +229,16 @@ def test_the_wrapper_hands_every_path_the_container_needs():
 
     for variable in ("WINNOW_DB", "WINNOW_PROFILE", "WINNOW_CONFIG", "WINNOW_ASSETS"):
         assert f"-e {variable}=" in script, f"{variable} is not passed to the container"
+
+
+def test_the_digest_may_run_long_enough_to_finish_a_large_board_list():
+    """Polling is sequential, so the run scales with how many boards there are.
+
+    A timeout that fits twenty boards and not two hundred kills the run
+    part-way, and a part-way run looks exactly like a quiet morning — the one
+    failure this project consistently refuses to allow.
+    """
+    unit = Path("deploy/winnow-digest.container").read_text()
+    timeout = int(re.search(r"TimeoutStartSec=(\d+)", unit).group(1))
+
+    assert timeout >= 3600

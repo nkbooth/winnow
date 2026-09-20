@@ -106,3 +106,56 @@ def test_a_malformed_file_names_itself(tmp_path):
 
     with pytest.raises(ValueError, match="broken.yaml"):
         seeds.load(bad)
+
+
+# ---------------------------------------------------------------------------
+# Finding the lists, from wherever winnow happens to be installed
+# ---------------------------------------------------------------------------
+
+
+def test_a_category_can_be_named_instead_of_a_path(tmp_path):
+    """`--from developer-tools` is what a person types; a path is what a repo has.
+
+    An installed copy has no `seeds/` next to the working directory, so naming
+    the file only works for someone standing in a clone. The category name has
+    to resolve wherever the lists were installed.
+    """
+    directory = tmp_path / "lists"
+    directory.mkdir()
+    (directory / "widgets.yaml").write_text(
+        "category: widgets\ndescription: Test\ncompanies:\n"
+        "  - name: Acme\n    board: https://boards.greenhouse.io/acme\n    verified: 2026-09-20\n"
+    )
+
+    resolved = seeds.resolve("widgets", directory)
+
+    assert resolved == directory / "widgets.yaml"
+
+
+def test_an_existing_path_is_used_as_given(tmp_path):
+    path = tmp_path / "mine.yaml"
+    path.write_text("category: mine\ndescription: T\ncompanies: []\n")
+
+    assert seeds.resolve(str(path), tmp_path) == path
+
+
+def test_an_unknown_category_lists_the_ones_that_exist(tmp_path):
+    """A typo should say what was meant, not just that nothing was found."""
+    directory = tmp_path / "lists"
+    directory.mkdir()
+    (directory / "widgets.yaml").write_text("category: widgets\ndescription: T\ncompanies: []\n")
+
+    with pytest.raises(FileNotFoundError, match="widgets"):
+        seeds.resolve("wigets", directory)
+
+
+def test_the_shipped_lists_are_found_without_a_clone(monkeypatch, tmp_path):
+    """Installed from a package or run from an image, the lists come along."""
+    bundled = tmp_path / "share" / "winnow" / "seeds"
+    bundled.mkdir(parents=True)
+    monkeypatch.setenv("WINNOW_SEEDS", str(bundled))
+
+    from winnow import config
+
+    config._cached_settings.cache_clear()
+    assert config.seeds_path() == bundled

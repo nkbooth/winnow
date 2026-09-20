@@ -111,6 +111,39 @@ def _read(file: Path) -> list[SeedEntry]:
     return entries
 
 
+def resolve(name: str, directory: Path | str) -> Path:
+    """Turn what somebody typed into a seed file or directory.
+
+    A path is what a repository has; a category name is what a person types.
+    Both work, because an installed copy has no ``seeds/`` beside the working
+    directory and naming the file would then only work for someone standing in
+    a clone.
+
+    Args:
+        name: A path, or a bare category name such as ``developer-tools``.
+        directory: Where the shipped lists live.
+
+    Returns:
+        The file or directory to load.
+
+    Raises:
+        FileNotFoundError: If neither resolves. The message lists the
+            categories that do exist, because a typo should say what was meant
+            rather than only that nothing was found.
+    """
+    given = Path(name)
+    if given.exists():
+        return given
+
+    directory = Path(directory)
+    for candidate in (directory / name, directory / f"{name}.yaml"):
+        if candidate.exists():
+            return candidate
+
+    available = ", ".join(sorted(p.stem for p in directory.glob("*.yaml"))) or "none installed"
+    raise FileNotFoundError(f"no seed list {name!r} — available: {available}")
+
+
 def categories(directory: Path | str = "seeds") -> dict[str, str]:
     """Return each category and its description, for listing them to a human."""
     found = {}

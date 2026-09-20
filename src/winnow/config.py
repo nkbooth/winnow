@@ -18,6 +18,7 @@ DB_ENV_VAR = "WINNOW_DB"
 PROFILE_ENV_VAR = "WINNOW_PROFILE"
 ASSETS_ENV_VAR = "WINNOW_ASSETS"
 CONFIG_ENV_VAR = "WINNOW_CONFIG"
+SEEDS_ENV_VAR = "WINNOW_SEEDS"
 
 _XDG_DATA = Path(os.environ.get("XDG_DATA_HOME") or Path.home() / ".local" / "share")
 _XDG_CONFIG = Path(os.environ.get("XDG_CONFIG_HOME") or Path.home() / ".config")
@@ -52,6 +53,22 @@ def assets_path() -> Path:
     """
     override = os.environ.get(ASSETS_ENV_VAR)
     return Path(override) if override else _DEFAULT_CONFIG_DIR / "assets"
+
+
+def seeds_path() -> Path:
+    """Return the directory holding the shipped seed lists.
+
+    Looked for where a package or image would have put them before falling
+    back to a checkout, so ``--from developer-tools`` works the same whether
+    winnow was installed, containerised, or is being run from a clone.
+    """
+    override = os.environ.get(SEEDS_ENV_VAR)
+    if override:
+        return Path(override)
+    for candidate in (Path("/usr/share/winnow/seeds"), Path("seeds")):
+        if candidate.is_dir():
+            return candidate
+    return Path("seeds")
 
 
 def config_path() -> Path:

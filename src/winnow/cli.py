@@ -67,7 +67,7 @@ def build_parser() -> argparse.ArgumentParser:
     add.add_argument(
         "--from",
         dest="seed_path",
-        help="import every board in a seed file or directory (see seeds/)",
+        help="import a seed list: a category name, a file, or a directory",
     )
     add.add_argument(
         "--tag",
@@ -261,7 +261,14 @@ def _company_add_seeds(conn: sqlite3.Connection, path: str, *, tags: list[str]) 
     failure and carries on. Stopping at the first would make a forty-company
     file unusable the day one company got acquired.
     """
-    entries = seeds.load(path, tags=tags)
+    try:
+        resolved = seeds.resolve(path, config.seeds_path())
+    except FileNotFoundError as error:
+        print(error, file=sys.stderr)
+        return 2
+
+    print(f"reading {resolved}")
+    entries = seeds.load(resolved, tags=tags)
     if not entries:
         print(f"no entries in {path}" + (f" tagged {', '.join(tags)}" if tags else ""))
         return 0

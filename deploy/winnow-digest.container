@@ -60,7 +60,13 @@ NoNewPrivileges=true
 
 [Service]
 Type=oneshot
-TimeoutStartSec=900
+# Boards are polled one at a time on purpose — these are public endpoints used
+# as intended, and concurrency is how a polite client becomes a rude one. That
+# makes the run scale with the board count: twenty boards finish in under a
+# minute, a couple of hundred take the better part of ten. The ceiling is set
+# high enough that a large board list is not silently truncated mid-poll, since
+# a run killed part-way looks exactly like a quiet morning.
+TimeoutStartSec=3600
 
 [Install]
 WantedBy=default.target

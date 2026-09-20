@@ -37,6 +37,10 @@ RUN microdnf install -y --nodocs shadow-utils ca-certificates \
 COPY --from=build /opt/python /opt/python
 COPY --from=build /opt/winnow /opt/winnow
 COPY --from=docker.io/1password/op:2 /usr/local/bin/op /usr/local/bin/op
+# The seed lists are part of the product: the quickstart tells people to run
+# `winnow company add --from developer-tools`, and that has to work in the
+# artifact they actually run rather than only in a checkout.
+COPY seeds /usr/share/winnow/seeds
 
 ENV PATH="/opt/winnow/bin:${PATH}" \
     WINNOW_DB=/var/lib/winnow/winnow.db \
