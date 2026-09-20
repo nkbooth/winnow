@@ -382,3 +382,111 @@ def test_an_application_that_progressed_is_still_one_application(conn, profile, 
     assert sum(band.applications for band in report) == 1
     assert sum(band.interviews for band in report) == 1
     assert sum(band.rejections for band in report) == 0
+
+
+# ---------------------------------------------------------------------------
+# What a veto establishes about the posting itself
+# ---------------------------------------------------------------------------
+
+
+def test_a_veto_records_the_arrangement_it_established(conn, profile, make_posting):
+    """The system knew it was hybrid and the posting still said UNKNOWN.
+
+    Greenhouse gave a city and nothing else, so the adapter was right to say
+    unknown. Then the model read "go into the office 3 days per week", quoted
+    it, and vetoed — and that finding lived only in the score. Anyone reading
+    the posting afterwards, including the detail pane, saw UNKNOWN for a role
+    whose arrangement the system had established and written down.
+    """
+    from winnow.models import RemoteSource, RemoteStatus
+
+    company_id = store.insert_company(conn, "Faire")
+    posting = make_posting(
+        company="Faire",
+        title="Head of Revenue Operations",
+        source_id="8617151002",
+        remote=RemoteStatus.UNKNOWN,
+        remote_source=RemoteSource.ABSENT,
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+
+    learning.record_score(
+        conn,
+        cluster_id,
+        _score_with_veto("hybrid_required", "go into the office 3 days per week"),
+    )
+
+    row = conn.execute(
+        "SELECT remote, remote_source FROM postings WHERE source_id = '8617151002'"
+    ).fetchone()
+    assert row["remote"] == RemoteStatus.HYBRID
+    assert row["remote_source"] == RemoteSource.DESCRIPTION_TEXT
+
+
+def test_a_veto_never_overwrites_a_stronger_source(conn, profile, make_posting):
+    """A structured field beats a model reading prose, and keeps its place."""
+    from winnow.models import RemoteSource, RemoteStatus
+
+    company_id = store.insert_company(conn, "Example Co")
+    posting = make_posting(
+        company="Example Co",
+        title="Director of Business Systems",
+        source_id="structured-1",
+        remote=RemoteStatus.REMOTE,
+        remote_source=RemoteSource.STRUCTURED,
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+
+    learning.record_score(
+        conn, cluster_id, _score_with_veto("onsite_required", "onsite five days a week")
+    )
+
+    row = conn.execute(
+        "SELECT remote, remote_source FROM postings WHERE source_id = 'structured-1'"
+    ).fetchone()
+    assert row["remote"] == RemoteStatus.REMOTE, "the employer's own field stands"
+    assert row["remote_source"] == RemoteSource.STRUCTURED
+
+
+def test_a_veto_about_something_else_leaves_the_arrangement_alone(conn, profile, make_posting):
+    from winnow.models import RemoteSource, RemoteStatus
+
+    company_id = store.insert_company(conn, "Example Co")
+    posting = make_posting(
+        company="Example Co",
+        title="Director of Business Systems",
+        source_id="boilerplate-1",
+        remote=RemoteStatus.UNKNOWN,
+        remote_source=RemoteSource.ABSENT,
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+
+    learning.record_score(
+        conn, cluster_id, _score_with_veto("llm_generated_boilerplate", "generated text")
+    )
+
+    row = conn.execute(
+        "SELECT remote, remote_source FROM postings WHERE source_id = 'boilerplate-1'"
+    ).fetchone()
+    assert row["remote"] == RemoteStatus.UNKNOWN
+
+
+def _score_with_veto(gate: str, evidence: str):
+    from winnow.scoring import BreakdownLine, ScoreRecord
+
+    return ScoreRecord(
+        score=90,
+        breakdown=(BreakdownLine("growth_signal", 1.0, 20, 20.0, "owns it", False),),
+        vetoes=({"gate": gate, "evidence": evidence},),
+        flags=(),
+        unverified=(),
+        why_fits="Owns the function.",
+        concern=evidence,
+        vetoed=True,
+        model="stub",
+        prompt_version="1",
+        rubric_version="v1.test",
+    )

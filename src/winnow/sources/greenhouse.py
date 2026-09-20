@@ -118,7 +118,15 @@ class GreenhouseAdapter:
             ),
             updated_at=parse_iso(raw.get("updated_at")),
             remote=remote,
-            remote_source=(RemoteSource.LOCATION_STRING if location else RemoteSource.ABSENT),
+            # Provenance has to match the value. A location string exists on
+            # nearly every posting and usually names only a city, which teaches
+            # nothing about the arrangement — claiming LOCATION_STRING for an
+            # UNKNOWN says a string told us something it did not say.
+            remote_source=(
+                RemoteSource.LOCATION_STRING
+                if remote is not RemoteStatus.UNKNOWN
+                else RemoteSource.ABSENT
+            ),
             locations=locations,
             employment_type=employment_type,
             employment_type_source=employment_source,

@@ -25,6 +25,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime, timedelta
 
 from winnow.drafting import Draft
+from winnow.models import RemoteSource, RemoteStatus
 from winnow.scoring import BreakdownLine, ScoreRecord
 
 #: Score bands for calibration. Coarse on purpose — the question is whether the
@@ -110,6 +111,8 @@ def record_score(conn: sqlite3.Connection, cluster_id: int, record: ScoreRecord)
     posting_row = conn.execute(
         "SELECT canonical_posting_id FROM clusters WHERE id = ?", (cluster_id,)
     ).fetchone()
+    if posting_row and posting_row["canonical_posting_id"]:
+        _record_vetoed_arrangement(conn, int(posting_row["canonical_posting_id"]), record)
     cursor = conn.execute(
         "INSERT INTO scores (cluster_id, posting_id, score, breakdown, vetoes, flags, "
         "why_fits, concern, rubric_version, prompt_version, model) "
@@ -393,6 +396,58 @@ def prune(conn: sqlite3.Connection, *, retention_days: int, now: datetime | None
         (cutoff,),
     )
     return int(cursor.rowcount)
+
+
+#: Vetoes that settle how a job is worked, and what they settle it to.
+_ARRANGEMENT_VETOES = {
+    "onsite_required": RemoteStatus.ONSITE,
+    "hybrid_required": RemoteStatus.HYBRID,
+}
+
+#: Provenance strong enough that a model reading prose does not displace it.
+_STATED_SOURCES = frozenset({RemoteSource.STRUCTURED, RemoteSource.LOCATION_STRING})
+
+
+def _record_vetoed_arrangement(
+    conn: sqlite3.Connection, posting_id: int, record: ScoreRecord
+) -> None:
+    """Write down the arrangement a veto established.
+
+    A board that gives a city and nothing else leaves the adapter no choice but
+    UNKNOWN, and that is right. But when the model then reads "go into the
+    office 3 days per week" and quotes it, the arrangement is no longer
+    unknown — and that finding used to live only in the score, so the posting
+    itself still said UNKNOWN for a role the system had already established and
+    written down.
+
+    Recorded as DESCRIPTION_TEXT, which is what it is: weaker than a structured
+    field and weaker than a location string that named the arrangement
+    outright. Neither of those is overwritten — an employer's own field beats a
+    model reading their prose, and a veto that contradicts one is a
+    disagreement worth keeping rather than resolving silently.
+    """
+    arrangement = next(
+        (
+            _ARRANGEMENT_VETOES[str(veto.get("gate"))]
+            for veto in record.vetoes
+            if isinstance(veto, dict) and str(veto.get("gate")) in _ARRANGEMENT_VETOES
+        ),
+        None,
+    )
+    if arrangement is None:
+        return
+
+    conn.execute(
+        "UPDATE postings SET remote = ?, remote_source = ? "
+        "WHERE id = ? AND remote_source NOT IN (?, ?)",
+        (
+            arrangement,
+            RemoteSource.DESCRIPTION_TEXT,
+            posting_id,
+            RemoteSource.STRUCTURED,
+            RemoteSource.LOCATION_STRING,
+        ),
+    )
 
 
 def _line_to_dict(line: BreakdownLine) -> dict:

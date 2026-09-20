@@ -160,3 +160,39 @@ def test_greenhouse_needs_no_detail_fetch(analytics_engineer):
     """The list payload already carries the description with content=true."""
     posting = GreenhouseAdapter().normalize(analytics_engineer, BOARD, now=NOW)
     assert GreenhouseAdapter().fetch_detail(posting) is None
+
+
+def test_a_location_that_states_no_arrangement_claims_no_provenance(fixtures):
+    """`San Francisco, CA` is a place. Reading it taught us nothing about how.
+
+    The source said LOCATION_STRING whenever a location existed, even when the
+    status it produced was UNKNOWN — provenance claiming a string told us
+    something it did not say. Every other adapter reports ABSENT here.
+    """
+    raw = {
+        "id": 1,
+        "title": "Head of Revenue Operations",
+        "absolute_url": "https://boards.greenhouse.io/faire/jobs/1",
+        "location": {"name": "San Francisco, CA"},
+        "content": "<p>A role.</p>",
+    }
+
+    posting = GreenhouseAdapter().normalize(raw, BOARD, now=NOW)
+
+    assert posting.remote is RemoteStatus.UNKNOWN
+    assert posting.remote_source is RemoteSource.ABSENT
+
+
+def test_a_location_that_does_state_an_arrangement_keeps_its_provenance(fixtures):
+    raw = {
+        "id": 2,
+        "title": "Head of Revenue Operations",
+        "absolute_url": "https://boards.greenhouse.io/faire/jobs/2",
+        "location": {"name": "Remote - US"},
+        "content": "<p>A role.</p>",
+    }
+
+    posting = GreenhouseAdapter().normalize(raw, BOARD, now=NOW)
+
+    assert posting.remote is RemoteStatus.REMOTE
+    assert posting.remote_source is RemoteSource.LOCATION_STRING
