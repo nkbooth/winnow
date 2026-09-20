@@ -457,3 +457,61 @@ def test_gate_misfires_are_counted_where_the_vocabulary_is_edited(conn, two_clus
     view = data.tunables(conn, profile, now=NOW)
 
     assert view.gate_misfires == 1
+
+
+# ---------------------------------------------------------------------------
+# The queue at scale
+# ---------------------------------------------------------------------------
+
+
+def test_the_queue_honours_the_threshold_the_digest_uses(conn, seeded, profile):
+    """Measured at 217 boards: 136 rows, 49 of them below the rubric's own bar.
+
+    The threshold was applied by the digest and never by review, which was
+    harmless at twenty boards and useless at two hundred — a third of the list
+    was roles the rubric had already judged too weak, and the count in the
+    title claimed all of them were awaiting a decision.
+    """
+    rows = data.queue(conn, profile=profile)
+
+    assert rows, "the queue is not empty"
+    assert all(row.score >= profile.score_threshold for row in rows)
+
+
+def test_everything_can_still_be_seen_on_request(conn, seeded, profile, make_posting):
+    """Below-threshold is not the same as wrong, so it stays reachable."""
+    _weak_cluster(conn, profile, make_posting)
+
+    shown = data.queue(conn, profile=profile)
+    everything = data.queue(conn, profile=profile, include_below_threshold=True)
+
+    assert len(everything) == len(shown) + 1
+    assert min(row.score for row in everything) == 48
+
+
+def test_the_queue_reports_what_it_is_holding_back(conn, seeded, profile, make_posting):
+    """A shorter list must say it is shorter, or it reads as a quiet day."""
+    _weak_cluster(conn, profile, make_posting)
+
+    assert data.below_threshold_count(conn, profile) == 1
+
+
+def _weak_cluster(conn, profile, make_posting):
+    """A scored cluster below the rubric's threshold."""
+    company_id = store.insert_company(conn, "Marginal Co")
+    posting = make_posting(
+        company="Marginal Co",
+        title="Business Systems Analyst",
+        source_id="weak",
+        description_text="Own and build out the BizOps function.",
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+    learning.record_score(conn, cluster_id, _record(48))
+    return cluster_id
+
+
+def test_no_profile_means_no_filtering(conn, seeded):
+    """The caller decides. Defaulting to a threshold nobody passed would hide
+    rows on the authority of a rubric that was never consulted."""
+    assert len(data.queue(conn)) == 2

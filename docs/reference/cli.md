@@ -54,10 +54,30 @@ Every subcommand of `winnow`. Run `winnow <command> --help` for flags.
 | `a` | Mark the application submitted |
 | `s` | Send the draft, after confirming |
 | `u` | Undo the most recent decision |
+| `A` | Show everything scored, including below the threshold |
 | `v` | Change list: review, interested, applied, deferred |
 | `m` | Review pending merge candidates |
 | `t` | Tunables: threshold, digest cap, measured rates |
 | `r` / `q` | Reload / quit |
+
+## What the review list shows
+
+The review queue holds scored, undecided clusters **at or above your
+`score_threshold`**, highest first. Anything the rubric scored below it is held
+back and the count is shown — `18 awaiting review · 49 below 70` — because a
+list that quietly got shorter reads as a quiet day. `A` reveals them.
+
+`vetoed` in the right-hand column means the model found a disqualifier in the
+posting's prose that the structured gates could not see: an onsite or hybrid
+requirement, relocation, an hours cap, or generated boilerplate. A veto
+overrides the score rather than reducing it, which is why a vetoed row can
+still read 88.
+
+Vetoed rows are shown; gated postings are not. The difference is what the
+judgement rests on. A gate reads a stated structured field and is trusted. A
+veto is a model reading prose — it must quote the span it relied on, and an
+unquotable veto is dropped, but a quotable one can still be a misreading.
+Hiding those would make a model error invisible and unappealable.
 
 ## Pass reasons
 

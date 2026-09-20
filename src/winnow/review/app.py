@@ -246,6 +246,7 @@ class ReviewApp(App[None]):
         Binding("m", "merges", "merges"),
         Binding("t", "tunables", "tunables"),
         Binding("u", "undo", "undo"),
+        Binding("A", "show_all", "show all"),
         Binding("v", "cycle_view", "view"),
         Binding("r", "reload", "reload"),
         Binding("q", "quit", "quit"),
@@ -261,6 +262,7 @@ class ReviewApp(App[None]):
         #: rather than only painted, so it can be asserted on.
         self.status: str = ""
         self._view: str = _VIEWS[0]
+        self._show_below_threshold: bool = False
 
     def compose(self) -> ComposeResult:
         yield Header()
@@ -291,7 +293,7 @@ class ReviewApp(App[None]):
         table.clear()
         self._rows.clear()
 
-        for row in _LISTS[self._view](self._conn):
+        for row in self._current_rows():
             key = str(row.cluster_id)
             self._rows[key] = row.cluster_id
             table.add_row(
@@ -304,8 +306,41 @@ class ReviewApp(App[None]):
                 key=key,
             )
 
-        self.sub_title = f"{len(self._rows)} {_LABELS[self._view]}"
+        self.sub_title = f"{len(self._rows)} {_LABELS[self._view]}{self._withheld_note()}"
         self._show_detail()
+
+    def _current_rows(self) -> list[data.QueueRow]:
+        """The rows for the list being shown.
+
+        Only the review queue filters on score. The other lists hold roles a
+        decision has already been made about, and hiding one because the rubric
+        has since been retuned would lose work rather than tidy it.
+        """
+        if self._view != "review":
+            return _LISTS[self._view](self._conn)
+        return data.queue(
+            self._conn,
+            profile=self._profile,
+            include_below_threshold=self._show_below_threshold,
+        )
+
+    def _withheld_note(self) -> str:
+        """Say how many rows the threshold is holding back, if any.
+
+        A list that quietly got shorter reads as a quiet day, and this project
+        does not let a number do that.
+        """
+        if self._view != "review":
+            return ""
+        if self._show_below_threshold:
+            return " — all scored"
+        held = data.below_threshold_count(self._conn, self._profile)
+        return f" · {held} below {self._profile.score_threshold}" if held else ""
+
+    def action_show_all(self) -> None:
+        """Toggle the below-threshold rows into the review queue."""
+        self._show_below_threshold = not self._show_below_threshold
+        self.action_reload()
 
     @on(DataTable.RowHighlighted)
     def _highlighted(self, _event: DataTable.RowHighlighted) -> None:

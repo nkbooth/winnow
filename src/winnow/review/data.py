@@ -142,16 +142,35 @@ class StaleBoard:
     identifier: str
 
 
-def queue(conn: sqlite3.Connection) -> list[QueueRow]:
+def queue(
+    conn: sqlite3.Connection,
+    *,
+    profile: Profile | None = None,
+    include_below_threshold: bool = False,
+) -> list[QueueRow]:
     """List the clusters awaiting a decision, highest score first.
 
     Args:
         conn: An open connection.
+        profile: The rubric, whose threshold filters the list. Without one
+            nothing is filtered — hiding rows on the authority of a rubric the
+            caller never passed would be deciding for them.
+        include_below_threshold: Show everything the scorer produced.
 
     Returns:
-        One row per undecided cluster. Vetoed clusters are included and marked:
-        the digest hides them, but a veto is exactly the kind of call worth
-        being able to overrule by hand.
+        One row per undecided cluster.
+
+        Vetoed clusters are included and marked. The digest hides them, but a
+        veto is a model reading prose rather than a gate reading a field, and a
+        model misreading "3 days onsite" out of a remote posting is exactly the
+        call worth being able to overrule by hand. Deterministic gates are a
+        different matter: those rejections are counted and never shown, because
+        they rest on stated structured evidence.
+
+        Below-threshold clusters are excluded by default. Measured at 217
+        boards: 136 rows, 49 of them under the rubric's own bar. That was
+        harmless at twenty boards and useless at two hundred, and a title
+        claiming 136 awaited a decision was not true in any useful sense.
     """
     rows: list[QueueRow] = []
     for cluster_id, _ in learning.clusters_awaiting_score(conn, include_scored=True):
@@ -171,7 +190,20 @@ def queue(conn: sqlite3.Connection) -> list[QueueRow]:
             )
         )
     rows.sort(key=lambda row: -row.score)
+    if profile is not None and not include_below_threshold:
+        rows = [row for row in rows if row.score >= profile.score_threshold]
     return rows
+
+
+def below_threshold_count(conn: sqlite3.Connection, profile: Profile) -> int:
+    """How many scored, undecided clusters the threshold is holding back.
+
+    Reported rather than silently dropped: a list that got shorter without
+    saying why reads as a quiet day, which is the one thing this project never
+    lets a number do.
+    """
+    withheld = queue(conn, profile=profile, include_below_threshold=True)
+    return sum(1 for row in withheld if row.score < profile.score_threshold)
 
 
 def working_set(conn: sqlite3.Connection, *, now: datetime | None = None) -> list[QueueRow]:

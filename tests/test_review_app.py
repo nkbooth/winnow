@@ -656,3 +656,56 @@ async def test_the_tunables_panel_stays_quiet_with_no_misfires(app, conn):
         body = str(app.screen.query_one("#tunables-body", Static).content)
 
     assert "wrong-function" not in body
+
+
+async def test_rows_that_clear_the_threshold_are_shown_without_a_note(app):
+    """Nothing held back means nothing to mention."""
+    async with app.run_test() as pilot:
+        await pilot.pause()
+        assert app.query_one("#queue").row_count == 2, "both seeded rows clear 70"
+        assert app.sub_title == "2 awaiting review"
+
+
+async def test_a_held_back_count_is_shown_not_swallowed(app, conn, profile, make_posting):
+    """A shorter list has to say it is shorter."""
+    from winnow import learning as learning_module
+    from winnow import store as store_module
+    from winnow.dedupe import cluster_postings, persist_cluster
+
+    company_id = store_module.insert_company(conn, "Marginal Co")
+    posting = make_posting(
+        company="Marginal Co",
+        title="Business Systems Analyst",
+        source_id="weak",
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+    learning_module.record_score(conn, cluster_id, _record(48))
+
+    async with app.run_test() as pilot:
+        await pilot.pause()
+        assert app.query_one("#queue").row_count == 2, "the weak one is hidden"
+        assert "1 below" in app.sub_title
+
+
+async def test_shift_a_reveals_everything_scored(app, conn, profile, make_posting):
+    """Below the bar is not the same as wrong; overruling stays possible."""
+    from winnow import learning as learning_module
+    from winnow import store as store_module
+    from winnow.dedupe import cluster_postings, persist_cluster
+
+    company_id = store_module.insert_company(conn, "Marginal Co")
+    posting = make_posting(
+        company="Marginal Co",
+        title="Business Systems Analyst",
+        source_id="weak",
+        description_complete=True,
+    )
+    cluster_id = persist_cluster(conn, cluster_postings([posting])[0], company_id=company_id)
+    learning_module.record_score(conn, cluster_id, _record(48))
+
+    async with app.run_test() as pilot:
+        await pilot.press("A")
+        await pilot.pause()
+        assert app.query_one("#queue").row_count == 3
+        assert "all scored" in app.sub_title
