@@ -221,6 +221,91 @@ _US_STATE_NAMES = (
 
 _STATE_CODE_PATTERN = re.compile(r",\s*([A-Z]{2})\b")
 
+#: Boards write "São Paulo, BRA" as often as they write the country name, and
+#: the classifier knew only names. Matched in the `City, CODE` shape and in
+#: upper case only, which is what makes it safe: "can", "are", "per" and "and"
+#: are all ISO codes for somewhere, and matching them as words would gate half
+#: of every posting. US cities carry two-letter state codes, so a three-letter
+#: code after a comma is a country rather than a state.
+_COUNTRY_CODE_PATTERN = re.compile(r",\s*([A-Z]{3})\b")
+
+#: Codes that also stand for a US city are left out on purpose. AUS is
+#: Australia and Austin; IND is India and Indianapolis; PHL is the Philippines
+#: and Philadelphia. Being unable to classify those is honest. Gating an Austin
+#: role as foreign is not, and an unknown location satisfies no gate anyway.
+_AMBIGUOUS_CODES = frozenset({"AUS", "IND", "PHL", "CHI", "LAX", "ATL", "DEN", "POR"})
+
+_NON_US_COUNTRY_CODES = frozenset(
+    {
+        "ARE",
+        "ARG",
+        "AUT",
+        "BEL",
+        "BGR",
+        "BRA",
+        "CAN",
+        "CHE",
+        "CHL",
+        "CHN",
+        "COL",
+        "CRI",
+        "CZE",
+        "DEU",
+        "DNK",
+        "EGY",
+        "ESP",
+        "EST",
+        "FIN",
+        "FRA",
+        "GBR",
+        "GRC",
+        "HKG",
+        "HRV",
+        "HUN",
+        "IDN",
+        "IRL",
+        "ISR",
+        "ITA",
+        "JPN",
+        "KEN",
+        "KOR",
+        "LTU",
+        "LUX",
+        "LVA",
+        "MEX",
+        "MYS",
+        "NGA",
+        "NLD",
+        "NOR",
+        "NZL",
+        "PAK",
+        "PER",
+        "POL",
+        "PRT",
+        "ROU",
+        "SAU",
+        "SGP",
+        "SRB",
+        "SVK",
+        "SVN",
+        "SWE",
+        "THA",
+        "TUR",
+        "TWN",
+        "UKR",
+        "URY",
+        "VNM",
+        "ZAF",
+        # Not ISO, but what boards actually write.
+        "UAE",
+        "KSA",
+    }
+    - _AMBIGUOUS_CODES
+)
+
+#: A code after a comma that means the United States rather than somewhere else.
+_US_COUNTRY_CODES = frozenset({"USA"})
+
 
 _US_PATTERN = re.compile(r"\b(?:" + "|".join(_US_MARKERS) + r")", re.IGNORECASE)
 _NON_US_PATTERN = re.compile(
@@ -243,6 +328,8 @@ def looks_us(location: str) -> bool:
     padded = f" {location.lower()} "
     if any(state in padded for state in _US_STATE_NAMES):
         return True
+    if any(code in _US_COUNTRY_CODES for code in _COUNTRY_CODE_PATTERN.findall(location)):
+        return True
     return any(code in _US_STATE_CODES for code in _STATE_CODE_PATTERN.findall(location))
 
 
@@ -251,8 +338,14 @@ def looks_non_us(location: str) -> bool:
 
     Matched on word boundaries: "Indiana" contains "india" and "Menands"
     contains "mena", and a substring match would gate both as foreign.
+
+    Country codes are matched separately and more narrowly — see
+    :data:`_COUNTRY_CODE_PATTERN` — because the same care is needed in a newer
+    form: half the alpha-3 codes are ordinary English words.
     """
-    return bool(_NON_US_PATTERN.search(location))
+    if _NON_US_PATTERN.search(location):
+        return True
+    return any(code in _NON_US_COUNTRY_CODES for code in _COUNTRY_CODE_PATTERN.findall(location))
 
 
 def classify(locations: tuple[str, ...] | list[str], remote: RemoteStatus) -> LocationClass:
