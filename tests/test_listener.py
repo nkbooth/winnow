@@ -826,3 +826,33 @@ def _draft_for_cluster(conn, cluster_id):
             built_from={},
         ),
     )
+
+
+def test_the_listener_config_is_built_from_settings():
+    """Settings exist to be read. A config that ignores them connects nowhere.
+
+    Caught in deployment: the listener's dataclass defaults are empty, which is
+    correct for a machine with no mailbox, and nothing carried config.toml into
+    them — so a host with a perfectly good [mail] section tried to reach an
+    empty hostname and reported connection refused every few seconds.
+    """
+    from winnow.settings import MailSettings
+
+    mail = MailSettings(
+        imap_host="imap.example.com",
+        imap_port=1993,
+        mailbox="Archive",
+        sent_folder="Sent Items",
+        username_ref="file:/run/secrets/u",
+        password_ref="file:/run/secrets/p",
+    )
+
+    config = listener.ListenerConfig.from_settings(mail)
+
+    assert config.host == "imap.example.com"
+    assert config.port == 1993
+    assert config.mailbox == "Archive"
+    assert config.sent_folder == "Sent Items"
+    assert config.username_ref == "file:/run/secrets/u"
+    assert config.password_ref == "file:/run/secrets/p"
+    assert not hasattr(config, "smtp_host"), "still no way to send"

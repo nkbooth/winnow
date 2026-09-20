@@ -510,6 +510,7 @@ def _listen(_args: argparse.Namespace) -> int:
     try:
         listener.run(
             conn,
+            listener.ListenerConfig.from_settings(config.settings().mail),
             escalate=lambda notice: sender.send(notice, f"<p>{notice}</p>"),
             stop=stopping.is_set,
         )

@@ -489,7 +489,7 @@ def test_listen_stops_cleanly_on_sigterm(monkeypatch):
 
     stops: list = []
 
-    def fake_run(conn, escalate=None, stop=None, **kwargs):
+    def fake_run(conn, config=None, *, escalate=None, stop=None, **kwargs):
         stops.append(stop)
 
     import winnow.listener as listener_module

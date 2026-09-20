@@ -38,6 +38,7 @@ from email.utils import parsedate_to_datetime
 from winnow import learning
 from winnow.normalize import html_to_text
 from winnow.secrets import resolve as resolve_secret
+from winnow.settings import MailSettings
 
 #: Renewed before the 30 minutes RFC 2177 permits a server to drop IDLE at.
 IDLE_RENEWAL_SECONDS = 29 * 60
@@ -137,6 +138,31 @@ class ListenerConfig:
     sent_lookback_days: int = 7
     username_ref: str = "env:WINNOW_MAIL_USERNAME"
     password_ref: str = "env:WINNOW_MAIL_PASSWORD"
+
+    @classmethod
+    def from_settings(cls, mail: MailSettings) -> ListenerConfig:
+        """Build from the ``[mail]`` section of config.toml.
+
+        The defaults above describe a machine with no mailbox, which is the
+        right thing to ship and the wrong thing to connect with. Without this
+        the listener read none of the configuration written for it and dialled
+        an empty hostname.
+
+        Args:
+            mail: The mail settings.
+
+        Returns:
+            A listener configuration. Still no SMTP counterpart, because the
+            point of the class is that this process cannot send.
+        """
+        return cls(
+            host=mail.imap_host,
+            port=mail.imap_port,
+            mailbox=mail.mailbox,
+            sent_folder=mail.sent_folder,
+            username_ref=mail.username_ref,
+            password_ref=mail.password_ref,
+        )
 
 
 @dataclass(frozen=True)

@@ -20,7 +20,9 @@ from email.message import EmailMessage
 from email.utils import formatdate, make_msgid
 from pathlib import Path
 
+from winnow import config as app_config
 from winnow.secrets import resolve as resolve_secret
+from winnow.settings import MailSettings
 
 #: Only used when no domain is configured. A Message-ID must be globally
 #: unique and its domain part is what makes it so, which is why this is a
@@ -46,6 +48,21 @@ class SmtpConfig:
     starttls: bool = True
     username_ref: str = "env:WINNOW_MAIL_USERNAME"
     password_ref: str = "env:WINNOW_MAIL_PASSWORD"
+
+    @classmethod
+    def from_settings(cls, mail: MailSettings) -> SmtpConfig:
+        """Build from the ``[mail]`` section of config.toml.
+
+        The defaults describe a machine with no mailbox. Shipping that is
+        right; connecting with it is not, and nothing carried the configured
+        host into here until a deployment found out the hard way.
+        """
+        return cls(
+            host=mail.smtp_host,
+            port=mail.smtp_port,
+            username_ref=mail.username_ref,
+            password_ref=mail.password_ref,
+        )
 
 
 def build_message(
@@ -172,7 +189,9 @@ def send(msg: EmailMessage, config: SmtpConfig | None = None) -> str:
         RuntimeError: If credentials cannot be resolved.
         smtplib.SMTPException: If the server rejects the message.
     """
-    config = config or SmtpConfig()
+    # Falls back to the configured mailbox rather than to empty defaults: an
+    # unset host is a machine with no mailbox, not a reason to dial nowhere.
+    config = config or SmtpConfig.from_settings(app_config.settings().mail)
 
     missing = [h for h in ("From", "To", "Date", "Message-ID") if not msg[h]]
     if missing:

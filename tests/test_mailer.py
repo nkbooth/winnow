@@ -226,3 +226,25 @@ class TestSmtpConfig(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class TestSettingsWiring(unittest.TestCase):
+    """The mailer reads the same [mail] section the listener does."""
+
+    def test_smtp_config_is_built_from_settings(self) -> None:
+        from winnow.settings import MailSettings
+
+        mail = MailSettings(
+            smtp_host="smtp.example.com",
+            smtp_port=465,
+            message_id_domain="example.com",
+            username_ref="env:U",
+            password_ref="env:P",
+        )
+
+        cfg = SmtpConfig.from_settings(mail)
+
+        self.assertEqual(cfg.host, "smtp.example.com")
+        self.assertEqual(cfg.port, 465)
+        self.assertEqual(cfg.username_ref, "env:U")
+        self.assertEqual(cfg.password_ref, "env:P")
