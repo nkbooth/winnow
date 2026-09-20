@@ -94,13 +94,14 @@ def run_poll(
             failed.append(board.vendor)
             continue
 
-        survivors, board_tally = _gate(rows, adapter, board, profile, conn, now)
+        survivors, rejected, board_tally = _gate(rows, adapter, board, profile, conn, now)
         tally.update(board_tally)
         _record_run(conn, board, started, "ok", len(rows), tally=board_tally)
         if board.board_id is not None:
             resolver.record_poll(conn, board.board_id, job_count=len(rows))
 
         _mark_departed(conn, board, rows, adapter, now)
+        _withdraw_rejected(conn, rejected, now)
 
         for cluster in cluster_postings(survivors):
             persisted, was_suppressed = _persist(conn, cluster, board, adapter, now)
@@ -167,6 +168,7 @@ def _gate(
         store.comp_tier(conn, board.company_id) if board.company_id is not None else "mid_market"
     )
     survivors: list[Posting] = []
+    rejected: list[Posting] = []
     tally: Counter[str] = Counter()
 
     for raw in rows:
@@ -175,10 +177,47 @@ def _gate(
         if outcome.passed:
             survivors.append(posting)
             continue
+        rejected.append(posting)
         for finding in outcome.rejections:
             tally[finding.gate] += 1
 
-    return survivors, dict(tally)
+    return survivors, rejected, dict(tally)
+
+
+def _withdraw_rejected(conn: sqlite3.Connection, rejected: list[Posting], now: datetime) -> int:
+    """Retire anything already stored that has started failing a gate.
+
+    A posting can pass today and fail tomorrow: an employer adds a salary below
+    the floor, or an onsite requirement appears in a field that was empty. Gated
+    postings are never stored, so nothing writes to the row that already exists
+    — it keeps its old values and keeps surfacing, scored on facts that are no
+    longer true.
+
+    Found live. A role sat in the queue at 90 reading "comp not disclosed"
+    through the poll that revealed it pays well under the floor; the gate
+    counted the rejection and the stale row stayed where it was.
+
+    Retiring rather than deleting: the score and any decision are the training
+    data, and ``disappeared_at`` is the field the digest, the repost detector
+    and the prune already read.
+
+    Args:
+        conn: An open connection.
+        rejected: Postings this poll gated.
+        now: Reference time.
+
+    Returns:
+        How many stored postings were retired.
+    """
+    retired = 0
+    for posting in rejected:
+        cursor = conn.execute(
+            "UPDATE postings SET disappeared_at = ? "
+            "WHERE source = ? AND source_id = ? AND disappeared_at IS NULL",
+            (now.isoformat(), posting.source, posting.source_id),
+        )
+        retired += cursor.rowcount
+    return retired
 
 
 def _persist(

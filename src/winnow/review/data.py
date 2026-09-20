@@ -191,8 +191,30 @@ def queue(
         )
     rows.sort(key=lambda row: -row.score)
     if profile is not None and not include_below_threshold:
-        rows = [row for row in rows if row.score >= profile.score_threshold]
+        # A role that has left its board cannot be applied to. The digest
+        # already refuses to list one — "the worst thing this system can
+        # produce is an evening spent on a role that has already closed" — and
+        # that reasoning was never applied to the screen where the evening
+        # actually gets spent.
+        closed = _closed_clusters(conn)
+        rows = [
+            row
+            for row in rows
+            if row.score >= profile.score_threshold and row.cluster_id not in closed
+        ]
     return rows
+
+
+def _closed_clusters(conn: sqlite3.Connection) -> set[int]:
+    """Clusters whose canonical posting has left its board."""
+    return {
+        int(row["id"])
+        for row in conn.execute(
+            "SELECT c.id AS id FROM clusters c "
+            "JOIN postings p ON p.id = c.canonical_posting_id "
+            "WHERE p.disappeared_at IS NOT NULL"
+        )
+    }
 
 
 def below_threshold_count(conn: sqlite3.Connection, profile: Profile) -> int:

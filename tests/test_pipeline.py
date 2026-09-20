@@ -13,8 +13,8 @@ matches", because silence and breakage must never look alike.
 import httpx
 import pytest
 
-from winnow import store
-from winnow.models import Board, Posting, RemoteStatus
+from winnow import learning, pipeline, store
+from winnow.models import Board, CompInterval, CompSource, Posting, RemoteStatus
 from winnow.pipeline import run_poll
 
 
@@ -349,3 +349,103 @@ def test_a_posting_that_comes_back_is_no_longer_gone(conn, board, profile):
         ]
         is None
     )
+
+
+def test_a_posting_that_starts_failing_a_gate_stops_being_surfaced(conn, profile, make_posting):
+    """A posting can pass today and fail tomorrow, and the queue must notice.
+
+    Gated postings are never stored, so when one that was already stored starts
+    failing — an employer adds a salary below the floor, or an onsite
+    requirement appears, or a bug that hid the comp gets fixed — nothing writes
+    to the existing row. It kept its old values and kept surfacing.
+
+    Seen live: a ClickHouse role sat in the queue at 90 reading 'comp not
+    disclosed' after the poll that revealed it pays $110-165K against a
+    $200,000 floor.
+    """
+    company_id = store.insert_company(conn, "ClickHouse")
+    board = Board(
+        vendor="ashby",
+        identifier={"slug": "clickhouse"},
+        company="ClickHouse",
+        company_id=company_id,
+        board_id=store.insert_board(
+            conn,
+            company_id=company_id,
+            vendor="ashby",
+            identifier={"slug": "clickhouse"},
+            source="manual",
+        ),
+    )
+
+    passing = make_posting(
+        company="ClickHouse",
+        title="Director of Business Systems",
+        source_id="e0a5",
+        description_complete=True,
+    )
+    adapter = _StubAdapter([passing])
+    report = pipeline.run_poll(conn, profile, [board], adapter_factory=lambda _v: adapter)
+    assert report.clusters, "it passed the first time"
+
+    # Scored, because the review queue ignores clusters that have none — an
+    # unscored cluster would make the assertion below pass without meaning it.
+    from winnow.scoring import BreakdownLine, ScoreRecord
+
+    learning.record_score(
+        conn,
+        report.clusters[0].cluster_id,
+        ScoreRecord(
+            score=90,
+            breakdown=(BreakdownLine("growth_signal", 1.0, 20, 20.0, "own it", False),),
+            vetoes=(),
+            flags=(),
+            unverified=(),
+            why_fits="Owns the function.",
+            concern="None.",
+            vetoed=False,
+            model="stub",
+            prompt_version="1",
+            rubric_version=profile.rubric_version,
+        ),
+    )
+    from winnow.review import data as review_data
+
+    assert [r.title for r in review_data.queue(conn, profile=profile)] == [
+        "Director of Business Systems"
+    ], "it is surfaced before anything changes"
+
+    # The same posting, now stating a salary far below the floor.
+    failing = make_posting(
+        company="ClickHouse",
+        title="Director of Business Systems",
+        source_id="e0a5",
+        description_complete=True,
+        comp_min=110000,
+        comp_max=165000,
+        comp_interval=CompInterval.YEAR,
+        comp_source=CompSource.STATED,
+    )
+    adapter._postings = [failing]
+    pipeline.run_poll(conn, profile, [board], adapter_factory=lambda _v: adapter)
+
+    surfaced = [row.title for row in review_data.queue(conn, profile=profile)]
+    assert "Director of Business Systems" not in surfaced
+
+
+class _StubAdapter:
+    """Returns fixed postings, so a poll can be replayed with different data."""
+
+    name = "ashby"
+
+    def __init__(self, postings):
+        self._postings = postings
+
+    def fetch_list(self, board):
+        return [{"id": p.source_id} for p in self._postings]
+
+    def normalize(self, raw, board, *, now=None):
+        return next(p for p in self._postings if p.source_id == raw["id"])
+
+    def fetch_detail(self, posting):
+        return None

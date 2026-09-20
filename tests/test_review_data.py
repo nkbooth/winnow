@@ -515,3 +515,33 @@ def test_no_profile_means_no_filtering(conn, seeded):
     """The caller decides. Defaulting to a threshold nobody passed would hide
     rows on the authority of a rubric that was never consulted."""
     assert len(data.queue(conn)) == 2
+
+
+def test_a_closed_role_leaves_the_review_queue(conn, seeded, profile):
+    """The digest already refuses to list these; review was still showing them.
+
+    "The worst thing this system can produce is an evening spent on a role that
+    has already closed" — that reasoning is in the digest and was never applied
+    to the screen where the evening actually gets spent.
+    """
+    cluster_id = seeded["Director of RevOps"]
+    conn.execute(
+        "UPDATE postings SET disappeared_at = ? WHERE id = "
+        "(SELECT canonical_posting_id FROM clusters WHERE id = ?)",
+        (NOW.isoformat(), cluster_id),
+    )
+
+    assert cluster_id not in [row.cluster_id for row in data.queue(conn, profile=profile)]
+
+
+def test_a_closed_role_is_still_reachable_with_everything_else(conn, seeded, profile):
+    """Closed is a fact about the posting, not a reason to lose the record."""
+    cluster_id = seeded["Director of RevOps"]
+    conn.execute(
+        "UPDATE postings SET disappeared_at = ? WHERE id = "
+        "(SELECT canonical_posting_id FROM clusters WHERE id = ?)",
+        (NOW.isoformat(), cluster_id),
+    )
+
+    everything = data.queue(conn, profile=profile, include_below_threshold=True)
+    assert cluster_id in [row.cluster_id for row in everything]
